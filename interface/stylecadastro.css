@@ -1,0 +1,132 @@
+body{
+  margin: 0;
+  padding: 0;
+  background-image: url("https://media.istockphoto.com/photos/the-winner-picture-id1324437705?b=1&k=20&m=1324437705&s=170667a&w=0&h=Doskar9KzwC48aYZe5282irwihmzOPvjykEaWPW4i4M=");
+  background-size: cover;
+}
+
+.num {
+	background: rgb(235,146,44);
+	background: linear-gradient(0deg, rgba(235,146,44,1) 3%, rgba(245,255,0,1) 100%);
+}
+
+.correct {
+	background: #91fb78
+}
+
+.dontshow {
+	color: black
+}
+.show {
+	color: black
+}
+
+.namecolorbronze {
+	background: rgb(235,146,44);
+	background: linear-gradient(0deg, rgba(235,146,44,1) 3%, rgba(179,111,63,1) 100%);
+	border-radius: 5px;
+}
+
+#metodologo {
+	width: 100px;
+	height: 50px;
+}
+
+.container {
+	width: 100vw;
+  height: 100vh;
+  display: grid;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+	text-align: center;
+	aspect-ratio: 100 / 29;
+}
+
+.box {
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+	border-radius:7px;
+  width: 95vw;
+  height: 550px;
+  background: rgb(255,255,255);
+	background: linear-gradient(180deg, rgba(255,255,255,0.835171568627451) 0%, rgba(82,170,114,0.6222864145658263) 100%);
+  flex-direction: row;
+	text-align: center;
+	overflow-y: scroll;
+}
+
+table{
+	align: center;
+	margin: auto;
+	text-align: center;
+}
+
+td{
+	align: center;
+	margin: auto;
+	text-align: center;
+	border-bottom: 0.5px dotted black;
+}
+
+tr{
+	align: center;
+	text-align: center;
+	margin: auto;
+}
+
+a{
+	text-decoration: none;
+}
+
+.button-33 {
+	padding: 1em 2em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #B0E0E6;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+	margin-top: 10px;
+	margin-bottom: 50px;
+}
+
+.button-33:hover {
+	background-color: #1E90FF;
+  box-shadow: 0px 15px 20px rgba(122, 103, 238, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.button-33:active{
+	transform: translateY(-1px);
+}
+
+#rnota {
+	margin-top: 50px;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+  height: 15px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(45deg, #00aeff, #a68eff);
+  border-radius: 10px;
+	-webkit-box-shadow: rgba(0,0,0,.12) 0 3px 13px 1px;
+}
+
+/*::-webkit-scrollbar-thumb:hover {
+  background-color: #a8bbbf;
+}*/

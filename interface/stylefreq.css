@@ -1,0 +1,95 @@
+body{
+  margin: 0;
+  padding: 0;
+  background-image: url("https://cdn5.f-cdn.com/contestentries/1578585/21468461/5d62b49ac544b_thumb900.jpg");
+  background-size: cover;
+}
+
+.container {
+	width: 100vw;
+  height: 100vh;
+  display: grid;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+	text-align: center;
+}
+
+.box {
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+	border-radius:7px;
+  width: 550px;
+  height: 550px;
+  background-image: url("https://i.ibb.co/brs9d2t/metodobox.png");
+  flex-direction: row;
+	text-align: center;
+	display: grid;
+}
+
+.error{
+	border: 1px solid red;
+}
+
+.row{
+	margin-bottom: 10px;
+	clear: both;
+	text-align: right;
+}
+
+#ll{
+	/*margin-bottom: 15px;*/
+	margin-right: 30px;
+	margin-left: 30px;
+}
+
+.box2 {
+	text-align: center;
+	justify-content: center;
+	height: 400px;
+	width: 400px;
+}
+
+select {
+	width: 100px;
+}
+
+.button-33 {
+	padding: 1em 2em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #B0E0E6;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+	margin: 10px;
+}
+
+.button-33:hover {
+	background-color: #23c483;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.button-33:active{
+	transform: translateY(-1px);
+}
+
+textarea {
+  padding: 3px 5px;
+  margin: 0.5px 0;
+  box-sizing: border-box;
+	height: 120px;
+}
+
+select {
+  padding: 3px 5px;
+  margin: 0.5px 0;
+  box-sizing: border-box;
+}
