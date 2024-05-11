@@ -1,0 +1,166 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background-image: url("https://s3.amazonaws.com/i.snag.gy/hATqGL.jpg");
+	background-size: cover;
+	overflow-y: auto; 
+}
+
+body {
+		overflow-y: auto;
+}
+
+h1 {
+		margin-left: 10px; 
+}
+
+.navbar {
+		background-color: #0C1248; 
+		color: #fff;
+		padding: 20px 0;
+		font-family: 'Roboto', sans-serif; 
+}
+
+.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 20px;
+		overflow: hidden;
+		display: flex;
+		justify-content: space-between; /* Alterado */
+		align-items: center; 
+}
+
+.container2 {
+	margin-top: 150px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	padding:15px;
+}
+
+.logo-container {
+		display: flex; 
+		align-items: center; 
+}
+
+.logo {
+		font-size: 24px;
+		color: #FE0000;
+}
+
+.nav-links {
+		list-style: none;
+		padding: 0;
+		display: flex;
+		align-items: center; 
+}
+
+.nav-links li {
+		margin-left: 20px;
+}
+
+.nav-links li:first-child {
+		margin-left: 0; 
+}
+
+.nav-links li a {
+		text-decoration: none;
+		color: #fff;
+		transition: color 0.3s ease;
+		font-weight: 500;
+}
+
+.nav-links li a:hover {
+		color: #ffd700; 
+}
+
+@media only screen and (max-width: 768px) {
+		.container {
+				flex-direction: column; 
+				align-items: center;
+		}
+
+		.logo-container {
+				margin-bottom: 5px; 
+		}
+		.nav-links {
+				margin-top: 20px; 
+		}
+
+		.profile-picture, .metodo {
+				align-self: flex-start;
+		}
+}
+.profile-picture, .metodo {
+		width: 40px; 
+		height: auto;
+		border-radius: 50%; 
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); 
+}
+
+.buttons {
+	max-height: 200px;
+	position: fixed;
+	margin: auto;
+}
+
+button:not(.btn2){
+	margin-bottom: 20px;
+	margin-left: 15px;
+	background:#FE0000;
+	color:#fff;
+	border:none;
+	position:relative;
+	height:60px;
+	font-size:1.6em;
+	padding:0 2em;
+	cursor:pointer;
+	transition:800ms ease all;
+	outline:none;
+}
+button:hover:not(.btn2){
+	background:#fff;
+	color:#FE0000;
+}
+button:before,button:after:not(.btn2){
+	content:'';
+	position:absolute;
+	top:0;
+	right:0;
+	height:2px;
+	width:0;
+	background: #FE0000;
+	transition:400ms ease all;
+}
+button:after:not(.btn2){
+	right:inherit;
+	top:inherit;
+	left:0;
+	bottom:0;
+}
+button:hover:before,button:hover:after:not(.btn2){
+	width:100%;
+	transition:800ms ease all;
+}
+
+.nav-links li .btn2 {
+	background-color: red;
+	padding: 10px 20px; 
+	border-radius: 5px; 
+	color: white;
+	text-decoration: none; 
+	transition: background-color 0.3s ease; 
+}
+
+.nav-links li .btn2:hover {
+		background-color: darkred; 
+}

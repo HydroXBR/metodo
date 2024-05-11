@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Recibo</title>
+	<link rel="stylesheet" href="recibo.css">
+	<link rel="icon" type="image/png" href="https://i.ibb.co/jryH3q8/Min-Branca.png">
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<img src="https://i.ibb.co/jryH3q8/Min-Branca.png" alt="Logo do Método" class="logo">
+			<h2 id="title">RECIBO</h2>
+			<h2 id="value">R$ </h2>
+		</div>
+		<div>
+			<div class="line"><strong>Recebemos de:</strong> <p id=responsavel></p></div>
+			<div class="line"><strong>A quantia de:</strong> <p id=valor></p></div>
+		</div>
+		<div class="descricao line">
+			<strong>Referente a:</strong> <p id="desc"></p>
+		</div>
+		<div class="footer line">
+			<p id="emi"><strong>Emitente:</strong> </p><p id="data"></p>
+		</div>
+		<div class="print-button">
+			<button onclick="window.print()">Imprimir</button>
+			<button onclick="window.location.href = `/gerar`">Voltar</button>
+		</div>
+	</div>
+	<script src="recibo.js"></script>
+</body>
+</html>

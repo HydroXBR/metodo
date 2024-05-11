@@ -1,0 +1,89 @@
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f4f4f4;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.container {
+	max-width: 500px;
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	padding: 30px;
+	box-sizing: border-box;
+}
+
+.logo {
+	width: 100px;
+	height: auto;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.descricao {
+	margin-bottom: 20px;
+	line-height: 1.6;
+}
+
+.footer {
+	font-size: 14px;
+	color: #888;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.print-button {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.print-button button {
+	padding: 10px 20px;
+	background-color: #FE0000;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+	transition: background-color 0.3s;
+}
+
+.print-button button:hover {
+	background-color: #ff6666;
+}
+
+
+@media print {
+	.print-button {
+		display: none;
+	}
+}
+
+.line{
+	border-top: 0.5px solid #8f8f8f;
+	padding-top: 10px;
+}
+
+.descricao {
+		text-align: justify;
+}
+
+#title{
+	margin-left:20px;
+}
+
+#value {
+	padding: 3px;
+	border: 0.5px solid #8f8f8f;
+	border-radius: 10px;
+}

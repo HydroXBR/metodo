@@ -1,0 +1,185 @@
+/* Reset de estilos */
+* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+}
+
+html, body {
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		background-image: url("https://s3.amazonaws.com/i.snag.gy/0ZGCok.jpg");
+		background-size: cover;
+		overflow-y: auto; 
+}
+
+body {
+		overflow-y: auto;
+}
+
+h1 {
+		margin-left: 10px; /* Adicionado para separar um pouco o nome do método da imagem */
+}
+
+/* Estilos da navegação */
+.navbar {
+		background-color: #0C1248; 
+		color: #fff;
+		padding: 20px 0;
+		font-family: 'Roboto', sans-serif; 
+}
+
+.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 20px;
+		overflow: hidden;
+		display: flex;
+		justify-content: space-between; /* Alterado */
+		align-items: center; 
+}
+
+.logo-container {
+		display: flex; /* Adicionado */
+		align-items: center; /* Adicionado */
+}
+
+.logo {
+		font-size: 24px;
+		color: #FE0000;
+}
+
+.nav-links {
+		list-style: none;
+		padding: 0;
+		display: flex; /* Alterado */
+		align-items: center; /* Alterado */
+}
+
+.nav-links li {
+		margin-left: 20px;
+}
+
+.nav-links li:first-child {
+		margin-left: 0; /* Removido o espaçamento do primeiro item */
+}
+
+.nav-links li a {
+		text-decoration: none;
+		color: #fff;
+		transition: color 0.3s ease;
+		font-weight: 500;
+}
+
+.nav-links li a:hover {
+		color: #ffd700; 
+}
+
+
+/* Estilos da seção "Sobre Nós" */
+.about-section {
+		position: relative;
+		background-color: darkblue;
+		background-size: cover;
+		background-position: center;
+		color: #fff;
+		padding: 100px 0;
+		text-align: center;
+		overflow: hidden; /* Para esconder o efeito de blur */
+}
+
+.section-title {
+		font-size: 36px;
+		margin-bottom: 40px;
+}
+
+.about-content {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 0 20px;
+		font-family: 'Roboto', sans-serif; /* Fonte moderna */
+}
+
+.about-content p {
+		font-size: 18px;
+		line-height: 1.6;
+		margin-bottom: 30px;
+}
+
+/* Estilos do rodapé */
+.footer {
+		background-color: #333;
+		color: #fff;
+		padding: 20px 0;
+		text-align: center;
+}
+
+/* Efeito de blur */
+.blur {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: darkblue;
+	background-position: center;
+	filter: blur(10px); /* Ajuste o valor conforme necessário */
+}
+
+/* Animação enquanto o usuário rola */
+@keyframes fadeIn {
+		0% {
+				opacity: 0;
+		}
+		100% {
+				opacity: 1;
+		}
+}
+
+.about-section .animated {
+		opacity: 0;
+		animation: fadeIn 1s ease forwards;
+}
+
+@media only screen and (max-width: 768px) {
+	.container {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.logo-container {
+		margin-bottom: 5px; 
+	}
+
+	.nav-links {
+		margin-top: 20px; 
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center; 
+	}
+
+	.profile-picture, .metodo {
+		align-self: flex-start;
+	}
+}
+
+.profile-picture, .metodo {
+		width: 40px; 
+		height: auto;
+		border-radius: 50%; 
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); 
+}
+
+.nav-links li .btn2 {
+	background-color: red;
+	padding: 10px 20px; 
+	border-radius: 5px; 
+	color: white;
+	text-decoration: none; 
+	transition: background-color 0.3s ease; 
+}
+
+.nav-links li .btn2:hover {
+		background-color: darkred; 
+}

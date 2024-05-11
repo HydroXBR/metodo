@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Relatório</title>
+	<link rel="stylesheet" href="relatorio.css">
+	<link rel="icon" type="image/png" href="https://i.ibb.co/jryH3q8/Min-Branca.png">
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<img src="https://i.ibb.co/jryH3q8/Min-Branca.png" alt="Logo do Método" class="logo">
+			<h2 id="title">RELATÓRIO DE PAGAMENTOS 2024</h2>
+		</div>
+		<div class="line">
+			<strong>Aluno(a)</strong> <p id="aluno"></p>
+		</div>
+		<div class="line">
+			<strong>Responsável</strong> <p id="resp"></p>
+		</div>
+		<table>
+				<thead>
+						<tr>
+								<th>Mês</th>
+								<th>Situação</th>
+						</tr>
+				</thead>
+				<tbody>
+						<tr>
+								<td>Janeiro</td>
+								<td id="pago-1" class="nao">Em aberto</td>
+						</tr>
+						<tr>
+								<td>Fevereiro</td>
+								<td id="pago-2" class="nao">Em aberto</td>
+						</tr>
+						<tr>
+								<td>Março</td>
+								<td id="pago-3" class="nao">Em aberto</td>
+						</tr>
+						<tr>
+								<td>Abril</td>
+								<td id="pago-4" class="nao">Em aberto</td>
+						</tr>
+						<tr>
+								<td>Maio</td>
+								<td id="pago-5" class="nao">Em aberto</td>
+						</tr>
+						<tr>
+								<td>Junho</td>
+								<td id="pago-6" class="nao">Em aberto</td>
+						</tr>
+						<tr>
+								<td>Julho</td>
+								<td id="pago-7" class="nao">Em aberto</td>
+						</tr>
+						<tr>
+								<td>Agosto</td>
+								<td id="pago-8" class="nao">Em aberto</td>
+						</tr>
+						<tr>
+								<td>Setembro</td>
+								<td id="pago-9" class="nao">Em aberto</td>
+						</tr>
+						<tr>
+								<td>Outubro</td>
+								<td id="pago-10" class="nao">Em aberto</td>
+						</tr>
+						<tr>
+								<td>Novembro</td>
+								<td id="pago-11" class="nao">Em aberto</td>
+						</tr>
+						<tr>
+								<td>Dezembro</td>
+								<td id="pago-12" class="nao">Em aberto</td>
+						</tr>
+				</tbody>
+		</table>
+		<div class="footer line">
+			<p id="emi"><strong>Emitente:</strong> </p><p id="data"></p>
+		</div>
+		<div class="print-button">
+			<button onclick="window.print()">Imprimir</button>
+			<button onclick="window.location.href = `/gerar`">Voltar</button>
+		</div>
+	</div>
+	<script src="relatorio.js"></script>
+</body>
+</html>

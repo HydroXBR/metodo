@@ -1,0 +1,9 @@
+run = 'bash node index.js'
+
+[deployment]
+deploymentTarget = "cloudrun"
+run = ["sh", "-c", "node index.js"]
+
+[[ports]]
+localPort = 3000
+externalPort = 80

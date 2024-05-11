@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-vr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height" />
+		<link rel="stylesheet" href="cadastroadmin.css" type="text/css"/>
+		<title>Gerar - Método Pré-Vestibular</title>
+		<link rel="icon" type="image/png" href="https://i.ibb.co/jryH3q8/Min-Branca.png">
+	</head>
+<body>
+	<header class="navbar">
+		<div class="container">
+			<h1 class="logo2">Método Pré-Vestibular</h1>
+			<ul class="nav-links" id="nav-links">
+				<li><a href="/">Página Inicial</a></li>
+				<li><a href="/sobre">Sobre</a></li>
+				<li><a href="/simulados">Simulados</a></li>
+				<li id="login"><a href="/login">Login</a></li>
+				<li><img id="profile" src="https://voxnews.com.br/wp-content/uploads/2017/04/unnamed.png" alt="Foto de Perfil" class="profile-picture"></li>
+			</ul>
+		</div>
+	</header>
+	<div class="container2">
+		<div class="wrapper fadeInDown">
+			<div class="content-login">
+				<img src="https://i.ibb.co/jryH3q8/Min-Branca.png" alt="Logo do Método Pré-Vestibular" class="logo">
+				<h2 class="active"> Gerar - Método </h2>
+				<div class="aviso"><p>Gerar recibo ou relatório</p></div>
+				<form class="box-login formgerar" action="#" id="formgerar">
+					<label for="type">Tipo</label>
+					<select id="type" name="type" class="form-input">
+						<option value="recibo">Recibo</option>
+						<option value="relatorio">Relatório</option>
+					</select>
+
+					<div id="divvalor">
+						<label for="valor">Valor (R$)</label>
+						<input type="number" id="valor" class="campo" name="valor" placeholder="Valor do recibo" required>
+					</div>
+
+						<label for="turma">Turma</label>
+						<select id="turma" name="turma" class="form-input">
+							<option value="1">1° Ano</option>
+							<option value="2">2° Ano</option>
+							<option value="3">3° Ano</option>
+						</select>
+
+					<label for="aluno">Aluno(a)</label>
+					<select id="aluno" name="aluno" class="form-input">
+					</select>
+
+					<div id="mesdiv">
+						<label for="mes">Mês</label>
+						<select id="mes" name="mes" class="form-input">
+							<option value="janeiro">Janeiro</option>
+							<option value="fevereiro">Fevereiro</option>
+							<option value="março">Março</option>
+							<option value="abril">Abril</option>
+							<option value="maio">Maio</option>
+							<option value="junho">Junho</option>
+							<option value="julho">Julho</option>
+							<option value="agosto">Agosto</option>
+							<option value="setembro">Setembro</option>
+							<option value="outubro">Outubro</option>
+							<option value="novembro">Novembro</option>
+							<option value="dezembro">Dezembro</option>
+						</select>
+					</div>
+
+					<label for="emi">Emitente</label>
+					<select id="emi" name="emi" class="form-input">
+						<option value="k">Kerolainy Stephany</option>
+						<option value="j">Janderson Pacheco</option>
+						<option value="i">Isaías Nascimento</option>
+						<option value="l">Luciana Almeida</option>
+					</select>
+
+					<input type="submit" class="botao" value="Gerar" id="continuar">
+					<input type="button" class="botao2" value="Voltar" id="voltar">
+				</form>
+				</div>
+			</div>
+		<div class="spacer"></div>
+	</div>
+	<script type="text/javascript" src="gerar.js"></script>
+</body>
+</html>

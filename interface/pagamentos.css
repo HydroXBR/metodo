@@ -1,0 +1,225 @@
+/* Reset de estilos */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background-image: url("https://s3.amazonaws.com/i.snag.gy/hATqGL.jpg");
+	background-size: cover;
+	overflow-y: auto; 
+}
+
+.container2 {
+	display: flex;
+	flex-direction: column;
+	align-items: center; /* Centraliza os itens horizontalmente */
+	margin-top: 20px; /* Espaçamento superior */
+}
+
+.container2 #turma {
+	width: 70%;
+	margin-bottom: 20px; /* Espaçamento inferior */
+}
+
+.container2 .table-container {
+	width: 70%;
+	margin: 0 auto; /* Centraliza o contêiner */
+	background-color: #fff; /* Fundo branco */
+	border-radius: 5px; /* Borda arredondada */
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+	overflow-x: auto;
+}
+
+body {
+	overflow-y: auto;
+}
+
+h1 {
+	margin-left: 10px; /* Adicionado para separar um pouco o nome do método da imagem */
+}
+
+/* Estilos da navegação */
+.navbar {
+	background-color: #0C1248; 
+	color: #fff;
+	padding: 20px 0;
+	font-family: 'Roboto', sans-serif; 
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 20px;
+	overflow: hidden;
+	display: flex;
+	justify-content: space-between; /* Alterado */
+	align-items: center; 
+}
+
+.logo-container {
+	display: flex; /* Adicionado */
+	align-items: center; /* Adicionado */
+}
+
+.logo {
+	font-size: 24px;
+	color: #FE0000;
+}
+
+.nav-links {
+	list-style: none;
+	padding: 0;
+	display: flex; /* Alterado */
+	align-items: center; /* Alterado */
+}
+
+.nav-links li {
+	margin-left: 20px;
+}
+
+.nav-links li:first-child {
+	margin-left: 0; /* Removido o espaçamento do primeiro item */
+}
+
+.nav-links li a {
+	text-decoration: none;
+	color: #fff;
+	transition: color 0.3s ease;
+	font-weight: 500;
+}
+
+.nav-links li a:hover {
+	color: #ffd700; 
+}
+
+@media only screen and (max-width: 768px) {
+	.container {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.logo-container {
+		margin-bottom: 5px; 
+	}
+
+	.nav-links {
+		margin-top: 20px; 
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center; 
+	}
+
+	.profile-picture, .metodo {
+		align-self: flex-start;
+	}
+}
+
+.profile-picture, .metodo {
+	width: 40px; 
+	height: auto;
+	border-radius: 50%; 
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); 
+}
+
+.nav-links li .btn2 {
+	background-color: red;
+	padding: 10px 20px; 
+	border-radius: 5px; 
+	color: white;
+	text-decoration: none; 
+	transition: background-color 0.3s ease; 
+}
+
+.nav-links li .btn2:hover {
+	background-color: darkred; 
+}
+
+th, td {
+	border: 1px solid #ddd;
+	padding: 8px;
+	text-align: left;
+}
+
+th {
+	background-color: #f2f2f2;
+}
+
+tr:hover {
+	background-color: #f5f5f5; /* Adiciona cor de fundo ao passar o mouse */
+}
+
+.table-container {
+	width: 70%;
+	margin: 0 auto; /* Centraliza a tabela */
+	background-color: #fff; /* Fundo branco */
+	border-radius: 5px; /* Borda arredondada */
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+	overflow-x: auto;
+}
+
+#turma {
+	margin-top: 20px;
+	width: 20%;
+	border: 0.5px solid black;
+	padding: 10px; 
+	border-radius: 5px; 
+	background-color: #f8f8f8;
+	color: #333;
+	font-size: 16px; 
+	cursor: pointer; 
+}
+
+#turma::after {
+	content: '\25BC';
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+#turma option {
+	background-color: #fff; 
+	color: #333; 
+	font-size: 14px;
+}
+
+#turma:focus {
+	outline: none; 
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+table tbody input[type="checkbox"] {
+	appearance: none; 
+	-webkit-appearance: none; 
+	-moz-appearance: none; 
+	width: 20px;
+	height: 20px;
+	background-color: transparent; 
+	border: 2px solid #FE0000; 
+	border-radius: 4px; 
+	cursor: pointer; 
+	transition: border-color 0.3s ease; 
+}
+
+table tbody input[type="checkbox"]:focus {
+	outline: none; 
+	border-color: #070038; 
+}
+
+table tbody input[type="checkbox"]:hover {
+	border-color: #070038;
+}
+
+table tbody input[type="checkbox"]:checked {
+	background-color: #FE0000; 
+	border-color: #FE0000; 
+}
+
+table tbody input[type="checkbox"]:checked:focus {
+	border-color: #070038;
+}
