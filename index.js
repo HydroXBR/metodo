@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url';
 const { token } = process.env
 import express from 'express'
 import cors from 'cors'
-const { PORT } = process.env || 4000
+const { PORT } = process.env || 3000
 const app = express()
 import bodyParser from "body-parser"
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -159,8 +159,9 @@ app.use(
 	express.static(path.join(__dirname, '/interface'))
 );
 
-app.listen(PORT, () => {console.log("Listening at "+PORT)})
-
+app.listen(PORT, "0.0.0.0", function () {
+  console.log("Listening at "+PORT)
+});
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/interface'));
