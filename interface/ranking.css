@@ -264,7 +264,7 @@ a.copy{
 }
 
 ::-webkit-scrollbar {
-	width: 15px;
+	width: 5px;
 	height: 15px;
 }
 
@@ -274,7 +274,7 @@ a.copy{
 }
 
 ::-webkit-scrollbar-thumb {
-	background-image: linear-gradient(45deg, #00aeff, #a68eff);
+	background-image: linear-gradient(45deg, #3100e0, #060019);
 	border-radius: 10px;
 	-webkit-box-shadow: rgba(0,0,0,.12) 0 3px 13px 1px;
 }
@@ -391,13 +391,13 @@ select::-ms-expand {
 	height: 70px;
 }
 
-h2 {
-	color: #333; 
-	background-color: #f4f4f4; 
+#title {
+	color: white; /* Alterando para uma cor mais escura */
+	background-color: var(--darkgray);
 	border-radius: 5px; 
 	padding: 10px 15px;
 	font-size: 1.5rem; 
-	font-family: 'Roboto', sans-serif; 
+	font-family: 'Montserrat', sans-serif;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 	text-align: center;
 	margin-bottom: 20px; 
