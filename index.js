@@ -64,7 +64,7 @@ var simulados = [
 		name: "2° Simulado 2024", 
 		description: "2° Simulado de 2024",
 		model: "PSC",
-		date: "28-02-2024",
+		date: "24-02-2024",
 		id: "022024",
 		organization: [{materia: "port", q:10, name: "Língua Portuguesa"},{materia: "lit", q:6, name: "Literatura"},{materia: "hist", q:6, name: "História"},{materia: "geo", q:6, name: "Geografia"},{materia: "bio", q:6, name: "Biologia"},{materia: "quim", q:6, name: "Química"},{materia: "fis", q:6, name: "Física"},{materia: "mat", q:8, name: "Matemática"}],
 		special: [0, 11, 18, 25, 32, 39, 46, 55],
