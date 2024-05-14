@@ -278,7 +278,7 @@ document.addEventListener('DOMContentLoaded', function(){
 								var org = anteriorAluno.simulado.organization
 								for(var i = 0; i < org.length; i++){
 									let objj = {
-										value: anteriorAluno[org[i].materia]*10, 
+										value: (anteriorAluno[org[i].materia]/org[i].q)*100, 
 										materia: org[i].name
 									}
 
