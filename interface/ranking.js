@@ -152,11 +152,10 @@ document.addEventListener('DOMContentLoaded', function(){
 			var simuatual = simulados.find(simu => simu.id === id)
 			let num = gebi("serie").value || simuatual.turmas[0]
 
-			console.log(num)
 			const response = await fetch(`/apiranking?sel=${num}&id=${id}`)
 			const rr = await response.json()
 
-			gebi("title").innerHTML = simuatual.name + ` (${simuatual.date})`
+			gebi("title").innerHTML = simuatual.name + ` (${simuatual.date.replace(/\-/gmi, "/")})`
 			for (var i = 0; i < simuatual.turmas.length; i++) {
 					let turma = simuatual.turmas[i];
 					// Verifica se a opção já existe no seletor
