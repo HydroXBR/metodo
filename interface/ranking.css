@@ -181,43 +181,56 @@ button:hover:before,button:hover:after:not(.btn2){
 	font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
 }
 
-table{
+table {
 	align: center;
 	margin: auto;
 	text-align: center;
+	border-collapse: collapse;
+	width: 80%;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+	overflow: hidden;
+	font-family: 'Arial', sans-serif;
+}
+
+th, td {
+	padding: 12px 15px;
+	text-align: center;
+}
+
+tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+th {
+	background-color: #333;
+	color: white;
+}
+
+tr:hover {
+	background-color: #ddd;
 }
 
 .namecolorouro {
-	background: rgb(255,171,0);
 	background: linear-gradient(0deg, rgba(255,171,0,1) 3%, rgba(255,255,255,1) 100%);
+	color: #000;
 }
 
 .namecolorprata {
-	background: rgb(185,185,185);
 	background: linear-gradient(0deg, rgba(185,185,185,1) 3%, rgba(255,255,255,1) 100%);
+	color: #000;
 }
 
 .namecolorbronze {
-	background: rgb(179,162,128);
 	background: linear-gradient(0deg, rgba(179,162,128,1) 3%, rgba(255,255,255,1) 100%);
+	color: #000;
 }
 
-td{
-	align: center;
-	margin: auto;
-	text-align: center;
-	/*border-bottom: 0.5px dotted black;*/
-}
-
-tr{
-	align: center;
-	text-align: center;
-	margin: auto;
-}
-
-a{
+a {
 	text-decoration: none;
+	color: inherit;
 }
+
 
 .button-33 {
 	padding: 1em 2em;
@@ -394,6 +407,7 @@ select::-ms-expand {
 #title {
 	color: white; /* Alterando para uma cor mais escura */
 	background-color: var(--darkgray);
+	font-style: oblique;
 	border-radius: 5px; 
 	padding: 10px 15px;
 	font-size: 1.5rem; 
