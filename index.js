@@ -19,6 +19,52 @@ const ec = txt => encodeURIComponent(txt)
 const dec = txt => decodeURIComponent(txt)
 var simulados = [
 	{
+		name: "4° Simulado 2024", 
+		description: "4° Simulado de 2024",
+		model: "PSC",
+		date: "20-05-2024",
+		id: "042024",
+		organization: [{materia: "port", q:10, name: "Língua Portuguesa"},{materia: "lit", q:6, name: "Literatura"},{materia: "hist", q:6, name: "História"},{materia: "geo", q:6, name: "Geografia"},{materia: "bio", q:6, name: "Biologia"},{materia: "quim", q:6, name: "Química"},{materia: "fis", q:6, name: "Física"},{materia: "mat", q:8, name: "Matemática"}],
+		special: [0, 11, 18, 25, 32, 39, 46, 53],
+		matspecial: [
+			{ materia: "Português", special: 0 },
+			{ materia: "Literatura", special: 11 },
+			{ materia: "História", special: 18 },
+			{ materia: "Geografia", special: 25 },
+			{ materia: "Biologia", special: 32 },
+			{ materia: "Química", special: 39 },
+			{ materia: "Física", special: 46 },
+			{ materia: "Matemática", special: 53 }
+		]
+		,
+		intervals: {
+			port: [1, 10],
+			lit: [11, 16],
+			hist: [17, 22],
+			geo: [23, 28],
+			bio: [29, 34],
+			quim: [35, 40],
+			fis: [41, 46],
+			mat: [47, 54]
+		},
+		turmas: [1,2,3],
+		answers: [
+			{
+				turma:1,
+				respostas:["B","B","C","B","E","A","A","E","A","D","A","B","B","A","C","A","D","E","E","D","D","A","D","A","D","B","B","B","A","A","D","X","E","D","A","B","C","A","D","C","D","D","C","D","D","B","C","A","B","E","E","A","A","D"]
+			},
+			{
+				turma:2,
+				respostas:["D","E","B","E","A","X","A","A","D","E","E","E","E","B","X","C","B","B","E","C","A","C","D","E","E","A","D","E","B","E","B","E","E","D","D","B","B","D","C","B","C","E","E","E","A","E","C","C","D","D","C","E","X","C"]
+			},
+			{
+				turma:3,
+				respostas:["A","E","C","D","A","E","D","E","D","D","B","C","D","B","E","E","C","D","C","B","A","B","A","B","A","B","B","B","A","A","A","A","C","D","D","E","C","D","C","C","A","A","E","C","A","A","A","E","D","D","C","A","A","C"]
+			}
+		],
+		questions: 54
+	},
+	{
 		name: "3° Simulado 2024", 
 		description: "3° Simulado de 2024",
 		model: "PSC",
