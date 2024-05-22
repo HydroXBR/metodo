@@ -8,13 +8,18 @@ html, body {
 	height: 100%;
 	margin: 0;
 	padding: 0;
-	background-image: url("https://s3.amazonaws.com/i.snag.gy/hATqGL.jpg");
 	background-size: cover;
 	overflow-y: auto; 
 }
 
 body {
 		overflow-y: auto;
+}
+
+.logona {
+	font-size: 24px;
+	color: #ffeb0a;
+	margin-left: 10px;
 }
 
 h1 {
