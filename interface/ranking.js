@@ -172,6 +172,7 @@ document.addEventListener('DOMContentLoaded', function(){
 		gebi("inicio").style.display = "none"
 		gebi("pphoto").style.display = "none"
 		gebi("sobre").style.display = "none"
+		gebi("login").style.display = "none"
 		
 	}else{
 		gebi("logoclass").innerHTML = "Método Pré-Vestibular"
