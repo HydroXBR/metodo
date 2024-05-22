@@ -5,6 +5,10 @@ async function simul(){
 	return rr.json()
 }
 
+const ec = txt => encodeURIComponent(txt)
+const dec = txt => decodeURIComponent(txt)
+const gebi = id => document.getElementById(id)
+const gebc = c => document.getElementsByClassName(c)
 
 // Classe Cookie para manipular cookies
 class Cookie {
@@ -142,11 +146,44 @@ document.addEventListener('DOMContentLoaded', function(){
 	}
 
 	simul().then(simulados => {
-		for(var i = 0; i < simulados.length; i++){
+		const queryString = window.location.search;
+		const params = new URLSearchParams(queryString);
+		let cat = params.get("cat")
+
+		let si = simulados
+		if(cat){
+			si = simulados.filter(simulado => simulado.id.includes("NA"))
+
+			var link = document.createElement('link');
+			link.type = 'image/png';
+			link.rel = 'icon';
+			var existingIcon = document.querySelector("link[rel='shortcut icon']")
+			if (existingIcon) {
+				document.head.removeChild(existingIcon);
+			}
+			document.head.appendChild(link)
+
+			gebi("logoclass").innerHTML = "Núcleo da Aprovação - LS"
+			logoclass.classList.remove("logo")
+			logoclass.classList.add("logona")
+			gebi("simulinks").setAttribute("href", "/simulados?cat=NA")
+			gebi("metodo").setAttribute("src", "https://i.ibb.co/1QvjfDp/Design-sem-nome-2.png")
+			document.body.style.backgroundImage = "url(https://www.portaldoholanda.com.br/sites/default/files/imagecache/2020_noticia_fotogrande/portaldoholanda-906224-imagem-foto-1amazonas.jpg)"
+			link.href = "https://i.ibb.co/1QvjfDp/Design-sem-nome-2.png"
+			document.head.appendChild(link)
+			gebi("inicio").style.display = "none"
+			gebi("pphoto").style.display = "none"
+			gebi("sobre").style.display = "none"
+		}else{
+			document.body.style.backgroundImage = "url(https://s3.amazonaws.com/i.snag.gy/hATqGL.jpg)"
+			si = simulados.filter(e => !e.id.includes("NA"))
+		}
+		
+		for(var i = 0; i < si.length; i++){
 			var button = document.createElement("button")
-			button.innerHTML = simulados[i].name
+			button.innerHTML = si[i].name
 			var a = document.createElement("a")
-			a.href = `/ranking?id=${simulados[i].id}`
+			a.href = `/ranking?id=${si[i].id}`
 			a.appendChild(button)
 
 			document.getElementById("buttons").appendChild(a)
