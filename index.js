@@ -19,6 +19,52 @@ const ec = txt => encodeURIComponent(txt)
 const dec = txt => decodeURIComponent(txt)
 var simulados = [
 	{
+		name: "2° Simulado NA", 
+		description: "Núcleo de Aprovação",
+		model: "PSC",
+		date: "10-05-2024",
+		id: "NA2",
+		organization: [{materia: "port", q:10, name: "Língua Portuguesa"},{materia: "lit", q:6, name: "Literatura"},{materia: "hist", q:6, name: "História"},{materia: "geo", q:6, name: "Geografia"},{materia: "bio", q:6, name: "Biologia"},{materia: "quim", q:6, name: "Química"},{materia: "fis", q:6, name: "Física"},{materia: "mat", q:8, name: "Matemática"}],
+		special: [0, 11, 18, 25, 32, 39, 46, 53],
+		matspecial: [
+			{ materia: "Português", special: 0 },
+			{ materia: "Literatura", special: 11 },
+			{ materia: "História", special: 18 },
+			{ materia: "Geografia", special: 25 },
+			{ materia: "Biologia", special: 32 },
+			{ materia: "Química", special: 39 },
+			{ materia: "Física", special: 46 },
+			{ materia: "Matemática", special: 53 }
+		]
+		,
+		intervals: {
+			port: [1, 10],
+			lit: [11, 16],
+			hist: [17, 22],
+			geo: [23, 28],
+			bio: [29, 34],
+			quim: [35, 40],
+			fis: [41, 46],
+			mat: [47, 54]
+		},
+		turmas: [1,2,3],
+		answers: [
+			{
+				turma:1,
+				respostas:["C","D","D","D","E","D","B","D","D","B","D","E","A","E","D","B","A","D","E","A","E","A","E","E","A","A","E","A","D","A","C","B","B","D","D","D","C","D","B","E","A","E","B","B","B","D","D","C","B","C","D","D","E","D"]
+			},
+			{
+				turma:2,
+				respostas:["C","D","D","D","E","D","B","D","D","B","A","A","B","D","C","A","A","A","B","E","D","D","E","E","A","A","C","A","D","D","D","D","A","B","E","B","C","B","D","B","A","E","B","B","B","D","A","X","D","C","E","A","C","B"]
+			},
+			{
+				turma:3,
+				respostas:["C","D","D","D","E","D","B","D","D","B","C","E","D","C","A","C","C","B","D","D","E","E","D","D","D","D","B","B","C","A","A","C","C","B","D","B","A","A","A","A","C","B","D","C","C","C","C","A","C","D","E","B","A","C"]
+			}
+		],
+		questions: 54
+	},
+	{
 		name: "4° Simulado 2024", 
 		description: "4° Simulado de 2024",
 		model: "PSC",
@@ -152,6 +198,7 @@ var simulados = [
 		questions: 54
 	}
 ]
+
 const fetch = s => import('node-fetch').then(({default: fetch}) => fetch(s))
 im()
 
@@ -278,6 +325,11 @@ app.get('/ranking',function(req,res) {
 app.get('/desempenho',function(req,res) {
 	console.log("Access DESEMPENHO: "+ new Date())
 	res.sendFile(__dirname + '/interface/desempenho.html')
+});
+
+app.get('/desempenhols',function(req,res) {
+	console.log("Access DESEMPENHO LS: "+ new Date())
+	res.sendFile(__dirname + '/interface/desempenhols.html')
 });
 
 app.get('/aluno',function(req,res) {
