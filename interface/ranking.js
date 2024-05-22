@@ -143,11 +143,46 @@ document.addEventListener('DOMContentLoaded', function(){
 	const dec = txt => decodeURIComponent(txt)
 	const gebi = id => document.getElementById(id)
 	const gebc = c => document.getElementsByClassName(c)
+	
+	const queryString = window.location.search;
+	const params = new URLSearchParams(queryString);
+	let idd = params.get("id")
+	var link = document.createElement('link');
+	link.type = 'image/png';
+	link.rel = 'icon';
+	var existingIcon = document.querySelector("link[rel='shortcut icon']")
+	if (existingIcon) {
+		document.head.removeChild(existingIcon);
+	}
+
+	// Adiciona o novo favicon
+	document.head.appendChild(link);
+	let caat;
+	
+	if(idd.includes("NA")){
+		caat = "NA";
+		gebi("simulinks").setAttribute("href", "/simulados?cat=NA")
+		gebi("logoclass").innerHTML = "Núcleo da Aprovação - LS"
+		logoclass.classList.remove("logo")
+		logoclass.classList.add("logona")
+		gebi("metodo").setAttribute("src", "https://i.ibb.co/1QvjfDp/Design-sem-nome-2.png")
+		document.body.style.backgroundImage = "url(https://www.portaldoholanda.com.br/sites/default/files/imagecache/2020_noticia_fotogrande/portaldoholanda-906224-imagem-foto-1amazonas.jpg)"
+		link.href = "https://i.ibb.co/1QvjfDp/Design-sem-nome-2.png"
+		document.head.appendChild(link)
+		gebi("inicio").style.display = "none"
+		gebi("pphoto").style.display = "none"
+		gebi("sobre").style.display = "none"
+		
+	}else{
+		gebi("logoclass").innerHTML = "Método Pré-Vestibular"
+		gebi("metodo").setAttribute("src", "https://i.ibb.co/jryH3q8/Min-Branca.png")
+		document.body.style.backgroundImage = "url(https://s3.amazonaws.com/i.snag.gy/hATqGL.jpg)"
+		link.href = "https://i.ibb.co/jryH3q8/Min-Branca.png"
+		document.head.appendChild(link);
+	}
 
 	async function generate_table() {
 		simul().then(async simulados => {
-			const queryString = window.location.search;
-			const params = new URLSearchParams(queryString);
 			let id = params.get("id")
 			var simuatual = simulados.find(simu => simu.id === id)
 			let num = gebi("serie").value || simuatual.turmas[0]
@@ -256,7 +291,7 @@ document.addEventListener('DOMContentLoaded', function(){
 							}
 						}
 
-						cellTexta.href = '/desempenho?id='+alogs[i].id+"&simulado="+id
+						cellTexta.href = caat ? '/desempenhols?id='+alogs[i].id+"&simulado="+id : '/desempenho?id='+alogs[i].id+"&simulado="+id
 						cella.appendChild(cellTexta);
 						row.appendChild(cella);
 					}
