@@ -111,7 +111,7 @@ function addAnimationOnScroll() {
 window.addEventListener('scroll', addAnimationOnScroll);
 
 document.addEventListener('DOMContentLoaded', function(){
-	if (User.isLoggedIn()) {
+	/*if (User.isLoggedIn()) {
 		const userInfo = User.getUserInfo();
 		let li = document.getElementById("login")
 		li.innerHTML = ""
@@ -141,13 +141,14 @@ document.addEventListener('DOMContentLoaded', function(){
 		}
 	} else {
 		console.log("Usuário não está logado.");
-	}
+	}*/
 
 	const ec = txt => encodeURIComponent(txt)
 	const dec = txt => decodeURIComponent(txt)
 	const gebi = id => document.getElementById(id)
 	const gebc = c => document.getElementsByClassName(c)
 	const voltar = gebi("voltar");
+	const prob = gebi("prob");
 
 	const cid = new URL(window.location.href).searchParams.get("id")
 	if(!cid){
@@ -187,6 +188,9 @@ document.addEventListener('DOMContentLoaded', function(){
 		gebi("title").innerHTML = rr.simulado.name + ` (${rr.simulado.date.replace(/\-/gmi, "/")})`
 		voltar.addEventListener('click', function(event){
 			window.location.href = `/ranking?id=${rr.simulado.id}`
+		})
+		prob.addEventListener('click', function(event){
+			window.location.href = `https://api.whatsapp.com/send?phone=559284507170&text=Ol%C3%A1%2C%20Isa%C3%ADas!%20Sou%20${rr.completename}%2C%20e%20estou%20com%20d%C3%BAvidas%2Fproblemas%20em%20rela%C3%A7%C3%A3o%20ao%20simulado%20de%20ID%20${idsimulado}. %20(N%C3%83O%20APAGAR!)`
 		})
 
 		async function history(name) {
@@ -245,7 +249,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 				if (data.length == 1) {
 					gebi("graficous").style.display = "none";
-					gebi("nota2").innerText = "Parabéns! É seu primeiro #SimuladoMÉTODO desde fevereiro! Frequente todos os simulados para que você compare a sua pontuação com os simulados anteriores :)"
+					gebi("nota2").innerText = "Parabéns! É seu primeiro #Simulado registrado! Frequente todos os próximos simulados para que você compare a sua pontuação com os simulados anteriores :)"
 				} else {
 					graphus();
 				}
