@@ -259,8 +259,8 @@ document.addEventListener('DOMContentLoaded', function(){
 					var ctx = canvas.getContext('2d');
 					ctx.fillText("Comp. com simulados anteriores", canvas.width / 2.5, canvas.height - 10);
 					var barWidth = 30;
-					var barMargin = 50;
-					var startX = 50;
+					var barMargin = 40;
+					var startX = 35;
 					var startY = canvas.height - 50;
 					
 					var maxPercentage = Math.max(...data.map(item => item.realvalue));
