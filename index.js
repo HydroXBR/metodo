@@ -19,6 +19,52 @@ const ec = txt => encodeURIComponent(txt)
 const dec = txt => decodeURIComponent(txt)
 var simulados = [
 	{
+		name: "5° Simulado 2024", 
+		description: "5° Simulado de 2024",
+		model: "PSC",
+		date: "31-05-2024",
+		id: "052024",
+		organization: [{materia: "port", q:10, name: "Língua Portuguesa"},{materia: "lit", q:6, name: "Literatura"},{materia: "hist", q:6, name: "História"},{materia: "geo", q:6, name: "Geografia"},{materia: "bio", q:6, name: "Biologia"},{materia: "quim", q:6, name: "Química"},{materia: "fis", q:6, name: "Física"},{materia: "mat", q:8, name: "Matemática"}],
+		special: [0, 11, 18, 25, 32, 39, 46, 53],
+		matspecial: [
+			{ materia: "Português", special: 0 },
+			{ materia: "Literatura", special: 11 },
+			{ materia: "História", special: 18 },
+			{ materia: "Geografia", special: 25 },
+			{ materia: "Biologia", special: 32 },
+			{ materia: "Química", special: 39 },
+			{ materia: "Física", special: 46 },
+			{ materia: "Matemática", special: 53 }
+		]
+		,
+		intervals: {
+			port: [1, 10],
+			lit: [11, 16],
+			hist: [17, 22],
+			geo: [23, 28],
+			bio: [29, 34],
+			quim: [35, 40],
+			fis: [41, 46],
+			mat: [47, 54]
+		},
+		turmas: [3],
+		answers: [
+			{
+				turma:1,
+				respostas:["X","E","C","D","C","B","C","D","X","D","B","C","C","E","B","D","B","D","E","E","C","D","B","A","D","C","B","A","E","D","B","B","A","A","A","C","C","E","C","D","C","D","A","D","B","D","C","B","D","C","E","E","E","C"]
+			},
+			{
+				turma:2,
+				respostas:["X","E","C","D","C","B","C","D","X","D","B","C","C","E","B","D","B","D","E","E","C","D","B","A","D","C","B","A","E","D","B","B","A","A","A","C","C","E","C","D","C","D","A","D","B","D","C","B","D","C","E","E","E","C"]
+			},
+			{
+				turma:3,
+				respostas:["X","E","C","D","C","B","C","D","X","D","B","C","C","E","B","D","B","D","E","E","C","D","B","A","D","C","B","A","E","D","B","B","A","A","A","C","C","E","C","D","C","D","A","D","B","D","C","B","D","C","E","E","E","C"]
+			}
+		],
+		questions: 54
+	},
+	{
 		name: "2° Simulado NA", 
 		description: "Núcleo de Aprovação",
 		model: "PSC",
