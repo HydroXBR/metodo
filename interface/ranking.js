@@ -166,18 +166,17 @@ document.addEventListener('DOMContentLoaded', function(){
 		logoclass.classList.remove("logo")
 		logoclass.classList.add("logona")
 		gebi("metodo").setAttribute("src", "https://i.ibb.co/1QvjfDp/Design-sem-nome-2.png")
-		document.body.style.backgroundImage = "url(https://lasalle.edu.br/public/uploads/cache/496x331-nadeb-0f41b03a5e73ea360c002e86521aba74.png)"
+		document.body.style.backgroundImage = "url(https://www.portaldoholanda.com.br/sites/default/files/imagecache/2020_noticia_fotogrande/portaldoholanda-906224-imagem-foto-1amazonas.jpg)"
 		link.href = "https://i.ibb.co/1QvjfDp/Design-sem-nome-2.png"
 		document.head.appendChild(link)
 		gebi("inicio").style.display = "none"
 		gebi("pphoto").style.display = "none"
 		gebi("sobre").style.display = "none"
-		gebi("login").style.display = "none"
 		
 	}else{
 		gebi("logoclass").innerHTML = "Método Pré-Vestibular"
 		gebi("metodo").setAttribute("src", "https://i.ibb.co/jryH3q8/Min-Branca.png")
-		document.body.style.backgroundImage = "url(https://s3.amazonaws.com/i.snag.gy/hATqGL.jpg)"
+		document.body.style.backgroundImage = "url(https://s3.amazonaws.com/i.snag.gy/kjvlaw.jpg)"
 		link.href = "https://i.ibb.co/jryH3q8/Min-Branca.png"
 		document.head.appendChild(link);
 	}
