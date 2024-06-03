@@ -174,9 +174,8 @@ document.addEventListener('DOMContentLoaded', function(){
 			gebi("inicio").style.display = "none"
 			gebi("pphoto").style.display = "none"
 			gebi("sobre").style.display = "none"
-			gebi("login").style.display = "none"
 		}else{
-			document.body.style.backgroundImage = "url(https://s3.amazonaws.com/i.snag.gy/hATqGL.jpg)"
+			document.body.style.backgroundImage = "url(https://s3.amazonaws.com/i.snag.gy/kjvlaw.jpg)"
 			si = simulados.filter(e => !e.id.includes("NA"))
 		}
 		
