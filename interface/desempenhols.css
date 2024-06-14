@@ -10,11 +10,13 @@ html, body {
 	padding: 0;
 	background-image: url("https://portalamazonia.com/wp-content/uploads/2022/02/Fachada-Centro-Educacional-La-Salle-2022.jpg");
 	background-size: cover;
-	overflow-y: auto; 
+	overflow-y: hidden; 
 }
 
 body {
-	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
 }
 
 h1 {
@@ -514,4 +516,72 @@ a{
 #nota3 {
 	margin-top: 5px;
 	font-size:0.7em;
+}
+
+@media print {
+		html, body {
+				overflow: visible !important;
+				background-image: none !important;
+				background-size: cover !important;
+		}
+
+		.box {
+				width: 100% !important;
+				height: auto !important;
+				overflow: visible !important;
+				background: none !important;
+				box-shadow: none !important;
+				padding: 0 !important;
+				margin: 0 !important;
+		}
+
+		.button-33, .button-34, #print, #prob, #voltar, #notaa {
+			display: none !important;
+		}
+
+		.buttons, .no-print {
+			display: none !important;
+		}
+
+	table {
+		width: 100%;
+		margin: 0;
+		font-size: 0.9em; 
+	}
+
+	th, td {
+		padding: 3px; 
+		border: 1px solid #000;
+		background-color: #fff;
+		color: #000;
+	}
+
+		th, td {
+			padding: 3px !important;
+		}
+
+		.grafico-barra {
+			border: 1px solid #969FAA !important;
+			height: 1em !important;
+			position: relative !important;
+		}
+
+		.grafico-barra-progresso {
+			background-color: #000e47 !important;
+			width: 100% !important;
+			position: absolute !important;
+			left: 0 !important;
+		}
+
+		.namecolorouro,
+		.namecolorprata,
+		.namecolorbronze {
+			background: none !important;
+			color: inherit !important;
+		}
+
+		canvas {
+			width: 300px !important;
+			height: 200px !important;
+		}
 }
