@@ -5,16 +5,16 @@
 }
 
 html, body {
-	height: 100%;
 	margin: 0;
 	padding: 0;
-	background-image: url("https://s3.amazonaws.com/i.snag.gy/0ZGCok.jpg");
+	background-image: url("https://s3.amazonaws.com/i.snag.gy/kjvlaw.jpg");
 	background-size: cover;
-	overflow-y: auto; 
 }
 
 body {
-	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
 }
 
 h1 {
@@ -117,7 +117,7 @@ h1 {
 }
 
 button:not(.btn2){
-	margin-bottom: 20px;
+	margin-bottom: 50px;
 	background:#FE0000;
 	color:#fff;
 	border:none;
@@ -211,7 +211,7 @@ h5 {
 	background: linear-gradient(0deg, rgb(255, 255, 255,0.6026785714285714) 0%, rgba(255,255,255,1) 100%);
 	flex-direction: row;
 	text-align: center;
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 
 table{
@@ -219,6 +219,7 @@ table{
 	margin: auto;
 	text-align: center;
 	margin: 50px;
+	
 }
 
 td{
@@ -449,7 +450,7 @@ canvas {
 	border: 2px solid #a3a3a3;
 	display: block;
 	margin: 20px auto;
-	width: 300px;
+	width: 350px;
 	height: 200px;
 	padding: 10px;
 }
@@ -503,7 +504,94 @@ th {
 a{
 	text-decoration: none;
 }
-
-#nota, #nota2 {
+#nota{
 	margin-top: 5px;
+}
+#nota2 {
+	margin-top: 5px;
+	font-size:0.7em;
+}
+
+#nota3 {
+	margin-top: 5px;
+	font-size:0.7em;
+}
+
+@media print {
+	body {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		font-size: 0.8em; 
+	}
+	
+	html, body {
+		margin: 0;
+		padding: 0;
+		background-image: none;
+		background-size: cover;
+	}
+
+	.button-33, #notaa {
+		display: none;
+	}
+
+	.box {
+		width: 100%;
+		height: auto;
+		overflow: visible;
+		background: none;
+		box-shadow: none;
+		padding: 0;
+		margin: 0;
+	}
+
+ 	.buttons, .no-print {
+		display: none; 
+	}
+
+	table {
+		width: 100%;
+		margin: 0;
+		font-size: 0.9em; 
+	}
+
+	th, td {
+		padding: 3px; 
+		border: 1px solid #000;
+		background-color: #fff;
+		color: #000;
+	}
+
+	.grafico-barra {
+		box-shadow: none; 
+		height: 1em; 
+		border: 1px solid #969FAA;
+		position: relative; 
+	}
+
+	.grafico-barra-progresso {
+		background-color: #FE0000;
+		width: 100%; 
+		position: absolute; 
+		left: 0;
+	}
+
+	.namecolorouro,
+	.namecolorprata,
+	.namecolorbronze {
+		background: none;
+		color: inherit;
+	}
+
+		/* Outros ajustes específicos para impressão */
+	a {
+		color: #000;
+		text-decoration: underline;
+	}
+
+	.circle, .circle-border {
+		width: 60px;
+		height: 60px;
+	}
 }
