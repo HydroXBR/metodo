@@ -149,6 +149,7 @@ document.addEventListener('DOMContentLoaded', function(){
 	const gebc = c => document.getElementsByClassName(c)
 	const voltar = gebi("voltar");
 	const prob = gebi("prob");
+	const print = gebi("print");
 
 	const cid = new URL(window.location.href).searchParams.get("id")
 	if(!cid){
@@ -187,7 +188,11 @@ document.addEventListener('DOMContentLoaded', function(){
 
 		gebi("title").innerHTML = rr.simulado.name + ` (${rr.simulado.date.replace(/\-/gmi, "/")})`
 		voltar.addEventListener('click', function(event){
-			window.location.href = `/ranking?id=${rr.simulado.id}`
+			window.locatio
+				n.href = `/ranking?id=${rr.simulado.id}`
+		})
+		print.addEventListener('click', function(event){
+			window.print()
 		})
 		prob.addEventListener('click', function(event){
 			window.location.href = `https://api.whatsapp.com/send?phone=559284507170&text=Ol%C3%A1%2C%20Isa%C3%ADas!%20Sou%20${rr.completename}%2C%20e%20estou%20com%20d%C3%BAvidas%2Fproblemas%20em%20rela%C3%A7%C3%A3o%20ao%20simulado%20de%20ID%20${idsimulado}. %20(N%C3%83O%20APAGAR!)`
