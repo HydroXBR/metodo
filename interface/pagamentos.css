@@ -11,7 +11,6 @@ html, body {
 	padding: 0;
 	background-image: url("https://s3.amazonaws.com/i.snag.gy/hATqGL.jpg");
 	background-size: cover;
-	overflow-y: auto; 
 }
 
 .container2 {
@@ -26,8 +25,16 @@ html, body {
 	margin-bottom: 20px; /* Espaçamento inferior */
 }
 
-.container2 .table-container {
-	width: 70%;
+.container2 {
+	width: 95%;
+	margin: 0 auto; /* Centraliza o contêiner */
+	border-radius: 5px; /* Borda arredondada */
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+	overflow-x: auto;
+}
+
+.table-container {
+	width: 95%;
 	margin: 0 auto; /* Centraliza o contêiner */
 	background-color: #fff; /* Fundo branco */
 	border-radius: 5px; /* Borda arredondada */
@@ -145,21 +152,48 @@ th, td {
 	text-align: left;
 }
 
-th {
+th:nth-child(1),
+td:nth-child(1),
+th:nth-child(2),
+td:nth-child(2) {
+	position: sticky;
+	left: 0;
 	background-color: #f2f2f2;
+	z-index: 1; /* Garante que fique sobre o conteúdo da tabela */
+}
+
+th {
+	position: sticky;
+	top: 0;
+	background-color: #f2f2f2;
+	z-index: 2; /* Garante que fique sobre a primeira coluna */
+	text-decoration: none;
 }
 
 tr:hover {
 	background-color: #f5f5f5; /* Adiciona cor de fundo ao passar o mouse */
 }
 
+a {
+	text-decoration: underline;
+	color: black;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	font-family: 'Roboto', sans-serif;
+	font-decoration: none;
+}
+
 .table-container {
-	width: 70%;
-	margin: 0 auto; /* Centraliza a tabela */
-	background-color: #fff; /* Fundo branco */
-	border-radius: 5px; /* Borda arredondada */
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
-	overflow-x: auto;
+	width: 95%;
+	margin: 0 auto; 
+	background-color: #fff; 
+	border-radius: 5px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+	overflow: auto; 
+	max-height: 400px;
 }
 
 #turma {
