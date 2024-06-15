@@ -104,7 +104,7 @@ async function add(completename, email, senha, turma, cpf){
 		} else {
 			if(rr.reason.includes("already")){
 				alert("CPF já cadastrado anteriormente!")
-			}else if(rr.reason.includes("not")){
+			}else if(rr.reason.includes("success")){
 				addd(completename, email, senha, turma, cpf).then(async response => {
 					const rr = await response.json();
 					console.log(rr);
