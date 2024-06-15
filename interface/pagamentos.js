@@ -187,12 +187,18 @@ document.addEventListener('DOMContentLoaded', function() {
 			alunos().then(async response => {
 			const todos = await response.json();
 			const data = todos.filter(aluno => aluno.turma == turma)
+			data.sort((a, b) => a.completename.localeCompare(b.completename));
 			const tableBody = document.getElementById('table-body');
 			tableBody.innerHTML = '';
 
-			data.forEach(aluno => {
+			data.forEach((aluno, index) => {
 				const row = document.createElement('tr');
 
+				const nCell = document.createElement('td');
+				nCell.innerText = index + 1
+				nCell.classList.add("ncell")
+				row.appendChild(nCell);
+				
 				const nomeCell = document.createElement('td');
 				let a = document.createElement('a')
 				a.href = `/aluno?id=`+aluno._id
