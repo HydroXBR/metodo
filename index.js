@@ -302,6 +302,7 @@ app.listen(PORT, "0.0.0.0", function () {
   console.log("Listening at "+PORT)
 });
 
+
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/interface'));
 
@@ -475,8 +476,9 @@ app.get('/setpago', async (req, res) => {
 
 		return res.status(200).send({ success: true, reason: "Pagamento setado com sucesso!" });
 	}catch(err){
+		console.log(err)
 		console.error(err);
-		return res.status(500).send('Internal Server Error.');
+		return res.status(500).send(err);
 	}
 })
 
@@ -535,7 +537,7 @@ app.get('/checkcpf', function(req, res) {
 				} 
 			});
 		} else {
-			res.send({ success: true, reason: "CPF not found"});
+			res.send({ success: true, reason: "success"});
 		}
 	})
 })
@@ -641,6 +643,59 @@ app.get('/deleteadmin', async function(req, res) {
 	}
 });
 
+/*for(var i = 0; i < dados.length; i++){
+	const novoUser = new useradm({
+		completename: dados[i].name,
+		nascimento: dados[i].nascimento,
+		email: dados[i].email,
+		responsavel: dados[i].responsavel,
+		rgresp: dados[i].rgResp.toString(),
+		cpfresp: dados[i].cpfResp.toString(),
+		telresp: dados[i].telResp.toString(),
+		endereco: dados[i].endereco,
+		bairro: dados[i].bairro,
+		cep: dados[i].cep,
+		dia: dados[i].diaPgto,
+		camisa: dados[i].camisa == "Não" ? "" : dados[i].camisa,
+		turma: 3,
+		pagamentos: [{jan: false, fev: false, mar: false, abr: false, mai: false, jun: false, jul: false, ago: false, set: false, out: false, nov: false, dez: false}],
+		registered: new Date().getTime()
+	});
+
+	novoUser.save()
+		.then(() => {
+			console.log({ success: true, reason: "Success"})
+		})
+		.catch(error => {
+			console.error("Erro ao cadastrar:", error);
+			console.log({ success: false, reason: "Error"});
+		});
+}*/
+
+app.get('/cadastrar', function(req, res) {
+	const { completename, cpf, email, senha, turma} = req.query
+
+	const novoUser = new user({
+		completename: completename,
+		cpf: cpf,
+		email: email,
+		senha: senha,
+		permissions: 0,
+		turma: Number(turma),
+		registered: new Date().getTime()
+	});
+
+	novoUser.save()
+		.then(() => {
+			res.send({ success: true, reason: "Success", user: { completename: completename}
+			});
+		})
+		.catch(error => {
+			console.error("Erro ao cadastrar:", error);
+			res.send({ success: false, reason: "Error" });
+		});
+});
+
 app.get('/cadastraradmin', function(req, res) {
 	const { completename, nascimento, email, responsavel, rgresp, cpfresp, telresp, telal, endereco, bairro, cep, dia, camisa, bolsista, turma } = req.query;
 	console.log(req.query);
@@ -682,7 +737,8 @@ app.get('/saveadmin', async function(req, res) {
 	const { id, completename, nascimento, email, responsavel, rgresp, cpfresp, telresp, telal, endereco, bairro, cep, dia, camisa, bolsista, turma } = req.query;
 	console.log(req.query);
 
-	if(!id || !completename || !nascimento || !email || !responsavel || !rgresp || !cpfresp || !telresp || !endereco || !bairro || !cep || !dia || !camisa || !bolsista || !turma) return re.send({ success: false, reason: "Missing parameters" })
+	console.log(id, completename, nascimento, email, responsavel, rgresp, cpfresp, telresp, endereco, bairro, cep, dia, camisa, bolsista, turma)
+	if(!id || !completename || !nascimento || !email || !responsavel || !rgresp || !cpfresp || !telresp || !endereco || !bairro || !cep || !dia  || !bolsista || !turma) return res.send({ success: false, reason: "Missing parameters" })
 
 	try {
 		const u = await useradm.findOne({ _id: id });
@@ -804,7 +860,6 @@ app.get('/apiranking', function(req,res) {
 					}
 				}
 				}
-
 				return `${firstName} ${secondName}`;
 			}
 
