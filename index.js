@@ -393,6 +393,10 @@ app.get('/simulados',function(req,res) {
 	res.sendFile(__dirname + '/interface/simulados.html')
 });
 
+app.get('/profile',function(req,res) {
+	res.sendFile(__dirname + '/interface/profile.html')
+});
+
 app.get('/src',function(req,res) {
 	let urlparsed = "https://metodosimulados.yeshayahudesigndeveloper.repl.co" + req._parsedOriginalUrl.href
 	let required = new URL(urlparsed).searchParams.get('id') || res.sendStatus(404)
@@ -439,6 +443,45 @@ app.get('/getalunobyid', async (req, res) => {
 		}
 	})
 });
+
+app.get('/getsimuladosbyname', async (req, res) => {
+	const name = req.query.name;
+
+	if (!name) {
+		res.status(400).send('Missing parameters.');
+		return;
+	}
+
+	try {
+		const users = await simuladoo.find({ completename: name }).exec();
+		if (users.length === 0) {
+				res.status(404).send({ success: false, message: "No users found." });
+		} else {
+				res.status(200).send({ success: true, users });
+		}
+	} catch (err) {
+		res.status(500).send({ success: false, message: "Server error.", error: err.message });
+	}
+});
+
+app.get('/getalunobynameadm', async (req, res) => {
+	const name = req.query.name;
+
+	if(!name){
+		res.status(400).send('Missing parameters.');
+		return;
+	}
+
+	useradm.findOne({ completename: name }, (err, use) => {
+		if(err){
+			res.status(404).send({success:false, message:"err"})
+		}else{
+			if(!use) return res.status(404).send({success:false, message:"not found"})
+			res.status(200).send(use)
+		}
+	})
+});
+
 
 app.get('/setpago', async (req, res) => {
 	const id = req.query.id;
