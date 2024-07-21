@@ -19,6 +19,111 @@ const ec = txt => encodeURIComponent(txt)
 const dec = txt => decodeURIComponent(txt)
 var simulados = [
 	{
+		name: "6° Simulado 2024 (PROJ. MED)", 
+		description: "6° Simulado de 2024 (PROJ. MED.)",
+		model: "TEST",
+		date: "19-07-2024",
+		id: "0620243",
+		organization: [{materia: "port", q:12, name: "Português"},{materia: "bio", q:12, name: "Biologia"},{materia: "quim", q:12, name: "Química"}],
+		special: [0, 13, 26],
+		matspecial: [
+			{ materia: "Português", special: 0 },
+			{ materia: "Biologia", special: 13 },
+			{ materia: "Química", special: 26 }
+		],
+		intervals: {
+			port: [1, 12],
+			bio: [13, 24],
+			quim: [25, 36]
+		},
+		turmas: [3],
+		answers: [
+			{
+				turma:1,
+				respostas:["C","E","C","D","E","E","B","D","E","C","B","A","A","E","B","B","A","C","C","D","C","B","B","B","B","A","D","A","E","C","C","A","B","B","A","B"]
+			},
+			{
+				turma:2,
+				respostas:["C","E","C","D","E","E","B","D","E","C","B","A","A","E","B","B","A","C","C","D","C","B","B","B","B","A","D","A","E","C","C","A","B","B","A","B"]
+			},
+			{
+				turma:3,
+				respostas:["C","E","C","D","E","E","B","D","E","C","B","A","A","E","B","B","A","C","C","D","C","B","B","B","B","A","D","A","E","C","C","A","B","B","A","B"]
+			}
+		],
+		questions: 36
+	},
+	{
+		name: "6° Simulado 2024 (2º ano)", 
+		description: "6° Simulado de 2024 (2º ano)",
+		model: "TEST",
+		date: "19-07-2024",
+		id: "0620242",
+		organization: [{materia: "mat", q:7, name: "Matemática"},{materia: "fis", q:7, name: "Física"},{materia: "quim", q:7, name: "Química"}],
+		special: [0, 8, 16],
+		matspecial: [
+			{ materia: "Matemática", special: 0 },
+			{ materia: "Física", special: 8 },
+			{ materia: "Química", special: 16 }
+		],
+		intervals: {
+			mat: [1, 7],
+			fis: [8, 14],
+			quim: [15, 21]
+		},
+		turmas: [2],
+		answers: [
+			{
+				turma:1,
+				respostas:["B","D","B","E","B","D","B","E","B","A","D","A","C","C","D","E","C","B","E","B","C"]
+			},
+			{
+				turma:2,
+				respostas:["B","D","B","E","B","D","B","E","B","A","D","A","C","C","D","E","C","B","E","B","C"]
+			},
+			{
+				turma:3,
+				respostas:["B","D","B","E","B","D","B","E","B","A","D","A","C","C","D","E","C","B","E","B","C"]
+			}
+		],
+		questions: 21
+	},
+	{
+		name: "6° Simulado 2024 (1º ano)", 
+		description: "6° Simulado de 2024 (1º ano)",
+		model: "TEST",
+		date: "19-07-2024",
+		id: "0620241",
+		organization: [{materia: "mat", q:7, name: "Matemática"},{materia: "quim", q:7, name: "Química"},{materia: "fis", q:7, name: "Física"}],
+		special: [0, 8, 16],
+		matspecial: [
+			{ materia: "Matemática", special: 0 },
+			{ materia: "Química", special: 8 },
+			{ materia: "Física", special: 16 }
+		],
+		intervals: {
+			mat: [1, 7],
+			quim: [8, 14],
+			fis: [15, 21]
+		},
+		turmas: [1],
+		answers: [
+			{
+				turma:1,
+				respostas:["B","E","C","C","A","E","E","A","C","B","A","C","D","D","C","C","A","B","C","E","B"]
+			},
+			{
+				turma:2,
+				respostas:["B","E","C","C","A","E","E","A","C","B","A","C","D","D","C","C","A","B","C","E","B"]
+			},
+			{
+				turma:3,
+				respostas:["B","E","C","C","A","E","E","A","C","B","A","C","D","D","C","C","A","B","C","E","B"]
+			}
+		],
+		questions: 21
+	},
+	{
 		name: "5° Simulado 2024", 
 		description: "5° Simulado de 2024",
 		model: "PSC",
@@ -35,8 +140,7 @@ var simulados = [
 			{ materia: "Química", special: 39 },
 			{ materia: "Física", special: 46 },
 			{ materia: "Matemática", special: 53 }
-		]
-		,
+		],
 		intervals: {
 			port: [1, 10],
 			lit: [11, 16],
@@ -298,9 +402,7 @@ app.use(
 	express.static(path.join(__dirname, '/interface'))
 );
 
-app.listen(PORT, "0.0.0.0", function () {
-  console.log("Listening at "+PORT)
-});
+app.listen(PORT, () => {console.log(`Listening at ${PORT}`)})
 
 
 app.set('view engine', 'ejs');
@@ -876,7 +978,7 @@ app.get('/apiranking', function(req,res) {
 
 			let intervals = simuatual.intervals;
 
-			for (var i = 0; i < 54; i++) {
+			for (var i = 0; i < simuatual.questions; i++) {
 				if (arranswers[i] == answersel[i] || answersel[i] == "X") {
 					pontos++;
 					for (const [key, value] of Object.entries(intervals)) {
