@@ -19,7 +19,7 @@
 							<li><a href="/sobre">Sobre</a></li>
 							<li><a href="/simulados">Simulados</a></li>
 							<li id="login"><a href="/login">Login</a></li>
-							<li id="pphoto"><a href="profile.html"><img id="profile" src="https://voxnews.com.br/wp-content/uploads/2017/04/unnamed.png" alt="Foto de Perfil" class="profile-picture"></a></li>
+							<li><img id="profile" src="https://voxnews.com.br/wp-content/uploads/2017/04/unnamed.png" alt="Foto de Perfil" class="profile-picture"></li>
 					</ul>
 			</div>
 	</nav>
@@ -45,7 +45,7 @@
 		</div>
 		<p class="desc" id="desctotal"></p>
 		<h2>Desempenho por matéria</h2>
-		<div class="display">
+		<div id="divport" class="display">
 			<div class="grafico-barra-container vermelho">
 				<div class="coluna">
 					<span class="titulo">Português</span>
@@ -57,92 +57,106 @@
 					</div>
 				</div>
 			</div>
-		<p class="desc" id="descport"></p>
+			<p class="desc" id="descport"></p>
 		</div>
-		<div class="grafico-barra-container vermelho">
-			<div class="coluna">
-				<span class="titulo">Literatura</span>
-			</div>
-			<div class="coluna">
-				<span id="pclit" class="porcentagem"></span>
-				<div class="grafico-barra">
-					<div id="idglit" class="grafico-barra-progresso"></div>
+		<div id="divlit">
+			<div class="grafico-barra-container vermelho">
+				<div class="coluna">
+					<span class="titulo">Literatura</span>
 				</div>
-			</div>
+				<div class="coluna">
+					<span id="pclit" class="porcentagem"></span>
+					<div class="grafico-barra">
+						<div id="idglit" class="grafico-barra-progresso"></div>
+					</div>
+				</div>
 		</div>
 		<p class="desc" id="desclit"></p>
-		<div class="grafico-barra-container vermelho">
-			<div class="coluna">
-				<span class="titulo">História</span>
+		</div>
+		<div id="divhist">
+			<div class="grafico-barra-container vermelho">
+				<div class="coluna">
+					<span class="titulo">História</span>
+				</div>
+				<div class="coluna">
+					<span id="pchist" class="porcentagem"></span>
+					<div class="grafico-barra">
+						<div id="idghist" class="grafico-barra-progresso"></div>
+					</div>
+				</div>
 			</div>
-			<div class="coluna">
-				<span id="pchist" class="porcentagem"></span>
-				<div class="grafico-barra">
-					<div id="idghist" class="grafico-barra-progresso"></div>
+			<p class="desc" id="deschist"></p>
+		</div>
+		<div id="divgeo">
+			<div class="grafico-barra-container vermelho">
+				<div class="coluna">
+					<span class="titulo">Geografia</span>
+				</div>
+				<div class="coluna">
+					<span id="pcgeo" class="porcentagem"></span>
+					<div class="grafico-barra">
+						<div id="idggeo" class="grafico-barra-progresso"></div>
+					</div>
+				</div>
+			</div>
+			<p class="desc" id="descgeo"></p>
+		</div>
+		<div id="divbio">
+			<div class="grafico-barra-container vermelho">
+				<div class="coluna">
+					<span class="titulo">Biologia</span>
+				</div>
+				<div class="coluna">
+					<span id="pcbio" class="porcentagem"></span>
+					<div class="grafico-barra">
+						<div id="idgbio" class="grafico-barra-progresso"></div>
+					</div>
 				</div>
 			</div>
 		</div>
-		<p class="desc" id="deschist"></p>
-		<div class="grafico-barra-container vermelho">
-			<div class="coluna">
-				<span class="titulo">Geografia</span>
-			</div>
-			<div class="coluna">
-				<span id="pcgeo" class="porcentagem"></span>
-				<div class="grafico-barra">
-					<div id="idggeo" class="grafico-barra-progresso"></div>
-				</div>
-			</div>
-		</div>
-		<p class="desc" id="descgeo"></p>
-		<div class="grafico-barra-container vermelho">
-			<div class="coluna">
-				<span class="titulo">Biologia</span>
-			</div>
-			<div class="coluna">
-				<span id="pcbio" class="porcentagem"></span>
-				<div class="grafico-barra">
-					<div id="idgbio" class="grafico-barra-progresso"></div>
-				</div>
-			</div>
-		</div>
-		<p class="desc" id="descbio"></p>
-		<div class="grafico-barra-container vermelho">
-			<div class="coluna">
+		<div id="divquim">
+		 <p class="desc" id="descbio"></p>
+		 <div class="grafico-barra-container vermelho">
+			 <div class="coluna">
 				<span class="titulo">Química</span>
+			 </div>
+			 <div class="coluna">
+				 <span id="pcquim" class="porcentagem"></span>
+				 <div class="grafico-barra">
+						<div id="idgquim" class="grafico-barra-progresso"></div>
+					</div>
+				 </div>
 			</div>
-			<div class="coluna">
-				<span id="pcquim" class="porcentagem"></span>
-				<div class="grafico-barra">
-					<div id="idgquim" class="grafico-barra-progresso"></div>
+			<p class="desc" id="descquim"></p>
+		</div>
+		<div id="divmat">
+			<div class="grafico-barra-container vermelho">
+				<div class="coluna">
+					<span class="titulo">Matemática</span>
+				</div>
+				<div class="coluna">
+					<span id="pcmat" class="porcentagem"></span>
+					<div class="grafico-barra">
+						<div id="idgmat" class="grafico-barra-progresso"></div>
+					</div>
 				</div>
 			</div>
+			<p class="desc" id="descmat"></p>
 		</div>
-		<p class="desc" id="descquim"></p>
-		<div class="grafico-barra-container vermelho">
-			<div class="coluna">
-				<span class="titulo">Matemática</span>
-			</div>
-			<div class="coluna">
-				<span id="pcmat" class="porcentagem"></span>
-				<div class="grafico-barra">
-					<div id="idgmat" class="grafico-barra-progresso"></div>
+		<div id="divfis">
+			<div class="grafico-barra-container vermelho">
+				<div class="coluna">
+					<span class="titulo">Física</span>
+				</div>
+				<div class="coluna">
+					<span id="pcfis" class="porcentagem"></span>
+					<div class="grafico-barra">
+						<div id="idgfis" class="grafico-barra-progresso"></div>
+					</div>
 				</div>
 			</div>
+			<p class="desc" id="descfis"></p>
 		</div>
-		<p class="desc" id="descmat"></p>
-		<div class="grafico-barra-container vermelho">
-			<div class="coluna">
-				<span class="titulo">Física</span>
-			</div>
-			<div class="coluna">
-				<span id="pcfis" class="porcentagem"></span>
-				<div class="grafico-barra">
-					<div id="idgfis" class="grafico-barra-progresso"></div>
-				</div>
-			</div>
-		</div>
-		<p class="desc" id="descfis"></p>
 		<h2>Destaque(s)</h2>
 		<div id="destaques">
 		</div>
