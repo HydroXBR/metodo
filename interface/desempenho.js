@@ -181,19 +181,37 @@ document.addEventListener('DOMContentLoaded', function(){
 		const r = rrr.filter(a => a.id == id)
 		let rr = r[0]
 		if(!rr) return alert("Usuário não encontrado! Contate Isaías Nascimento para mais informações.") 
-		rr.total = rr.port + rr.lit + rr.hist + rr.fis + rr.quim + rr.bio + rr.geo + rr.mat;
+		const materiasEsperadas = rr.simulado.organization.map(item => item.materia)
+		rr.total = 0
+		materiasEsperadas.forEach(materia => {
+			if (rr[materia] !== undefined && typeof rr[materia] === 'number') {
+				rr.total += rr[materia];
+			}
+		});
+
+		function isMateriaEsperada(id) {
+			return materiasEsperadas.some(materia => id.endsWith(materia));
+		}
+
+		const divs = document.querySelectorAll("div[id^='div']");
+
+		divs.forEach(div => {
+			if (!isMateriaEsperada(div.id.slice(3))) {
+				div.style.display = "none";
+			}
+		});
 
 		gebi("name").innerHTML = rr.completename
 		gebi("serie").innerHTML = Number(rr.turma) > 3 ? `${Number(rr.turma) - 3}° ano` : `${Number(rr.turma)}° ano`  
 
 		gebi("title").innerHTML = rr.simulado.name + ` (${rr.simulado.date.replace(/\-/gmi, "/")})`
 		voltar.addEventListener('click', function(event){
-			window.locatio
-				n.href = `/ranking?id=${rr.simulado.id}`
+			window.location.href = `/ranking?id=${rr.simulado.id}`
 		})
 		print.addEventListener('click', function(event){
 			window.print()
 		})
+		print.style.display = "none";
 		prob.addEventListener('click', function(event){
 			window.location.href = `https://api.whatsapp.com/send?phone=559284507170&text=Ol%C3%A1%2C%20Isa%C3%ADas!%20Sou%20${rr.completename}%2C%20e%20estou%20com%20d%C3%BAvidas%2Fproblemas%20em%20rela%C3%A7%C3%A3o%20ao%20simulado%20de%20ID%20${idsimulado}. %20(N%C3%83O%20APAGAR!)`
 		})
@@ -263,10 +281,11 @@ document.addEventListener('DOMContentLoaded', function(){
 					var canvas = document.getElementById('graficous');
 					var ctx = canvas.getContext('2d');
 					ctx.fillText("Comp. com simulados anteriores", canvas.width / 2.5, canvas.height - 10);
-					var barWidth = 30;
+					var barWidth = 20;
 					var barMargin = 40;
-					var startX = 35;
+					var startX = 15;
 					var startY = canvas.height - 50;
+					ctx.font = '9px Arial';
 					
 					var maxPercentage = Math.max(...data.map(item => item.realvalue));
 					var maxBarHeight = canvas.height * 0.8; 
@@ -426,103 +445,71 @@ document.addEventListener('DOMContentLoaded', function(){
 
 				tblBody.appendChild(newRow)
 
-				for (var i = 0; i < selected.length + 8; i++) {
-					var row = document.createElement("tr");
-					var reali = i;
-					switch(true) {
-						case (i <= 0):
-							reali = 0;
-							break;
-						case (i >= 1 && i <= rr.simulado.special[1]-1):
-							reali = i;
-							break;
-						case (i >= rr.simulado.special[1] && i <= rr.simulado.special[2]-1):
-							reali = i - 1;
-							break;
-						case (i >= rr.simulado.special[2] && i <= rr.simulado.special[3]-1):
-							reali = i - 2;
-							break;
-						case (i >= rr.simulado.special[3] && i <= rr.simulado.special[4]-1):
-							reali = i - 3;
-							break;
-						case (i >= rr.simulado.special[4] && i <= rr.simulado.special[5]-1):
-							reali = i - 4;
-							break;
-						case (i >= rr.simulado.special[5] && i <= rr.simulado.special[6]-1):
-							reali = i - 5;
-							break;
-						case (i >= rr.simulado.special[6] && i <= rr.simulado.special[7]-1):
-							reali = i - 6;
-							break;
-						case (i >= rr.simulado.special[7]):
-							reali = i - 7;
-							break;
-					}
+				function getRealIndex(i, special) {
+					let offset = 0;
+						for (let j = 0; j < special.length; j++) {
+							if (i === special[j]) {
+								return -1; 
+							}
+							if (i > special[j]) {
+								offset++;
+							}
+						}
+						return i - offset + 1; 
+				}
 
-					for (var j = 0; j < 1; j++) {
-						var cell = document.createElement("td");
-						var cellText = document.createElement('a')
-						if (special.includes(i)) {
+				for (var i = 0; i < selected.length + rr.simulado.matspecial.length; i++) {
+					var row = document.createElement("tr");
+					var reali = getRealIndex(i, rr.simulado.special);
+
+					// Adicionando células à linha
+					if (special.includes(i)) {
 							var td = document.createElement("td");
 							td.setAttribute("colspan", "4"); 
-							td.classList.add("materia")
-							cellText.innerText = mat.find(m => m.special == i).materia
+							td.classList.add("materia");
+							var cellText = document.createElement('a');
+							cellText.innerText = mat.find(m => m.special == i).materia;
 							td.appendChild(cellText); 
 							row.appendChild(td); 
-						} else {
-							cellText.innerText = reali
-							cell.classList.add("num");
-							cell.appendChild(cellText);
-							row.appendChild(cell);
-						}
-					}
+					} else {
+							var numCell = document.createElement("td");
+							numCell.classList.add("num");
+							var numCellText = document.createElement('a');
+							numCellText.innerText = reali;
+							numCell.appendChild(numCellText);
+							row.appendChild(numCell);
 
-					for (var a = 0; a < 1; a++) {
-						if(!special.includes(i)){
-							var cella = document.createElement("td");
-							var cellTexta = document.createElement('a')
-							cellTexta.classList.add("gab")
-							cellTexta.innerText = selected[reali-1]
-							cellTexta.id = `gab${reali-1}`
-							cellTexta.style.color = "#000000"
+							var gabCell = document.createElement("td");
+							gabCell.classList.add("correct");
+							var gabCellText = document.createElement('a');
+							gabCellText.classList.add("gab");
+							gabCellText.innerText = selected[reali-1];
+							gabCellText.id = `gab${reali-1}`;
+							gabCellText.style.color = "#000000";
+							gabCell.appendChild(gabCellText);
+							row.appendChild(gabCell);
 
+							var respCell = document.createElement("td");
+							respCell.classList.add("resp");
+							var respCellText = document.createElement('a');
+							respCellText.id = `answeruser${reali-1}`;
+							respCellText.innerText = ans[reali-1];
+							respCell.appendChild(respCellText);
+							row.appendChild(respCell);
 
-							cella.appendChild(cellTexta);
-							cella.classList.add("correct")
-							row.appendChild(cella);
-						}
-					}
-
-					for (var e = 0; e < 1; e++) {
-						if(!special.includes(i)){
-							var cell1 = document.createElement("td");
-							cell1.classList.add("resp")
-							let inn = document.createElement("a")
-							inn.id = `answeruser${reali-1}`
-							inn.innerText = ans[reali-1]
-
-							cell1.appendChild(inn)
-							row.appendChild(cell1);
-						}
-					}
-
-					for (var o = 0; o < 1; o++) {
-						if(!special.includes(i)){
-							var cell2 = document.createElement("td");
-							var cellText2 = document.createElement('p')
-							cellText2.classList.add("correctcheck")
-							cellText2.id = `correct${reali}`
-
-							cell2.appendChild(cellText2);
-							row.appendChild(cell2);
-						}
+							var correctCell = document.createElement("td");
+							correctCell.classList.add("correctcheck");
+							var correctCellText = document.createElement('p');
+							correctCellText.id = `correct${reali}`;
+							correctCell.appendChild(correctCellText);
+							row.appendChild(correctCell);
 					}
 
 					tblBody.appendChild(row);
 				}
 
 				tbl.appendChild(tblBody);
-				body.appendChild(tbl)
+				body.appendChild(tbl);
 			}
 
 			create()
@@ -584,7 +571,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 			medidortotal.style.width = (rr.total/rr.simulado.questions)*100 + '%';
 
-			document.getElementById("pctotal").innerHTML = round(((rr.total)/54)*100,2) + '%';
+			document.getElementById("pctotal").innerHTML = round(((rr.total)/rr.simulado.questions)*100,2) + '%';
 			gebi("desctotal").innerHTML = `${rr.total} de ${rr.simulado.questions}`
 		}
 
