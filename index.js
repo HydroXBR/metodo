@@ -19,6 +19,97 @@ const ec = txt => encodeURIComponent(txt)
 const dec = txt => decodeURIComponent(txt)
 var simulados = [
 	{
+		name: "3° Simulado NA (3°)", 
+		description: "Núcleo de Aprovação",
+		model: "MACRO",
+		date: "20-07-2024",
+		id: "NA32",
+		organization: [{materia: "port", q:8, name: "Língua Portuguesa"},{materia: "lit", q:4, name: "Literatura"},{materia: "hist", q:12, name: "História"},{materia: "geo", q:12, name: "Geografia"},{materia: "bio", q:12, name: "Biologia"},{materia: "mat", q:12, name: "Matemática"},{materia: "fis", q:12, name: "Física"},{materia: "quim", q:12, name: "Química"}],
+		special: [0, 9, 14, 27, 40, 53, 66, 79],
+		matspecial: [
+			{ materia: "Língua Portuguesa", special: 0 },
+			{ materia: "Literatura", special: 9 },
+			{ materia: "História", special: 14 },
+			{ materia: "Geografia", special: 27 },
+			{ materia: "Biologia", special: 40 },
+			{ materia: "Matemática", special: 53 },
+			{ materia: "Física", special: 66 },
+			{ materia: "Química", special: 79 }
+		],
+		intervals: {
+			port: [1, 8], 
+			lit: [9, 12],    
+			hist: [13, 24],   
+			geo: [25, 36],    
+			bio: [37, 48],     
+			mat: [49, 60],  
+			fis: [61, 72],  
+			quim: [73, 84]
+		},
+		turmas: [3],
+		answers: [
+			{
+				turma:1,
+				respostas:["B","D","E","B","E","D","D","C","D","C","B","C","A","C","A","A","E","A","A","D","C","C","A","A","E","C","C","C","B","E","D","A","E","B","A","A","E","D","E","E","D","D","E","C","C","D","E","A","C","C","D","B","E","E","C","C","D","E","B","B","A","C","D","E","E","D","D","B","B","A","C","C","B","A","D","C","E","B","E","B","A","D","E","C"]
+			},
+			{
+				turma:2,
+				respostas:["B","D","E","B","E","D","D","C","D","C","B","C","A","C","A","A","E","A","A","D","C","C","A","A","E","C","C","C","B","E","D","A","E","B","A","A","E","D","E","E","D","D","E","C","C","D","E","A","C","C","D","B","E","E","C","C","D","E","B","B","A","C","D","E","E","D","D","B","B","A","C","C","B","A","D","C","E","B","E","B","A","D","E","C"]
+			},
+			{
+				turma:3,
+				respostas:["B","D","E","B","E","D","D","C","D","C","B","C","A","C","A","A","E","A","A","D","C","C","A","A","E","C","C","C","B","E","D","A","E","B","A","A","E","D","E","E","D","D","E","C","C","D","E","A","C","C","D","B","E","E","C","C","D","E","B","B","A","C","D","E","E","D","D","B","B","A","C","C","B","A","D","C","E","B","E","B","A","D","E","C"]
+			}
+		],
+		questions: 84
+	},
+	{
+		name: "3° Simulado NA (1° e 2°)", 
+		description: "Núcleo de Aprovação",
+		model: "SIS",
+		date: "20-07-2024",
+		id: "NA31",
+		organization: [{materia: "port", q:8, name: "Língua Portuguesa"},{materia: "lit", q:4, name: "Literatura"},{materia: "hist", q:8, name: "História"},{materia: "geo", q:8, name: "Geografia"},{materia: "bio", q:8, name: "Biologia"},{materia: "quim", q:8, name: "Química"},{materia: "fis", q:8, name: "Física"},{materia: "mat", q:8, name: "Matemática"}],
+		special: [0, 9, 14, 23, 32, 41, 50, 59],
+		matspecial: [
+			{ materia: "Português", special: 0 },
+			{ materia: "Literatura", special: 9 },
+			{ materia: "História", special: 14 },
+			{ materia: "Geografia", special: 23 },
+			{ materia: "Biologia", special: 32 },
+			{ materia: "Química", special: 41 },
+			{ materia: "Física", special: 50 },
+			{ materia: "Matemática", special: 59 }
+		]
+		,
+		intervals: {
+			port: [1, 8],
+			lit: [9, 12],
+			hist: [13, 20],
+			geo: [21, 28],
+			bio: [29, 36],
+			quim: [37, 44],
+			fis: [45, 52],
+			mat: [53, 60]
+		},
+		turmas: [1,2],
+		answers: [
+			{
+				turma:1,
+				respostas:["B","D","E","B","E","D","D","C","A","E","D","E","B","B","E","D","B","E","D","C","D","B","C","D","A","E","C","A","A","B","E","B","C","E","E","B","E","A","D","C","E","A","D","A","E","B","D","B","C","A","E","B","D","B","D","C","C","E","B","C"]
+			},
+			{
+				turma:2,
+				respostas:["B","D","E","B","E","D","D","C","C","B","E","C","C","C","A","E","E","D","A","B","A","D","D","D","D","D","B","B","E","E","B","D","A","A","D","D","B","A","A","C","A","D","B","D","B","C","B","B","D","E","C","A","D","A","D","E","A","B","A","C"]
+			},
+			{
+				turma:3,
+				respostas:["B","D","E","B","E","D","D","C","C","B","E","C","C","C","A","E","E","D","A","B","A","D","D","D","D","D","B","B","E","E","B","D","A","A","D","D","B","A","A","C","A","D","B","D","B","C","B","B","D","E","C","A","D","A","D","E","A","B","A","C"]
+			}
+		],
+		questions: 60
+	},
+	{
 		name: "6° Simulado 2024 (PROJ. MED)", 
 		description: "6° Simulado de 2024 (PROJ. MED.)",
 		model: "TEST",
@@ -997,7 +1088,7 @@ app.get('/apiranking', function(req,res) {
 				const secondName = words[1];
 
 				if(secondName){
-				if (["de", "da", "dos", "das", "do", "henrique", "luiza"].includes(secondName.toLowerCase())) {
+				if (["de", "da", "dos", "das", "do", "henrique", "pedro", "eduarda", "luiza"].includes(secondName.toLowerCase())) {
 					if (["de", "da", "dos", "das", "do"].includes(words[2].toLowerCase())) {
 						return `${firstName} ${secondName} ${words[2]} ${words[3]}`;
 					} else {
