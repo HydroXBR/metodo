@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function(){
 		print.addEventListener('click', function(event){
 			window.print()
 		})
-		print.style.display = "none";
+		if(!new URL(window.location.href).searchParams.get("simulado").includes("NA")) print.style.display = "none";
 		prob.addEventListener('click', function(event){
 			window.location.href = `https://api.whatsapp.com/send?phone=559284507170&text=Ol%C3%A1%2C%20Isa%C3%ADas!%20Sou%20${rr.completename}%2C%20e%20estou%20com%20d%C3%BAvidas%2Fproblemas%20em%20rela%C3%A7%C3%A3o%20ao%20simulado%20de%20ID%20${idsimulado}. %20(N%C3%83O%20APAGAR!)`
 		})
