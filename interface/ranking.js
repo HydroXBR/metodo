@@ -184,8 +184,9 @@ document.addEventListener('DOMContentLoaded', function(){
 	async function generate_table() {
 		simul().then(async simulados => {
 			let id = params.get("id")
+			let selectedSeries = params.get("serie")
 			var simuatual = simulados.find(simu => simu.id === id)
-			let num = gebi("serie").value || simuatual.turmas[0]
+			let num = selectedSeries || gebi("serie").value || simuatual.turmas[0]
 
 			const response = await fetch(`/apiranking?sel=${num}&id=${id}`)
 			const rr = await response.json()
@@ -193,14 +194,17 @@ document.addEventListener('DOMContentLoaded', function(){
 			gebi("title").innerHTML = simuatual.name + ` (${simuatual.date.replace(/\-/gmi, "/")})`
 			for (var i = 0; i < simuatual.turmas.length; i++) {
 					let turma = simuatual.turmas[i];
-					// Verifica se a opção já existe no seletor
 					let opcaoExistente = document.querySelector("#serie option[value='" + turma + "']");
-					if (!opcaoExistente) { // Se a opção não existe, adicione-a
-							let opt = document.createElement("option");
-							opt.value = turma;
-							opt.innerText = turma + "° ano";
-							gebi("serie").appendChild(opt);
+					if (!opcaoExistente) {
+						let opt = document.createElement("option");
+						opt.value = turma;
+						opt.innerText = turma + "° ano";
+						gebi("serie").appendChild(opt);
 					}
+			}
+
+			if (selectedSeries) {
+					gebi("serie").value = selectedSeries;
 			}
 
 			let logs = rr
@@ -344,6 +348,7 @@ document.addEventListener('DOMContentLoaded', function(){
 				gebi("c").removeChild(gebi("tabela"))
 				body.removeChild(gebi("copy"))
 				generate_table().then(() => {
+					params.set("serie", gebi("serie").value)
 					addoptions()
 				})
 			})
