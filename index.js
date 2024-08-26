@@ -23,10 +23,10 @@ var simulados = [
 		name: "7° Simulado 2024", 
 		description: "7° Simulado de 2024",
 		model: "MACRO",
-		date: "09-08-2024",
+		date: "23-08-2024",
 		id: "072024",
 		organization: [{materia: "port", q:8, name: "Português"},{materia: "lit", q:4, name: "Literatura"},{materia: "hist", q:8, name: "História"},{materia: "geo", q:8, name: "Geografia"},{materia: "bio", q:8, name: "Biologia"},{materia: "mat", q:8, name: "Matemática"},{materia: "fis", q:8, name: "Física"},{materia: "quim", q:8, name: "Química"}],
-		special: [0,9,14,23,32,41,49,59],
+		special: [0,9,14,23,32,41,50,59],
 		matspecial: [
 			{ materia: "Português", special: 0 },
 			{ materia: "Literatura", special: 9 }, // +1
@@ -34,7 +34,7 @@ var simulados = [
 			{ materia: "Geografia", special: 23 }, // +3
 			{ materia: "Biologia", special: 32 }, // +4
 			{ materia: "Matemática", special: 41 }, // +5
-			{ materia: "Física", special: 49 }, // +6
+			{ materia: "Física", special: 50 }, // +6
 			{ materia: "Química", special: 59 } // +7
 		],
 		intervals: {
@@ -47,11 +47,11 @@ var simulados = [
 			fis: [45, 52],
 			quim: [53, 60]
 		},
-		turmas: [1,2],
+		turmas: [1,2,3],
 		answers: [
 			{
 				turma:1,
-				respostas:["C","D","A","C","D","B","C","E","E","C","D","B","B","D","A","B","C","E","D","C","E","B","D","A","D","D","C","C","A","B","B","A","B","C","D","B","E","C","E","A","E","B","C","C","C","C","A","C","C","E","B","A","A","D","C","B","B","E","B","E"]
+				respostas:["C","D","A","C","D","B","C","E","E","C","D","B","B","D","A","B","C","E","D","C","E","B","D","A","D","D","C","C","A","B","B","A","X","X","D","B","E","C","E","A","E","B","C","C","C","C","A","C","C","E","B","A","D","D","C","B","B","E","B","E"]
 			},
 			{
 				turma:2,
@@ -59,7 +59,7 @@ var simulados = [
 			},
 			{
 				turma:3,
-				respostas:["A","B","C","A","A","D","B","E","C","E","C","D","C","D","A","A","B","D","C","B","D","A","D","C","B","D","E","B","A","D","C","D","C","C","E","B","A","D","B","D","C","C","C","B","D","D","E","E","B","B","B","A","B","C","E","B","D","A","E","X"]
+				respostas:["D","D","D","E","D","B","A","C","D","E","A","A","D","D","A","E","C","B","B","A","B","A","C","D","E","C","D","C","A","C","C","B","C","D","E","B","A","C","D","B","C","E","B","D","C","B","A","C","C","E","E","E","B","C","C","A","C","D","B","C"]
 			}
 		],
 		questions: 60
