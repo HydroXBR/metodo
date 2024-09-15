@@ -5,125 +5,200 @@
 }
 
 html, body {
-		height: 100%;
-		margin: 0;
-		padding: 0;
+	height: 100%;
+	margin: 0;
+	padding: 0;
 	background-image: url("https://s3.amazonaws.com/i.snag.gy/hATqGL.jpg");
-		background-size: cover;
-		overflow-y: auto; 
-}
-
-body {
-		overflow-y: auto;
+	background-size: cover;
+	overflow-y: auto;
 }
 
 h1 {
-		margin-left: 10px; /* Adicionado para separar um pouco o nome do método da imagem */
+	margin-left: 10px;
 }
 
 /* Estilos da navegação */
 .navbar {
-		background-color: #0C1248; 
-		color: #fff;
-		padding: 20px 0;
-		font-family: 'Roboto', sans-serif; 
+	background-color: #0C1248; 
+	color: #fff;
+	padding: 20px 0;
+	font-family: 'Roboto', sans-serif; 
 }
 
 .container {
-		max-width: 1200px;
-		margin: 0 auto;
-		padding: 0 20px;
-		overflow: hidden;
-		display: flex;
-		justify-content: space-between; /* Alterado */
-		align-items: center; 
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 20px;
+	overflow: hidden;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .container2 {
-	margin-top: 150px;
 	display: flex;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	padding:15px;
+	justify-content: space-around; 
+	align-items: flex-start; 
+	padding: 15px;
+	flex-wrap: wrap; 
+	height: 90vh;
 }
 
 .logo-container {
-		display: flex; /* Adicionado */
-		align-items: center; /* Adicionado */
+	display: flex;
+	align-items: center;
 }
 
 .logo {
-		font-size: 24px;
-		color: #FE0000;
+	font-size: 24px;
+	color: #FE0000;
 }
 
 .nav-links {
-		list-style: none;
-		padding: 0;
-		display: flex; /* Alterado */
-		align-items: center; /* Alterado */
+	list-style: none;
+	padding: 0;
+	display: flex;
+	align-items: center;
 }
 
 .nav-links li {
-		margin-left: 20px;
+	margin-left: 20px;
 }
 
 .nav-links li:first-child {
-		margin-left: 0; /* Removido o espaçamento do primeiro item */
+	margin-left: 0;
 }
 
 .nav-links li a {
-		text-decoration: none;
-		color: #fff;
-		transition: color 0.3s ease;
-		font-weight: 500;
+	text-decoration: none;
+	color: #fff;
+	transition: color 0.3s ease;
+	font-weight: 500;
 }
 
 .nav-links li a:hover {
-		color: #ffd700; 
+	color: #ffd700;
 }
 
-/* Estilos para dispositivos móveis */
-/* Estilos para dispositivos móveis */
+.profile-picture, .metodo {
+	width: 40px;
+	height: auto;
+	border-radius: 50%;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+#infodetails {
+	font-family: 'Roboto', sans-serif;
+	font-decoration: none;
+	display: flex;
+	flex-direction: column; /* Dispor linhas em coluna */
+	margin-top: 15px;
+	padding-left: 20px;
+	text-align: left;
+}
+
+.info-row {
+	display: flex;
+	align-items: center; /* Alinhar verticalmente no centro */
+	margin-bottom: 5px; /* Espaçamento entre as linhas */
+}
+
+.info-row strong {
+	color: #060033;
+	width: 150px; /* Largura fixa para alinhamento */
+	margin-right: 10px; /* Espaçamento entre strong e p */
+	font-weight: bold; /* Adiciona peso à fonte */
+}
+
+.info-row2 {
+	margin-top: 15px;
+}
+
+.info-row p {
+	color: #060033;
+	margin: 0; /* Remove margem padrão */
+	flex: 1; /* O <p> expande-se para o espaço restante */
+	display: inline-block; /* Alinhar inline com <strong> */
+}
+
+#profile2 {
+	height: 80px;
+	width: 80px;
+}
+
+/* Estilo dos painéis do perfil */
+.profile-panel {
+	background-color: rgba(255, 255, 255, 0.9);
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+	width: 30%;
+	text-align: center;
+	margin: 10px;
+	font-family: 'Roboto', sans-serif;
+}
+
+#tablediv {
+	width: 100%;
+	height: 300px;
+	overflow-y: auto; 
+	padding: 10px;
+	box-sizing: border-box; 
+}
+
+.profile-panel h2 {
+	margin-bottom: 10px;
+	color: #0C1248;
+}
+
+.profile-panel p {
+	color: #333;
+}
+
 @media only screen and (max-width: 768px) {
 		.container {
-				flex-direction: column; /* Alterado */
-				align-items: center; /* Alterado */
+				flex-direction: column;
+				align-items: center;
 		}
 
-		.logo-container {
-				margin-bottom: 5px; 
-		}
-		.nav-links {
-				margin-top: 20px; 
+		.container2 {
+				display: block;
+				text-align: center;
 		}
 
-		.profile-picture, .metodo {
-				align-self: flex-start; /* Ajustado o alinhamento vertical da imagem */
+		.profile-panel {
+				width: 80%; 
+				margin: 10px auto; 
 		}
 }
-.profile-picture, .metodo {
-		width: 40px; 
-		height: auto;
-		border-radius: 50%; 
-		box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); 
+
+.nav-links li .btn2 {
+	background-color: red;
+	padding: 10px 20px;
+	border-radius: 5px;
+	color: white;
+	text-decoration: none;
+	transition: background-color 0.3s ease;
+}
+
+.nav-links li .btn2:hover {
+	background-color: darkred;
 }
 
 .buttons {
-	max-height: 200px;
-	position: fixed;
 	margin: auto;
 }
 
 button:not(.btn2){
-	margin-bottom: 20px;
+	padding: 2px;
 	background:#FE0000;
 	color:#fff;
 	border:none;
 	position:relative;
-	height:60px;
-	font-size:1.6em;
+	height:30px;
+	margin-top: 10px;
+	font-size:1.3em;
+	border-radius: 5px;
 	padding:0 2em;
 	cursor:pointer;
 	transition:800ms ease all;
@@ -154,15 +229,60 @@ button:hover:before,button:hover:after:not(.btn2){
 	transition:800ms ease all;
 }
 
-.nav-links li .btn2 {
-	background-color: red;
-	padding: 10px 20px; 
-	border-radius: 5px; 
-	color: white;
-	text-decoration: none; 
-	transition: background-color 0.3s ease; 
+canvas {
+	border: 2px solid #a3a3a3;
+	display: block;
+	margin: 20px auto;
+	width: 350px;
+	height: 200px;
+	padding: 10px;
+	max-width: 100%; 
+	max-height: 100%;
 }
 
-.nav-links li .btn2:hover {
-		background-color: darkred; 
+.table-container {
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 10px;
+	background-color: #ffffff;
+	border-radius: 4px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+thead {
+	background-color: #007bff;
+	color: #ffffff;
+}
+
+th, td {
+	padding: 8px;
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+	background-color: #f9f9f9;
+}
+
+.btn-message {
+	display: inline-block;
+	padding: 4px 8px;
+	background-color: #25D366;
+	color: #ffffff;
+	text-decoration: none;
+	border-radius: 4px;
+	font-size: 12px;
+}
+
+.btn-message:hover {
+	background-color: #1ebd60;
+}
+
+th {
+	font-weight: normal;
 }
