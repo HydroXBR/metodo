@@ -159,6 +159,27 @@ document.addEventListener('DOMContentLoaded', function() {
 		}
 		return `${firstName} ${secondName}`;
 	}
+
+	function formatarData() {
+			// Cria um objeto Date com a data atual
+			const data = new Date();
+
+			// Cria arrays com os nomes dos meses e dias da semana
+			const meses = [
+					"janeiro", "fevereiro", "março", "abril", "maio", "junho",
+					"julho", "agosto", "setembro", "outubro", "novembro", "dezembro"
+			];
+
+			// Obtém o dia do mês e o mês
+			const dia = data.getDate();
+			const mes = meses[data.getMonth()];
+			const ano = data.getFullYear();
+
+			// Monta a string no formato desejado
+			return `${dia} de ${mes} de ${ano}`;
+	}
+
+	document.getElementById("date").innerText = formatarData()
 	
 	preencherTabela()
 	function preencherTabela(){
