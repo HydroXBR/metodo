@@ -14,21 +14,53 @@
 						<img src="https://i.ibb.co/jryH3q8/Min-Branca.png" alt="Foto de Perfil" class="metodo">
 						<h1 class="logo">Método Pré-Vestibular</h1>
 				</div>
-					<ul class="nav-links">
+					<ul class="nav-links" id="nav-links">
 							<li><a href="/">Início</a></li>
 							<li><a href="/sobre">Sobre</a></li>
 							<li><a href="/simulados">Simulados</a></li>
 							<li id="login"><a href="/login">Login</a></li>
-							<li id="pphoto"><a href="profile.html"><img id="profile" src="https://voxnews.com.br/wp-content/uploads/2017/04/unnamed.png" alt="Foto de Perfil" class="profile-picture"></a></li>
+							<li><img id="profile" src="https://voxnews.com.br/wp-content/uploads/2017/04/unnamed.png" alt="Foto de Perfil" class="profile-picture"></li>
 					</ul>
 			</div>
 	</nav>
 
-		<div class="container2">
+	<div class="container2">
+		<div class="profile-panel" id="info">
+			<h2>Administração</h2>
+			<img id="profile2" src="https://voxnews.com.br/wp-content/uploads/2017/04/unnamed.png" alt="Foto de Perfil" class="profile-picture">
+			<div id="infodetails">
+					<div class="info-row">
+							<strong>Administrador(a):</strong> <p id="admin">Não identificado</p>
+					</div>
+					<div class="info-row">
+							<strong>Nível de permissões:</strong> <p id="level">Não identificado</p>
+					</div>
+			</div>
+		</div>
+		<div class="profile-panel" id="simulados">
+			<h2>Ações</h2>
 			<div class=buttons>
-				<a href="/cadastroadmin"><button>Cadastrar aluno</button></a>
-				<a href="/gerar"><button>Gerar</button></a>
-				<a href="/pagamentos"><button>Pagamentos</button></a>
+				<button href="/cadastroadmin">Cadastrar aluno</button>
+				<button href="/gerarrecibo">Gerar recibo</button>
+				<button href="/gerarrelato">Gerar relatório</button>
+				<button href="/admin/pagamentos">Controle pagamentos</button>
+			</div>
+		</div>
+		<div class="profile-panel" id="pgtos">
+			<h2>Pagamentos de hoje</h2>
+			<div id="tablediv">
+				<table>
+					<thead>
+						<tr>
+							<th>Nº</th>
+							<th>Nome</th>
+							<th>Turma</th>
+							<th>Enviar</th>
+						</tr>
+					</thead>
+					<tbody id="table-body">
+					</tbody>
+					</table>
 			</div>
 		</div>
 		<script src="admin.js"></script>
