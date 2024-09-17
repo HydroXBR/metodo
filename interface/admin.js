@@ -200,6 +200,8 @@ document.addEventListener('DOMContentLoaded', function() {
 			return document.getElementById("pgtos").appendChild(pp)
 		}
 
+		let addZero = num => num < 10 ? '0' + num : num;
+			
 		data.forEach((aluno, index) => {
 			const row = document.createElement('tr');
 
@@ -221,11 +223,20 @@ document.addEventListener('DOMContentLoaded', function() {
 			row.appendChild(turmaCell);
 
 			function formatWhatsappLink(phoneNumber) {
-				const formattedNumber = phoneNumber.trim().replace(/ /gmi, "").slice(0, 2) + phoneNumber.slice(3);
-				const parenteses = formattedNumber.replace(/\(/gmi, "")
-				const parenteses2 = parenteses.replace(/\)/gmi, "")
-				const parenteses3 = parenteses2.replace(/\-/gmi, "")
-				const whatsappLink = `https://api.whatsapp.com/send/?phone=55${parenteses3.trim().replace(/ /gmi, "")}`;
+				let formattedNumber = phoneNumber.replace(/[()\-\s]/g, "");
+
+				if(formattedNumber.length == 0 || formattedNumber.length < 8) return `#`
+
+				if (formattedNumber.length === 8) {
+					formattedNumber = "92" + formattedNumber;
+				}
+
+				if (formattedNumber.length === 11 && formattedNumber[2] === "9") {
+					formattedNumber = formattedNumber.slice(0, 2) + formattedNumber.slice(3);
+				}
+
+				const text = `*📌 MENSALIDADE*\n❗️Boa tarde, senhor(a) responsável!\n⚠️ Lembrando que sua mensalidade vence HOJE dia ${addZero(today.getDate())}/${addZero(today.getMonth())} do aluno:\n${aluno.completename}\n\n✅ Estamos aguardando o pagamento.\n\n🔑 *Chave Pix (CNPJ)*\n53.579.716/0001-51\n> Método Centro de Estudos LTDA\n> Caso pagamento em PIX, enviar comprovante, por favor.\n\n📍 Agradecemos a compreensão 😉👍🏻\n\n*MENSAGEM AUTOMÁTICA*`;
+				const whatsappLink = `https://api.whatsapp.com/send/?phone=55${formattedNumber}&text=${encodeURIComponent(text)}`;
 				return whatsappLink;
 			}
 
