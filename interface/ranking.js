@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function(){
 	}else{
 		gebi("logoclass").innerHTML = "Método Pré-Vestibular"
 		gebi("metodo").setAttribute("src", "https://i.ibb.co/jryH3q8/Min-Branca.png")
-		document.body.style.backgroundImage = "url(https://s3.amazonaws.com/i.snag.gy/kjvlaw.jpg)"
+		document.body.style.backgroundImage = "url(https://s3.amazonaws.com/i.snag.gy/ChNAa6.jpg)"
 		link.href = "https://i.ibb.co/jryH3q8/Min-Branca.png"
 		document.head.appendChild(link);
 	}
@@ -224,12 +224,14 @@ document.addEventListener('DOMContentLoaded', function(){
 				newCell.style.align = 'center'
 				var ncText = document.createElement('strong')
 				ncText.innerText = 'RANK'
+					newCell.id = "rankCell"
 				newCell.appendChild(ncText)
 				newRow.appendChild(newCell)
 
 				var newCell1 = document.createElement('td')
 				var ncText1 = document.createElement('strong')
 				ncText1.innerText= 'NOME'
+					newCell1.id = "nomeCell"
 				newCell1.appendChild(ncText1)
 				newRow.appendChild(newCell1)
 
@@ -237,6 +239,7 @@ document.addEventListener('DOMContentLoaded', function(){
 				var newCell2 = document.createElement('td')
 				var ncText2 = document.createElement('strong')
 				ncText2.innerText = 'ACERTOS'
+					newCell2.id = "acertosCell"
 				newCell2.appendChild(ncText2)
 				newRow.appendChild(newCell2)
 				}
@@ -285,13 +288,16 @@ document.addEventListener('DOMContentLoaded', function(){
 						cellTexta.innerText = alogs[i].name
 						if(Number(num) < 4){
 							if(i == 0){
-								cella.classList.add("namecolorouro")
+								cellTexta.classList.add("namecolorouro")
+								cellTexta.innerText = "🥇" + cellTexta.innerText 
 							}
 							if(i == 1){
-								cella.classList.add("namecolorprata")
+								cellTexta.classList.add("namecolorprata")
+								cellTexta.innerText = "🥈" + cellTexta.innerText 
 							}
 							if(i == 2){
-								cella.classList.add("namecolorbronze")
+								cellTexta.classList.add("namecolorbronze")
+								cellTexta.innerText = "🥉" + cellTexta.innerText 
 							}
 						}
 
