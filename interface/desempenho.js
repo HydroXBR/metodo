@@ -208,10 +208,10 @@ document.addEventListener('DOMContentLoaded', function(){
 		voltar.addEventListener('click', function(event){
 			window.location.href = `/ranking?id=${rr.simulado.id}`
 		})
-		print.addEventListener('click', function(event){
+		/*print.addEventListener('click', function(event){
 			window.print()
 		})
-		if(!new URL(window.location.href).searchParams.get("simulado").includes("NA")) print.style.display = "none";
+		if(!new URL(window.location.href).searchParams.get("simulado").includes("NA")) print.style.display = "none";*/
 		prob.addEventListener('click', function(event){
 			window.location.href = `https://api.whatsapp.com/send?phone=559284507170&text=Ol%C3%A1%2C%20Isa%C3%ADas!%20Sou%20${rr.completename}%2C%20e%20estou%20com%20d%C3%BAvidas%2Fproblemas%20em%20rela%C3%A7%C3%A3o%20ao%20simulado%20de%20ID%20${idsimulado}. %20(N%C3%83O%20APAGAR!)`
 		})
@@ -277,10 +277,12 @@ document.addEventListener('DOMContentLoaded', function(){
 					graphus();
 				}
 
+
 				function graphus() {
 					var canvas = document.getElementById('graficous');
 					var ctx = canvas.getContext('2d');
-					ctx.fillText("Comp. com simulados anteriores", canvas.width / 2.5, canvas.height - 10);
+					ctx.fillStyle = '#ffffff';
+					ctx.fillText("Comp. com  3 simulados anteriores", canvas.width / 2.5, canvas.height - 10);
 					var barWidth = 20;
 					var barMargin = 40;
 					var startX = 15;
@@ -293,11 +295,13 @@ document.addEventListener('DOMContentLoaded', function(){
 
 					function parseDate(dateString) {
 						let parts = dateString.split('-');
+													
 						let formattedDate = `${parts[1]}-${parts[0]}-${parts[2]}`;
 						return new Date(formattedDate);
 					}
 
 					data.sort((a, b) => parseDate(a.label) - parseDate(b.label));
+					data = data.slice(0, 4);
 
 					for (var i = 0; i < data.length; i++) {
 						var barHeight = data[i].realvalue * scale; 
@@ -311,7 +315,7 @@ document.addEventListener('DOMContentLoaded', function(){
 						var textX = x + (barWidth - textWidth) / 2; 
 						var textY = y - 5;
 
-						ctx.fillStyle = '#000';
+						ctx.fillStyle = '#ffffff';
 						ctx.fillText(data[i].label, textX, startY + 20);
 						ctx.fillText(data[i].value, textX, startY +10);
 					}
@@ -350,9 +354,10 @@ document.addEventListener('DOMContentLoaded', function(){
 				var numCategories = data2.length;
 				var angleIncrement = (2 * Math.PI) / numCategories;
 
+
 				function drawRadarChart() {
 					ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
-
+					ctx2.fillStyle = 'white'
 					ctx2.beginPath();
 					for (var i = 0; i < numCategories; i++) {
 						var angle = i * angleIncrement;
@@ -373,7 +378,7 @@ document.addEventListener('DOMContentLoaded', function(){
 					}
 					
 					ctx2.closePath();
-					ctx2.strokeStyle = 'black';
+					ctx2.strokeStyle = 'white';
 					ctx2.stroke();
 
 					ctx2.beginPath();
@@ -391,7 +396,7 @@ document.addEventListener('DOMContentLoaded', function(){
 					}
 						
 					ctx2.closePath();
-					ctx2.fillStyle = 'rgba(255, 0, 0, 0.5)';
+					ctx2.fillStyle = '#fe0000';
 					ctx2.fill();
 				}
 
@@ -404,7 +409,7 @@ document.addEventListener('DOMContentLoaded', function(){
 		history(rr.completename);
 
 		async function espelho(){
-			var body = gebi('center')
+			var body = gebi('tabelaa')
 			var tbl = document.createElement("table");
 			tbl.classList.add('tablecenter')
 			tbl.id = "tabela"
@@ -485,7 +490,6 @@ document.addEventListener('DOMContentLoaded', function(){
 							gabCellText.classList.add("gab");
 							gabCellText.innerText = selected[reali-1];
 							gabCellText.id = `gab${reali-1}`;
-							gabCellText.style.color = "#000000";
 							gabCell.appendChild(gabCellText);
 							row.appendChild(gabCell);
 
