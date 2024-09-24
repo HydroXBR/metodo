@@ -654,7 +654,7 @@ app.get('/ranking',function(req,res) {
 });
 
 app.get('/desempenho',function(req,res) {
-	console.log("Access DESEMPENHO: "+ new Date())
+	console.log(`Access DESEMPENHO: ${new Date()} - ${req.query.id} - ${req.query.simulado}`)
 	res.sendFile(__dirname + '/interface/desempenho.html')
 });
 
