@@ -4,6 +4,9 @@
 	box-sizing: border-box;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+
 html, body {
 	height: 100%;
 	margin: 0;
@@ -64,29 +67,29 @@ h1 {
 }
 
 .nav-links {
-		list-style: none;
-		padding: 0;
-		display: flex; /* Alterado */
-		align-items: center; /* Alterado */
+	list-style: none;
+	padding: 0;
+	display: flex; /* Alterado */
+	align-items: center; /* Alterado */
 }
 
 .nav-links li {
-		margin-left: 20px;
+	margin-left: 20px;
 }
 
 .nav-links li:first-child {
-		margin-left: 0; /* Removido o espaçamento do primeiro item */
+	margin-left: 0; /* Removido o espaçamento do primeiro item */
 }
 
 .nav-links li a {
-		text-decoration: none;
-		color: #fff;
-		transition: color 0.3s ease;
-		font-weight: 500;
+	text-decoration: none;
+	color: #fff;
+	transition: color 0.3s ease;
+	font-weight: 500;
 }
 
 .nav-links li a:hover {
-		color: #ffd700; 
+	color: #fe0000; 
 }
 
 /* Estilos para dispositivos móveis */
@@ -191,11 +194,13 @@ table {
 	margin: auto;
 	text-align: center;
 	border-collapse: collapse;
-	width: 80%;
+	width: 60%;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 	border-radius: 10px;
 	overflow: hidden;
 	font-family: 'Arial', sans-serif;
+	background-color: #00072b;
+	color: white;
 }
 
 th, td {
@@ -204,31 +209,30 @@ th, td {
 }
 
 tr:nth-child(even) {
-	background-color: #f2f2f2;
+	background-color: #111C43;
 }
 
 th {
-	background-color: #333;
-	color: white;
+	background-color: #0C1248;
 }
 
 tr:hover {
-	background-color: #ddd;
+	background-color: #111C43;
 }
 
 .namecolorouro {
-	background: linear-gradient(0deg, rgba(255,171,0,1) 3%, rgba(255,255,255,1) 100%);
-	color: #000;
+	/*background: linear-gradient(0deg, rgba(255,171,0,1) 3%, rgba(255,255,255,1) 100%);
+	color: #000;*/
 }
 
 .namecolorprata {
-	background: linear-gradient(0deg, rgba(185,185,185,1) 3%, rgba(255,255,255,1) 100%);
-	color: #000;
+	/*background: linear-gradient(0deg, rgba(185,185,185,1) 3%, rgba(255,255,255,1) 100%);
+	color: #000;*/
 }
 
 .namecolorbronze {
-	background: linear-gradient(0deg, rgba(179,162,128,1) 3%, rgba(255,255,255,1) 100%);
-	color: #000;
+	/*ackground: linear-gradient(0deg, rgba(179,162,128,1) 3%, rgba(255,255,255,1) 100%);
+	color: #000;*/
 }
 
 a {
@@ -250,8 +254,7 @@ a {
 	transition: all 0.3s ease 0s;
 	cursor: pointer;
 	outline: none;
-	margin-top: 10px;
-	margin-bottom: 50px;
+	margin: 10px;
 }
 
 .button-33:hover {
@@ -315,8 +318,8 @@ select {
 	/* Personalize */
 	flex: 1;
 	padding: 0 1em;
-	color: #fff;
-	background-color: var(--darkgray);
+	color: #00072b;
+	background-color: white;
 	background-image: none;
 	cursor: pointer;
 }
@@ -340,7 +343,7 @@ select::-ms-expand {
 	top: 0;
 	right: 0;
 	padding: 1em;
-	background-color: #34495e;
+	background-color: #fe0000;
 	transition: .25s all ease;
 	pointer-events: none;
 }
@@ -359,14 +362,11 @@ select::-ms-expand {
 
 .fl-table {
 	border-radius: 5px;
-	font-size: 25px;
+	font-size: 15px;
 	font-weight: normal;
 	border: none;
 	border-collapse: collapse;
-	width: 100%;
-	max-width: 100%;
 	white-space: nowrap;
-	background-color: white;
 }
 
 .fl-table td, .fl-table th {
@@ -376,23 +376,7 @@ select::-ms-expand {
 }
 
 .fl-table td {
-	border-right: 1px solid #f8f8f8;
 	font-size: 15px;
-}
-
-.fl-table thead th {
-	color: #ffffff;
-	background: #4FC3A1;
-}
-
-
-.fl-table thead th:nth-child(odd) {
-	color: #ffffff;
-	background: #324960;
-}
-
-.fl-table tr:nth-child(even) {
-	background: #DCDCDC;
 }
 
 /* Responsive */
@@ -409,14 +393,17 @@ select::-ms-expand {
 }
 
 #title {
-	color: white; /* Alterando para uma cor mais escura */
-	background-color: var(--darkgray);
+	color: #00072b;
+	background-color: white;
 	font-style: oblique;
 	border-radius: 5px; 
 	padding: 10px 15px;
 	font-size: 1.5rem; 
-	font-family: 'Montserrat', sans-serif;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 	text-align: center;
 	margin-bottom: 20px; 
+}
+
+#acertosCell, #rankCell, #nomeCell {
+	background-color: #fe0000;
 }
