@@ -20,6 +20,51 @@ const ec = txt => encodeURIComponent(txt)
 const dec = txt => decodeURIComponent(txt)
 var simulados = [
 	{
+		name: "8° Simulado 2024", 
+		description: "8° Simulado de 2024",
+		model: "SIS",
+		date: "23-09-2024",
+		id: "082024",
+		organization: [{materia: "port", q:8, name: "Português"},{materia: "lit", q:4, name: "Literatura"},{materia: "hist", q:8, name: "História"},{materia: "geo", q:8, name: "Geografia"},{materia: "bio", q:8, name: "Biologia"},{materia: "mat", q:8, name: "Matemática"},{materia: "fis", q:8, name: "Física"},{materia: "quim", q:8, name: "Química"}],
+		special: [0,9,14,23,32,41,50,59],
+		matspecial: [
+			{ materia: "Português", special: 0 },
+			{ materia: "Literatura", special: 9 }, // +1
+			{ materia: "História", special: 14 }, // +2
+			{ materia: "Geografia", special: 23 }, // +3
+			{ materia: "Biologia", special: 32 }, // +4
+			{ materia: "Matemática", special: 41 }, // +5
+			{ materia: "Física", special: 50 }, // +6
+			{ materia: "Química", special: 59 } // +7
+		],
+		intervals: {
+			port: [1, 8],
+			lit: [9, 12],
+			hist: [13, 20],
+			geo: [21, 28],
+			bio: [29, 36],
+			mat: [37, 44],
+			fis: [45, 52],
+			quim: [53, 60]
+		},
+		turmas: [1,2,3],
+		answers: [
+			{
+				turma:1,
+				respostas:["B","A","C","B","D","E","C","E","A","B","B","A","D","B","C","C","D","B","E","E","A","B","C","B","A","B","E","E","C","C","C","C","A","D","A","D","D","C","C","E","A","C","B","E","C","D","E","E","C","A","B","A","A","B","E","A","C","B","B","B"]
+			},
+			{
+				turma:2,
+				respostas:["B","D","B","B","A","D","C","E","C","D","C","C","A","B","E","E","B","B","C","D","B","D","A","B","B","E","A","A","E","E","C","E","D","B","D","A","B","B","B","E","B","E","D","B","A","B","A","B","D","B","E","A","D","A","D","A","C","D","A","C"]
+			},
+			{
+				turma:3,
+				respostas:["D","E","C","A","B","C","A","D","D","A","C","B","B","A","A","A","A","E","C","B","A","B","A","B","E","B","B","B","D","E","B","D","C","C","B","A","D","C","B","E","E","C","A","C","B","C","A","D","C","A","A","B","D","A","D","E","D","D","C","A"]
+			}
+		],
+		questions: 60
+	},
+	{
 		name: "7° Simulado 2024", 
 		description: "7° Simulado de 2024",
 		model: "MACRO",
