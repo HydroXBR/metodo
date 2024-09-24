@@ -7,8 +7,9 @@
 html, body {
 	margin: 0;
 	padding: 0;
-	background-image: url("https://s3.amazonaws.com/i.snag.gy/kjvlaw.jpg");
+	background-image: url(https://s3.amazonaws.com/i.snag.gy/ChNAa6.jpg);
 	background-size: cover;
+	overflow-x: hidden;
 }
 
 body {
@@ -22,20 +23,22 @@ h1 {
 }
 
 .navbar {
-		background-color: #0C1248; 
-		color: #fff;
-		padding: 20px 0;
-		font-family: 'Roboto', sans-serif; 
+	background-color: #0C1248;
+	color: #fff;
+		padding: 10px 0;
+		font-family: 'Roboto', sans-serif;
+		position: fixed; /* Fixa a barra de navegação no topo */
+		width: 100%; /* Garante que a barra de navegação ocupe toda a largura */
+		z-index: 1000; /* Coloca a barra de navegação acima de outros conteúdos */
 }
 
 .container {
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 0 20px;
-	overflow: hidden;
 	display: flex;
 	justify-content: space-between;
-	align-items: center; 
+	align-items: center;
 }
 
 .container2 {
@@ -88,8 +91,12 @@ h1 {
 /* Estilos para dispositivos móveis */
 @media only screen and (max-width: 768px) {
 		.container {
-				flex-direction: column; /* Alterado */
-				align-items: center; /* Alterado */
+			flex-direction: column;
+			align-items: center; 
+		}
+
+		#boxx {
+			margin-top: 110px;
 		}
 
 		.logo-container {
@@ -117,13 +124,12 @@ h1 {
 }
 
 button:not(.btn2){
-	margin-bottom: 50px;
 	background:#FE0000;
 	color:#fff;
 	border:none;
 	position:relative;
 	height:30px;
-	font-size:1em;
+	font-size:0.7em;
 	padding:0 2em;
 	cursor:pointer;
 	transition:800ms ease all;
@@ -167,27 +173,6 @@ button:hover:before,button:hover:after:not(.btn2){
 		background-color: darkred; 
 }
 
-.namecolorouro {
-	background: rgb(245,255,2);
-	background: linear-gradient(0deg, rgba(245,255,2,1) 10%, rgba(253,187,45,1) 47%);
-	border-radius: 5px;
-	padding: 7px;
-}
-
-.namecolorprata {
-	background: rgb(255,255,255);
-	background: linear-gradient(0deg, rgba(255,255,255,1) 10%, rgba(184,184,184,1) 59%);
-	border-radius: 5px;
-	padding: 7px;
-}
-
-.namecolorbronze {
-	background: rgb(235,146,44);
-	background: linear-gradient(0deg, rgba(235,146,44,1) 3%, rgba(179,111,63,1) 100%);
-	border-radius: 5px;
-}
-
-
 h5 {
 	margin-top: 10px;
 }
@@ -204,14 +189,14 @@ h5 {
 
 .box {
 	box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-	border-radius:7px;
 	width: 100vw;
 	height: 95vh;
-	background: rgb(41,96,255);
-	background: linear-gradient(0deg, rgb(255, 255, 255,0.6026785714285714) 0%, rgba(255,255,255,1) 100%);
 	flex-direction: row;
 	text-align: center;
-	overflow-y: auto;
+	overflow-y: auto; /* Permite a rolagem nesta área */
+	flex: 1; /* Faz com que esta área ocupe o espaço restante */
+	padding: 20px; /* Adiciona preenchimento para o conteúdo */
+	margin-top: 80px; /* Espaçamento extra, se necessário */
 }
 
 table{
@@ -232,6 +217,23 @@ tr{
 	align: center;
 	text-align: center;
 	margin: auto;
+}
+
+th, td {
+	padding: 12px 15px;
+	text-align: center;
+}
+
+tr:nth-child(even) {
+	background-color: #111C43;
+}
+
+th {
+	background-color: #2e367a;
+}
+
+tr:hover {
+	background-color: #111C43;
 }
 
 .button-34 {
@@ -274,7 +276,6 @@ tr{
 	cursor: pointer;
 	outline: none;
 	margin-top: 10px;
-	margin-bottom: 50px;
 }
 
 .button-33:hover {
@@ -297,27 +298,26 @@ center{
 	margin-top: 50px;
 }
 
-/*::-webkit-scrollbar {
-	width: 15px;
-	height: 15px;
-}*/
-
 #metodologo {
 	margin-top:10px;
 	width: 100px;
 	height: 100px;
 }
+::-webkit-scrollbar {
+	width: 5px;
+	height: 15px;
+}
 
-/*::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
 	border-radius: 10px;
 	background-color: rgba(0, 0, 0, 0.4);
-}*/
+}
 
-/*::-webkit-scrollbar-thumb {
-	background-image: linear-gradient(45deg, #00aeff, #a68eff);
+::-webkit-scrollbar-thumb {
+	background-image: linear-gradient(45deg, #3100e0, #060019);
 	border-radius: 10px;
 	-webkit-box-shadow: rgba(0,0,0,.12) 0 3px 13px 1px;
-}*/
+}
 
 *:not(h2, h5) {
 	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -330,15 +330,16 @@ center{
 h2 {
 	font-family: 'Verdana', serif;
 	margin-top: 10px;
-	border: 1px solid black;
+	border: 1px solid white;
 	padding:5px;
+	color: white;
 	margin-right:20vw;
 	margin-left:20vw;
-	border-radius:10px;
 }
 
 p.desc {
 	margin-bottom: 10px;
+	color: white;
 }
 #name {
 	font-size: 25pt
@@ -355,7 +356,7 @@ strong{
 }
 
 .grafico-barra {
-	background: #969FAA;
+	background: #ffffff;
 	border-radius: 20px;
 	box-shadow: inset 0 0 0 1px #969FAA;
 	height: 1.5em;
@@ -372,10 +373,12 @@ strong{
 .grafico-barra-container .titulo {
  /* text-transform: uppercase;*/
 	font-size: 20pt;
+	color: white;
 }
 
 .destaque {
  /* text-transform: uppercase;*/
+	color: white;
 	font-size: 20pt;
 }
 
@@ -438,12 +441,14 @@ strong{
 	margin-left: 30%;
 	border-radius: 100%;
 	background-color: #E53B3B;
-	background: linear-gradient(0deg, lightgray 100%, black 0%)
+	background: white;
 }
 
 #title {
 	background-color: red;
 	color: white;
+	margin-right: 2vw;
+	margin-left: 2vw;
 }
 
 canvas {
@@ -465,11 +470,18 @@ canvas {
 }
 
 .correct {
-	background: #91fb78
+	/*background: #000129;*/
+	color: #ffffff;
+}
+
+.correctcheck {
+	/*background: white;*/
+	color: #000129;
 }
 
 .resp {
-	background: lightblue
+	/*background: #000129;*/
+	color: white;
 }
 
 .dontshow {
@@ -482,17 +494,19 @@ canvas {
 table {
 	margin: auto;
 	border-collapse: collapse;
-	width: 60%;
+	width: 40%;
 }
 
 th, td {
-		padding: 5px; 
-		text-align: center;
-		border-bottom: 1px solid #ddd;
+	padding: 5px; 
+	text-align: center;
+	border-bottom: 1px solid #ddd;
+	color: white;
 }
 
 tr .materia{
-	background-color: #f2f2f2;
+	background-color: #ffffff;
+	color: #000129;
 	font-weight: bold
 }
 
@@ -501,19 +515,29 @@ th {
 	color: white; 
 }
 
+strong, p, h5 {
+	color: white;
+}
+
 a{
 	text-decoration: none;
 }
 #nota{
 	margin-top: 5px;
+	color: white;
+	margin-left: 50px;
+	margin-right: 50px;
+	font-size:0.7em;
 }
-#nota2 {
+#nota2, #notaa {
 	margin-top: 5px;
 	font-size:0.7em;
+	color: white;
 }
 
 #nota3 {
 	margin-top: 5px;
+	color: white;
 	font-size:0.7em;
 }
 
@@ -537,13 +561,13 @@ a{
 	}
 
 	.box {
-		width: 100%;
+		width: 60%;
 		height: auto;
 		overflow: visible;
 		background: none;
 		box-shadow: none;
 		padding: 0;
-		margin: 0;
+		margin-top: 90px;
 	}
 
  	.buttons, .no-print {
@@ -586,7 +610,7 @@ a{
 
 		/* Outros ajustes específicos para impressão */
 	a {
-		color: #000;
+		color: #ffffff;
 		text-decoration: underline;
 	}
 
