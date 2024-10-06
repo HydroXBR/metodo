@@ -229,7 +229,15 @@ document.addEventListener('DOMContentLoaded', function(){
 					'laranja': '#FFA500',
 					'rosa': '#FFC0CB',
 					'amarelo': '#FFFF00',
-					'ciano': '#00FFFF'
+					'ciano': '#00FFFF',
+					'azul-escuro': '#00072b',
+					'vermelho': '#FE0000',
+					'azul-profundo': '#0C1248',
+					'cinza-escuro': '#1C1C1C',
+					'cinza-claro': '#D3D3D3',
+					'azul-médio': '#243A73',
+					'dourado': '#FFD700',
+					'azul-esverdeado': '#007F7F'
 				};
 
 				const coresArray = Object.values(coresHex);
@@ -300,8 +308,9 @@ document.addEventListener('DOMContentLoaded', function(){
 						return new Date(formattedDate);
 					}
 
-					data.sort((a, b) => parseDate(a.label) - parseDate(b.label));
+					data.sort((a, b) => parseDate(b.label) - parseDate(a.label));
 					data = data.slice(0, 4);
+					data = data.reverse()
 
 					for (var i = 0; i < data.length; i++) {
 						var barHeight = data[i].realvalue * scale; 
