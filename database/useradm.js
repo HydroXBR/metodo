@@ -18,7 +18,7 @@ const schema = Schema({
 	endereco: { type: String, required: true },
 	bairro: { type: String, required: true },
 	cep: { type: String, required: true },
-	dia: { type: Number, required: true },
+	dia: { type: Number, required: false },
 	bolsista: { type: String, default: "n" },
 	camisa: { type: String, default: "" },
 	turma: { type: Number, required: true },
