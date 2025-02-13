@@ -288,11 +288,13 @@ th {
 }
 
 .footer-text {
-    width: 100%;
-    text-align: center;
-    padding: 2px;
-    font-size: 12px;
-    color: white;
-    background-color: #00072b;
-    margin-top: 20px;
+    	width: 80%;
+    	text-align: center;
+    	padding: 2px;
+    	font-size: 12px;
+    	color: white;
+    	background-color: #00072b;
+    	margin-top: 20px;
+    	font-family: fangsong;
+	border-radius: 5px;
 }
