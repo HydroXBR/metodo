@@ -57,7 +57,7 @@ async function preencher(id){
 				emitente = "Kerolainy Stephany - Secretária Método Pré-Vestibular"
 				break;
 			case "l":
-				emitente = "Luciana Almeida - Coord. Ped. Método Pré-Vestibular"
+				emitente = "Isabella Albuquerque - Secretária Método Pré-Vestibular"
 				break;
 			case "i":
 				emitente = "Isaías Nascimento - Assistente Método Pré-Vestibular"
