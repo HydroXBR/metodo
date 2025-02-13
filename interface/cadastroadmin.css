@@ -37,6 +37,95 @@ body {
 	text-align: center;
 }
 
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background-image: url("https://s3.amazonaws.com/i.snag.gy/hATqGL.jpg");
+	background-size: cover;
+	overflow-y: auto;
+}
+
+h1 {
+	margin-left: 10px;
+}
+
+/* Estilos da navegação */
+.navbar {
+	background-color: #0C1248; 
+	color: #fff;
+	padding: 20px 0;
+	font-family: 'Roboto', sans-serif; 
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 20px;
+	overflow: hidden;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.container2 {
+	display: flex;
+	justify-content: space-around; 
+	align-items: flex-start; 
+	padding: 15px;
+	flex-wrap: wrap; 
+	height: 90vh;
+}
+
+.logo-container {
+	display: flex;
+	align-items: center;
+}
+
+.logo {
+	font-size: 24px;
+	color: #FE0000;
+}
+
+.nav-links {
+	list-style: none;
+	padding: 0;
+	display: flex;
+	align-items: center;
+}
+
+.nav-links li {
+	margin-left: 20px;
+}
+
+.nav-links li:first-child {
+	margin-left: 0;
+}
+
+.nav-links li a {
+	text-decoration: none;
+	color: #fff;
+	transition: color 0.3s ease;
+	font-weight: 500;
+}
+
+.nav-links li a:hover {
+	color: #ffd700;
+}
+
+.profile-picture, .metodo {
+	width: 40px;
+	height: auto;
+	border-radius: 50%;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
 .spacer {
 	height: 15px; /* Defina a altura do espaço desejado */
 }
