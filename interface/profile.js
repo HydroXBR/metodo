@@ -77,37 +77,26 @@ class User {
 	}
 }
 
-
 document.addEventListener('DOMContentLoaded', function() {
 	if (User.isLoggedIn()) {
 		const userInfo = User.getUserInfo();
-	console.log(userInfo)
-	
-	if(userInfo.profilePicture != "") {
-		document.getElementById("profile").src = userInfo.profilePicture;
-	}
-		
-	let li = document.getElementById("login")
-	li.innerHTML = ""
-	let btn = document.createElement("button")
-	btn.innerText = "Sair"
-	btn.classList.add("btn2")
-	btn.onclick = function(event){
-		User.logout();
-		window.location.href = "/"
-	}
-	li.appendChild(btn)
+		let li = document.getElementById("login")
+		li.innerHTML = ""
+		let newa = document.createElement("a")
+		let btn = document.createElement("button")
+		btn.innerText = "Sair"
+		btn.classList.add("btn2")
+		btn.onclick = function(event){
+			User.logout();
+			window.location.href = "/"
+		}
+		newa.appendChild(btn)
+		li.appendChild(newa)
 
-	if(Number(userInfo.permissions) > 0){
-		let ul = document.getElementById("nav-links")
-		let admin = document.createElement("li")
-		let aadmin = document.createElement("a")
-		aadmin.href = "/admin"
-		aadmin.innerText = "Admin"
-		admin.appendChild(aadmin)
-		ul.appendChild(admin)
-	}
-
+		if(userInfo.profilePicture !== 'null'&& userInfo.profilePicture) {
+			document.getElementById("profile").src = userInfo.profilePicture;
+			document.getElementById("profile2").src = userInfo.profilePicture;
+		}
 
 		document.getElementById("name").innerText = userInfo.completename;
 		
