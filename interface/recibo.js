@@ -10,7 +10,7 @@ function cap(string) {
 		return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-String.prototype.extenso = function(c){ // Função para converter número no formato string para número por extenso.
+String.prototype.extenso = function(c){
 		var ex = [
 				["zero", "um", "dois", "três", "quatro", "cinco", "seis", "sete", "oito", "nove", "dez", "onze", "doze", "treze", "quatorze", "quinze", "dezesseis", "dezessete", "dezoito", "dezenove"],
 				["dez", "vinte", "trinta", "quarenta", "cinquenta", "sessenta", "setenta", "oitenta", "noventa"],
@@ -42,7 +42,7 @@ const data = document.getElementById('data');
 const value = document.getElementById('value');
 
 function descricao(mes, turma, aluno){
-	return `Mensalidade do mês de ${mes} do curso Método Pré-Vestibular do(a) aluno(a) ${aluno.toUpperCase()} da turma ${turma}.`
+	return `Parcela ${mes} de 12 referente ao contrato de 2025 - Curso Método Pré-Vestibular do(a) aluno(a) ${aluno.toUpperCase()} da turma ${turma}.`
 }
 
 const queryString = window.location.search;
