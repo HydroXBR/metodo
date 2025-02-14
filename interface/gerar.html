@@ -1,27 +1,33 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Método Pré-Vestibular</title>
-		<link rel="stylesheet" href="gerar.css">
+<html lang="pt-vr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height" />
+		<link rel="stylesheet" href="cadastroadmin.css" type="text/css"/>
+		<title>Gerar - Método Pré-Vestibular</title>
 		<link rel="icon" type="image/png" href="https://i.ibb.co/jryH3q8/Min-Branca.png">
-</head>
+	</head>
 <body>
 	<nav class="navbar">
-			<div class="container">
-				<div class="logo-container">
-						<img src="https://i.ibb.co/jryH3q8/Min-Branca.png" alt="Foto de Perfil" class="metodo">
-						<h1 class="logo">Método Pré-Vestibular</h1>
-				</div>
-					<ul class="nav-links" id="nav-links">
-							<li><a href="/">Início</a></li>
-							<li><a href="/sobre">Sobre</a></li>
-							<li><a href="/simulados">Simulados</a></li>
-							<li id="login"><a href="/login">Login</a></li>
-							<li><img id="profile" src="https://voxnews.com.br/wp-content/uploads/2017/04/unnamed.png" alt="Foto de Perfil" class="profile-picture"></li>
-					</ul>
+		<div class="container">
+			<div class="logo-container">
+				<img src="https://i.ibb.co/jryH3q8/Min-Branca.png" alt="Logo Método" class="logo-img">
+				<h1 class="logo">Método Pré-Vestibular</h1>
 			</div>
+			<button class="hamburger" id="hamburger" aria-label="Abrir menu">
+				<span class="hamburger-line"></span>
+				<span class="hamburger-line"></span>
+				<span class="hamburger-line"></span>
+			</button>
+			<ul class="nav-links" id="nav-links">
+				<li><a href="/">Início</a></li>
+				<li><a href="/sobre">Sobre</a></li>
+				<li><a href="/simulados">Simulados</a></li>
+				<li id="login"><a id="login" href="/login" class="btn-login">Login</a></li>
+				<li><a href="/profile"><img id="profile" src="https://voxnews.com.br/wp-content/uploads/2017/04/unnamed.png" alt="Foto de Perfil" class="profile-picture"></a></li>
+			</ul>
+		</div>
 	</nav>
 	<div class="container2">
 		<div class="wrapper fadeInDown">
@@ -55,18 +61,18 @@
 					<div id="mesdiv">
 						<label for="mes">Mês</label>
 						<select id="mes" name="mes" class="form-input">
-							<option value="1">Janeiro</option>
-							<option value="2">Fevereiro</option>
-							<option value="3">Março</option>
-							<option value="4">Abril</option>
-							<option value="5">Maio</option>
-							<option value="6">Junho</option>
-							<option value="7">Julho</option>
-							<option value="8">Agosto</option>
-							<option value="9">Setembro</option>
-							<option value="10">Outubro</option>
-							<option value="11">Novembro</option>
-							<option value="12">Dezembro</option>
+							<option value="janeiro">1</option>
+							<option value="fevereiro">2</option>
+							<option value="março">3</option>
+							<option value="abril">4</option>
+							<option value="maio">5</option>
+							<option value="junho">6</option>
+							<option value="julho">7</option>
+							<option value="agosto">8</option>
+							<option value="setembro">9</option>
+							<option value="outubro">10</option>
+							<option value="novembro">11</option>
+							<option value="dezembro">12</option>
 						</select>
 					</div>
 
@@ -74,9 +80,8 @@
 					<select id="emi" name="emi" class="form-input">
 						<option value="k">Kerolainy Stephany</option>
 						<option value="j">Janderson Pacheco</option>
-						<option value="l">Isabella Albuquerque</option>
 						<option value="i">Isaías Nascimento</option>
-						
+						<option value="l">Isabella Albuquerque</option>
 					</select>
 
 					<input type="submit" class="botao" value="Gerar" id="continuar">
@@ -85,7 +90,6 @@
 				</div>
 			</div>
 		<div class="spacer"></div>
-		<div class="footer-text"><p>Sistema criado e desenvolvido por Isaías Nascimento © 2025 - Contato: 92984507170</p></div>
 	</div>
 	<script type="text/javascript" src="gerar.js"></script>
 </body>
