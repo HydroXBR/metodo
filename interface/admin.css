@@ -12,7 +12,7 @@ html, body {
 }
 
 body {
-	background-image: url("https://s3.amazonaws.com/i.snag.gy/kjvlaw.jpg");
+	background-image: url(https://s3.amazonaws.com/i.snag.gy/ChNAa6.jpg);
 	background-size: cover;
 	background-attachment: fixed;
 	background-position: center;
@@ -86,8 +86,6 @@ body {
 	background: transparent;
 	border: none;
 	cursor: pointer;
-	padding: 0;
-	z-index: 1000;
 }
 
 .hamburger-line {
@@ -95,6 +93,47 @@ body {
 	height: 3px;
 	background-color: #fff;
 	transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+	.container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.hamburger {
+		display: flex;
+	}
+
+	.nav-links {
+		display: none;
+		width: 100%;
+		flex-direction: column;
+		align-items: center;
+		background-color: #0C1248;
+		position: absolute;
+		top: 70px;
+		left: 0;
+		padding: 20px 0;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	}
+
+	.nav-links.active {
+		display: flex;
+	}
+
+	.hamburger.active .hamburger-line:nth-child(1) {
+		transform: rotate(45deg) translate(5px, 5px);
+	}
+
+	.hamburger.active .hamburger-line:nth-child(2) {
+		opacity: 0;
+	}
+
+	.hamburger.active .hamburger-line:nth-child(3) {
+		transform: rotate(-45deg) translate(7px, -6px);
+	}
 }
 
 .btn-login {
@@ -175,6 +214,7 @@ button:hover {
 	background-color: #ffffff;
 	border-radius: 4px;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	overflow-y: auto;
 }
 
 table {
@@ -187,6 +227,12 @@ thead {
 	color: #ffffff;
 }
 
+#tablediv {
+	max-height: 400px; 
+	overflow-y: auto; 
+	border: 1px solid #ddd;
+}
+
 th, td {
 	padding: 8px;
 	text-align: left;
@@ -195,12 +241,6 @@ th, td {
 
 tbody tr:hover {
 	background-color: #f9f9f9;
-}
-
-#tablediv {
-	max-height: 400px; 
-	overflow-y: auto; 
-	border: 1px solid #ddd;
 }
 
 .btn-message {
@@ -227,66 +267,4 @@ tbody tr:hover {
 	margin: 20px auto 0;
 	font-family: 'Poppins', sans-serif;
 	border-radius: 5px;
-}
-
-@media (max-width: 992px) { 
-	.navbar {
-		padding: 10px 15px; 
-		position: relative;
-	}
-
-	.container {
-		flex-wrap: wrap; 
-		gap: 15px;
-	}
-
-	.container2 {
-		grid-template-columns: repeat(1, 1fr); 
-	}
-
-	.hamburger {
-		display: flex; 
-		position: static; 
-		order: 2;
-		margin-left: auto; 
-	}
-
-	.logo-container {
-		order: 1; 
-		flex-grow: 1; 
-	}
-
-	.nav-links {
-		order: 3;
-		display: none;
-		width: 100%;
-		position: static; 
-		background-color: #0C1248;
-		margin-top: 15px;
-		padding: 10px 0;
-	}
-
-	.nav-links.active {
-		display: flex;
-	}
-
-	.nav-links li {
-		margin: 8px 0;
-	}
-}
-
-@media (max-width: 480px) {
-	.logo {
-		font-size: 20px; 
-	}
-
-	.logo-img {
-		width: 35px;
-		height: 35px;
-	}
-
-	.hamburger {
-		width: 28px;
-		height: 22px;
-	}
 }
