@@ -1,133 +1,115 @@
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html, body {
-	height: 100%;
-	margin: 0;
-	padding: 0;
-	background-image: url("https://s3.amazonaws.com/i.snag.gy/hATqGL.jpg");
-	background-size: cover;
-	overflow-y: auto; 
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
 }
 
-body {
-		overflow-y: auto;
-}
-
-h1 {
-		margin-left: 10px; /* Adicionado para separar um pouco o nome do método da imagem */
-}
-
-/* Estilos da navegação */
 .navbar {
-		background-color: #0C1248; 
-		color: #fff;
-		padding: 20px 0;
-		font-family: 'Roboto', sans-serif; 
+    background-color: #0C1248;
+    padding: 15px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .container {
-	padding: 20px;
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 0 20px;
-	overflow: hidden;
-	display: flex;
-	justify-content: space-between;
-	align-items: center; 
-}
-
-.instagram-media{
-	margin-top:25px;
-}
-
-.container2 {
-	width: 100%;
-	margin-top: 15px;
-	padding: 0 20px;
-	overflow: hidden;
-	display: flex;
-	justify-content: center; 
-	align-items: center; 
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo-container {
-		display: flex; /* Adicionado */
-		align-items: center; /* Adicionado */
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
 }
 
 .logo {
-		font-size: 24px;
-		color: #FE0000;
+    font-size: 24px;
+    font-weight: 600;
+    color: #FE0000;
 }
 
 .nav-links {
-		list-style: none;
-		padding: 0;
-		display: flex; /* Alterado */
-		align-items: center; /* Alterado */
+    list-style: none;
+    display: flex;
+    align-items: center;
 }
 
 .nav-links li {
-		margin-left: 20px;
-}
-
-.nav-links li:first-child {
-		margin-left: 0; /* Removido o espaçamento do primeiro item */
+    margin-left: 20px;
 }
 
 .nav-links li a {
-		text-decoration: none;
-		color: #fff;
-		transition: color 0.3s ease;
-		font-weight: 500;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
 .nav-links li a:hover {
-		color: #ffd700; 
+    color: #ffd700;
 }
 
-@media only screen and (max-width: 768px) {
-	.container {
-		flex-direction: column;
-		align-items: center;
-	}
-
-	.logo-container {
-		margin-bottom: 5px; 
-	}
-
-	.nav-links {
-		margin-top: 20px; 
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center; 
-	}
-
-	.profile-picture, .metodo {
-		align-self: flex-start;
-	}
+.btn-login {
+    background-color: #FE0000;
+    padding: 8px 16px;
+    border-radius: 5px;
+    color: #fff;
+    transition: background-color 0.3s ease;
 }
 
-.profile-picture, .metodo {
-		width: 40px; 
-		height: auto;
-		border-radius: 50%; 
-		box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); 
+.btn-login:hover {
+    background-color: #cc0000;
 }
 
-.nav-links li .btn2 {
-	background-color: red;
-	padding: 10px 20px; 
-	border-radius: 5px; 
-	color: white;
-	text-decoration: none; 
-	transition: background-color 0.3s ease; 
+.profile-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    transition: transform 0.3s ease;
 }
 
-.nav-links li .btn2:hover {
-		background-color: darkred; 
+.profile-picture:hover {
+    transform: scale(1.1);
+}
+
+.main-content {
+    padding: 40px 0;
+}
+
+.instagram-media {
+    margin: 0 auto;
+    max-width: 540px;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        margin-top: 15px;
+        flex-direction: column;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
 }
