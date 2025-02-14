@@ -1,3 +1,17 @@
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+
+hamburger.addEventListener('click', () => {
+	hamburger.classList.toggle('active');
+	navLinks.classList.toggle('active');
+});
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+	link.addEventListener('click', () => {
+		hamburger.classList.remove('active');
+		navLinks.classList.remove('active');
+	});
+});
 async function addd(completename, email, senha, turma, cpf){
 	const response = await fetch(`/cadastrar?completename=${completename}&email=${email}&senha=${senha}&turma=${turma}&cpf=${cpf}`)
 	console.log("addded")
@@ -133,9 +147,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 		let li = document.getElementById("login")
 		li.innerHTML = ""
-		let btn = document.createElement("button")
+		let btn = document.createElement("a")
 		btn.innerText = "Sair"
-		btn.classList.add("btn2")
+		btn.classList.add("btn-login")
 		btn.onclick = function(event){
 			User.logout();
 			window.location.href = "/"
