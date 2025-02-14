@@ -43,6 +43,8 @@ class Cookie {
 		document.cookie = name+'=; Max-Age=-99999999;';  
 	}
 }
+
+// Classe User para armazenar informações do usuário em cookies
 class User {
 	constructor(email, permissions, profilePicture, completename) {
 		this.email = email;
@@ -100,9 +102,9 @@ if (User.isLoggedIn()) {
 		
 	let li = document.getElementById("login")
 	li.innerHTML = ""
-	let btn = document.createElement("button")
+	let btn = document.createElement("a")
 	btn.innerText = "Sair"
-	btn.classList.add("btn2")
+	btn.classList.add("btn-login")
 	btn.onclick = function(event){
 		User.logout();
 		window.location.href = "/"
