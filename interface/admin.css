@@ -197,6 +197,12 @@ tbody tr:hover {
 	background-color: #f9f9f9;
 }
 
+#tablediv {
+	max-height: 400px; 
+	overflow-y: auto; 
+	border: 1px solid #ddd;
+}
+
 .btn-message {
 	display: inline-block;
 	padding: 4px 8px;
