@@ -1,4 +1,18 @@
-// Classe Cookie para manipular cookies
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+
+hamburger.addEventListener('click', () => {
+	hamburger.classList.toggle('active');
+	navLinks.classList.toggle('active');
+});
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+	link.addEventListener('click', () => {
+		hamburger.classList.remove('active');
+		navLinks.classList.remove('active');
+	});
+});
+
 class Cookie {
 	static set(name, value, days) {
 		let expires = "";
@@ -78,7 +92,7 @@ class User {
 }
 
 const mesesAbreviados = [
-		"Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"
+	"Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"
 ];
 
 function getmes(numero) {
@@ -197,12 +211,14 @@ document.addEventListener('DOMContentLoaded', function() {
 				const nCell = document.createElement('td');
 				nCell.innerText = index + 1
 				nCell.classList.add("ncell")
+				nCell.classList.add("aluno")
 				row.appendChild(nCell);
 				
 				const nomeCell = document.createElement('td');
 				let a = document.createElement('a')
 				a.href = `/aluno?id=`+aluno._id
 				a.innerText = aluno.completename
+				a.classList.add("aluno")
 				nomeCell.appendChild(a)
 				row.appendChild(nomeCell);
 
