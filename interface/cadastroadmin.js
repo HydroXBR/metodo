@@ -1,4 +1,17 @@
-// Classe Cookie para manipular cookies
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+
+hamburger.addEventListener('click', () => {
+	hamburger.classList.toggle('active');
+	navLinks.classList.toggle('active');
+});
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+	link.addEventListener('click', () => {
+		hamburger.classList.remove('active');
+		navLinks.classList.remove('active');
+	});
+});
 class Cookie {
 	static set(name, value, days) {
 		let expires = "";
@@ -130,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		let newa = document.createElement("a")
 		let btn = document.createElement("button")
 		btn.innerText = "Sair"
-		btn.classList.add("btn2")
+		btn.classList.add("btn-login")
 		btn.onclick = function(event){
 			User.logout();
 			window.location.href = "/"
