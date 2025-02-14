@@ -1,57 +1,66 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Pagamentos - Método Pré-Vestibular</title>
-		<link rel="stylesheet" href="pagamentos.css">
-		<link rel="icon" type="image/png" href="https://i.ibb.co/jryH3q8/Min-Branca.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagamentos - Método Pré-Vestibular</title>
+  <link rel="stylesheet" href="pagamentos.css">
+  <link rel="icon" type="image/png" href="https://i.ibb.co/jryH3q8/Min-Branca.png">
 </head>
 <body>
-		<nav class="navbar">
-				<div class="container">
-						<h1 class="logo">Método Pré-Vestibular</h1>
-						<ul class="nav-links" id="nav-links">
-								<li><a href="/">Início</a></li>
-								<li><a href="/sobre">Sobre</a></li>
-								<li><a href="/simulados">Simulados</a></li>
-								<li id="login"><a href="/login">Login</a></li>
-								<li><img id="profile" src="https://voxnews.com.br/wp-content/uploads/2017/04/unnamed.png" alt="Foto de Perfil" class="profile-picture"></li>
-						</ul>
-				</div>
-		</nav>
-
-		<div class="container2">
-			<select id="turma" name="turma">
-				<option value="1">1° Ano</option>
-				<option value="2">2° Ano</option>
-				<option value="3">Proj. Med. (3° +)</option>
-			</select>
-			<div class="table-container">
-				<table>
-				<thead>
-					<tr>
-						<th>Nº</th>
-						<th>Nome Completo</th>
-						<th>Janeiro</th>
-						<th>Fevereiro</th>
-						<th>Março</th>
-						<th>Abril</th>
-						<th>Maio</th>
-						<th>Junho</th>
-						<th>Julho</th>
-						<th>Agosto</th>
-						<th>Setembro</th>
-						<th>Outubro</th>
-						<th>Novembro</th>
-						<th>Dezembro</th>
-					</tr>
-				</thead>
-				<tbody id="table-body">
-				</tbody>
-				</table>
-				</div>
+	<nav class="navbar">
+		<div class="container">
+			<div class="logo-container">
+				<img src="https://i.ibb.co/jryH3q8/Min-Branca.png" alt="Logo Método" class="logo-img">
+				<h1 class="logo">Método Pré-Vestibular</h1>
+			</div>
+			<button class="hamburger" id="hamburger" aria-label="Abrir menu">
+				<span class="hamburger-line"></span>
+				<span class="hamburger-line"></span>
+				<span class="hamburger-line"></span>
+			</button>
+			<ul class="nav-links" id="nav-links">
+				<li><a href="/">Início</a></li>
+				<li><a href="/sobre">Sobre</a></li>
+				<li><a href="/simulados">Simulados</a></li>
+				<li id="login"><a href="/login" class="btn-login">Login</a></li>
+				<li><a href="/profile"><img id="profile" src="https://voxnews.com.br/wp-content/uploads/2017/04/unnamed.png" alt="Foto de Perfil" class="profile-picture"></a></li>
+			</ul>
 		</div>
-		<script src="pagamentos.js"></script>
+	</nav>
+
+  <div class="container2">
+    <select id="turma" name="turma">
+      <option value="1">1° Ano</option>
+      <option value="2">2° Ano</option>
+      <option value="3">Proj. Med. (3° +)</option>
+    </select>
+    <div class="table-wrapper"> 
+      <table>
+        <thead>
+          <tr>
+            <th>Nº</th>
+            <th>Nome Completo</th>
+            <th>Janeiro</th>
+            <th>Fevereiro</th>
+            <th>Março</th>
+            <th>Abril</th>
+            <th>Maio</th>
+            <th>Junho</th>
+            <th>Julho</th>
+            <th>Agosto</th>
+            <th>Setembro</th>
+            <th>Outubro</th>
+            <th>Novembro</th>
+            <th>Dezembro</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="pagamentos.js"></script>
 </body>
 </html>
