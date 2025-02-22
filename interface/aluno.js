@@ -95,7 +95,7 @@ async function addd(id, completename, nascimento, email, responsavel, rgresp, cp
 
 async function add(id, completename, nascimento, email, responsavel, rgresp, cpfresp, telresp, telal, endereco, bairro, cep, dia, camisa, bolsista, turma){
 	try {
-        	const response = await (id, completename, nascimento, email, responsavel, rgresp, cpfresp, telresp, telal, endereco, bairro, cep, dia, camisa, bolsista, turma);
+        	const response = await addd(id, completename, nascimento, email, responsavel, rgresp, cpfresp, telresp, telal, endereco, bairro, cep, dia, camisa, bolsista, turma);
         	const rr = await response.json();
         	console.log(rr);
         	if (!rr.success) {
