@@ -94,21 +94,23 @@ async function addd(id, completename, nascimento, email, responsavel, rgresp, cp
 }
 
 async function add(id, completename, nascimento, email, responsavel, rgresp, cpfresp, telresp, telal, endereco, bairro, cep, dia, camisa, bolsista, turma){
-	addd(id, completename, nascimento, email, responsavel, rgresp, cpfresp, telresp, telal, endereco, bairro, cep, dia, camisa, bolsista, turma).then(async response => {
-	const rr = await response.json();
-	console.log(rr);
-
-	if(rr.success == false){
-		alert("Erro no cadastro! Contate o Isaías, por favor.");
-		console.log("Reason", rr.message);
-	} else if(rr.message.includes("Nothing")){
-		alert("Você não alterou nenhuma informação!");
-		console.log("Reason", rr.message);
-	}else{
-		alert("Aluno(a) editado com sucesso!")
-		window.location.href = window.location.href
-	}
-	});
+	try {
+        	const response = await (id, completename, nascimento, email, responsavel, rgresp, cpfresp, telresp, telal, endereco, bairro, cep, dia, camisa, bolsista, turma);
+        	const rr = await response.json();
+        	console.log(rr);
+        	if (!rr.success) {
+            		alert("Erro no cadastro! Contate o Isaías, por favor.");
+            		console.log("Motivo:", rr.message);
+        	} else if (rr.message.includes("Nothing")) {
+            		alert("Você não alterou nenhuma informação!");
+       		} else {
+            		alert("Aluno(a) editado com sucesso!");
+            	location.reload();
+       		}
+    	} catch (error) {
+        	console.error("Erro ao adicionar aluno:", error);
+        	alert("Ocorreu um erro inesperado.");
+    	}
 }
 
 document.addEventListener('DOMContentLoaded', function() {
