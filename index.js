@@ -1181,15 +1181,15 @@ app.get('/saveadmin', async function(req, res) {
 
 		if(different.length == 0) return res.send({success: true, message: "Nothing changed"})
 		if(different.length > 0){
-			for(var i = 0; i < different.length; i++){
-				u[different[i]] = req.query[different[i]]
-			}
+			different.forEach(field => {
+    				u[field] = req.query[field];
+			});
 			await u.save()
 			res.send({success:true, message:"Successfully changed"})
 		}
 		
 	} catch (err) {
-		
+		console.log(err)
 	}
 });
 
