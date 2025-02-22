@@ -1155,7 +1155,6 @@ app.get('/saveadmin', async function(req, res) {
 	console.log(req.query);
 
 	console.log(id, completename, nascimento, email, responsavel, rgresp, cpfresp, telresp, endereco, bairro, cep, dia, camisa, bolsista, turma)
-	if(!id || !completename || !nascimento || !email || !responsavel || !rgresp || !cpfresp || !telresp || !endereco || !bairro || !cep || !dia  || !bolsista || !turma) return res.send({ success: false, reason: "Missing parameters" })
 
 	try {
 		const u = await useradm.findOne({ _id: id });
