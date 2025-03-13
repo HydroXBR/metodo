@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function(){
 			gebi("pphoto").style.display = "none"
 			gebi("sobre").style.display = "none"
 		}else{
-			document.body.style.backgroundImage = "url(https://s3.amazonaws.com/i.snag.gy/kjvlaw.jpg)"
+			document.body.style.backgroundImage = "url(https://i.ibb.co/Xf1rnpgc/blue.png)"
 			si = simulados.filter(e => !e.id.includes("NA"))
 		}
 		
