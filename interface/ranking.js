@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function(){
 	}else{
 		gebi("logoclass").innerHTML = "Método Pré-Vestibular"
 		gebi("metodo").setAttribute("src", "https://i.ibb.co/jryH3q8/Min-Branca.png")
-		document.body.style.backgroundImage = "url(https://s3.amazonaws.com/i.snag.gy/ChNAa6.jpg)"
+		document.body.style.backgroundImage = "url(https://i.ibb.co/Xf1rnpgc/blue.png)"
 		link.href = "https://i.ibb.co/jryH3q8/Min-Branca.png"
 		document.head.appendChild(link);
 	}
