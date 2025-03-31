@@ -28,24 +28,24 @@ var simulados = [
 		organization: [{materia: "lit", q:4, name: "Literatura"},{materia: "port", q:8, name: "Português"},{materia: "hist", q:8, name: "História"},{materia: "geo", q:8, name: "Geografia"},{materia: "bio", q:8, name: "Biologia"},{materia: "mat", q:8, name: "Matemática"},{materia: "fis", q:8, name: "Física"},{materia: "quim", q:8, name: "Química"}],
 		special: [0,5,14,23,32,41,50,59],
 		matspecial: [
-			{ materia: "Literatura", special: 0 },
-			{ materia: "Português", special: 5 }, // +1
-			{ materia: "História", special: 14 }, // +2
-			{ materia: "Geografia", special: 23 }, // +3
+			{ materia: "Português", special: 0 },
+			{ materia: "Literatura", special: 11 }, // +1
+			{ materia: "História", special: 18 }, // +2
+			{ materia: "Geografia", special: 25 }, // +3
 			{ materia: "Biologia", special: 32 }, // +4
-			{ materia: "Matemática", special: 41 }, // +5
-			{ materia: "Física", special: 50 }, // +6
-			{ materia: "Química", special: 59 } // +7
+			{ materia: "Matemática", special: 39 }, // +5
+			{ materia: "Física", special: 46 }, // +6
+			{ materia: "Química", special: 53 } // +7
 		],
 		intervals: {
-			lit: [1, 4],
-			port: [5, 12],
-			hist: [13, 20],
-			geo: [21, 28],
-			bio: [29, 36],
-			mat: [37, 44],
-			fis: [45, 52],
-			quim: [53, 60]
+			port: [1, 10],
+			lit: [11, 16],
+			hist: [17, 22],
+			geo: [23, 28],
+			bio: [29, 34],
+			quim: [35, 40],
+			fis: [41, 46],
+			mat: [47, 54]
 		},
 		turmas: [1, 2,3],
 		answers: [
