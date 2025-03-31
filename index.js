@@ -33,9 +33,9 @@ var simulados = [
 			{ materia: "História", special: 18 }, // +2
 			{ materia: "Geografia", special: 25 }, // +3
 			{ materia: "Biologia", special: 32 }, // +4
-			{ materia: "Matemática", special: 39 }, // +5
+			{ materia: "Química", special: 39 }, // +5
 			{ materia: "Física", special: 46 }, // +6
-			{ materia: "Química", special: 53 } // +7
+			{ materia: "Matemática", special: 53 } // +7
 		],
 		intervals: {
 			port: [1, 10],
