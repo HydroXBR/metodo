@@ -20,6 +20,51 @@ const ec = txt => encodeURIComponent(txt)
 const dec = txt => decodeURIComponent(txt)
 var simulados = [
 	{
+		name: "10° Simulado - 2025", 
+		description: "10° Simulado - 2025",
+		model: "PSC",
+		date: "27-03-2025",
+		id: "012025",
+		organization: [{materia: "lit", q:4, name: "Literatura"},{materia: "port", q:8, name: "Português"},{materia: "hist", q:8, name: "História"},{materia: "geo", q:8, name: "Geografia"},{materia: "bio", q:8, name: "Biologia"},{materia: "mat", q:8, name: "Matemática"},{materia: "fis", q:8, name: "Física"},{materia: "quim", q:8, name: "Química"}],
+		special: [0,5,14,23,32,41,50,59],
+		matspecial: [
+			{ materia: "Literatura", special: 0 },
+			{ materia: "Português", special: 5 }, // +1
+			{ materia: "História", special: 14 }, // +2
+			{ materia: "Geografia", special: 23 }, // +3
+			{ materia: "Biologia", special: 32 }, // +4
+			{ materia: "Matemática", special: 41 }, // +5
+			{ materia: "Física", special: 50 }, // +6
+			{ materia: "Química", special: 59 } // +7
+		],
+		intervals: {
+			lit: [1, 4],
+			port: [5, 12],
+			hist: [13, 20],
+			geo: [21, 28],
+			bio: [29, 36],
+			mat: [37, 44],
+			fis: [45, 52],
+			quim: [53, 60]
+		},
+		turmas: [1,2,3],
+		answers: [
+			{
+				turma:1,
+				respostas:["E","A","C","B","E","A","B","E","E","E","B","B","B","C","E","D","E","A","D","D","A","B","A","A","E","D","C","B","B","B","B","A","C","A","C","B","C","A","C","A","B","A","D","C","E","C","E","E","D","E","B","B","C","B","D","E","E","D","A","A"]
+			},
+			{
+				turma:2,
+				respostas:["C","A","C","D","E","D","C","A","C","A","C","B","C","A","B","D","A","D","D","A","D","C","A","B","D","E","E","B","D","D","B","E","D","A","A","A","B","A","B","D","C","E","D","E","A","B","B","B","D","E","B","D","A","D","B","B","C","E","C","B"]
+			},
+			{
+				turma:3,
+				respostas:["D","D","A","C","C","C","B","A","C","B","D","E","B","A","A","B","D","C","C","B","D","A","C","A","D","D","D","E","B","A","C","C","C","B","A","B","E","C","C","D","C","A","B","D","A","E","B","C","B","B","A","A","C","A","C","D","D","C","D","E"]
+			}
+		],
+		questions: 54
+	},
+	{
 		name: "9° Simulado 2024 (1º ano)", 
 		description: "9° Simulado de 2024",
 		model: "SIS",
