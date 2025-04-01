@@ -197,8 +197,10 @@ document.addEventListener('DOMContentLoaded', function(){
 					let opcaoExistente = document.querySelector("#serie option[value='" + turma + "']");
 					if (!opcaoExistente) {
 						let opt = document.createElement("option");
-						opt.value = turma;
-						opt.innerText = turma + "° ano";
+						let t = turma
+						if (t>4) t = turma - 3
+						opt.value = t
+						opt.innerText = turma > 4 ? t + "° ano (faltosos)" : t + "° ano"
 						gebi("serie").appendChild(opt);
 					}
 			}
