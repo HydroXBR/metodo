@@ -47,7 +47,7 @@ var simulados = [
 			fis: [41, 46],
 			mat: [47, 54]
 		},
-		turmas: [1, 2,3],
+		turmas: [1, 2,3,6],
 		answers: [
 			{
 				turma:1,
