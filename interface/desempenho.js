@@ -482,6 +482,8 @@ document.addEventListener('DOMContentLoaded', function(){
 							td.setAttribute("colspan", "4"); 
 							td.classList.add("materia");
 							var cellText = document.createElement('a');
+							console.log("i:", i, "mat:", mat);
+							console.log("Encontrado:", mat.find(m => m.special == i));
 							cellText.innerText = mat.find(m => m.special == i).materia;
 							td.appendChild(cellText); 
 							row.appendChild(td); 
