@@ -194,12 +194,13 @@ document.addEventListener('DOMContentLoaded', function(){
 			gebi("title").innerHTML = simuatual.name + ` (${simuatual.date.replace(/\-/gmi, "/")})`
 			for (var i = 0; i < simuatual.turmas.length; i++) {
 					let turma = simuatual.turmas[i];
-					let opcaoExistente = document.querySelector("#serie option[value='" + turma + "']");
+					let opcaoExistente = document.querySelector("#serie option[value='" + turma + "']")
+					
 					if (!opcaoExistente) {
 						let opt = document.createElement("option");
 						let t = turma
 						if (t>4) t = turma - 3
-						opt.value = t
+						opt.value = turma
 						opt.innerText = turma > 4 ? t + "° ano (faltosos)" : t + "° ano"
 						gebi("serie").appendChild(opt);
 					}
