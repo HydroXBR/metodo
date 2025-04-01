@@ -47,7 +47,7 @@ var simulados = [
 			fis: [41, 46],
 			mat: [47, 54]
 		},
-		turmas: [1, 2,3,6],
+		turmas: [1, 2,3],
 		answers: [
 			{
 				turma:1,
@@ -59,10 +59,6 @@ var simulados = [
 			},
 			{
 				turma:3,
-				respostas:["D","B","E","B","C","B","C","B","D","C","B","C","B","B","B","A","C","B","B","B","A","B","D","C","D","C","C","E","D","E","D","C","D","E","C","E","B","D","C","C","B","B","E","X","B","B","A","C","B","A","C","D","B","C"]
-			},
-			{
-				turma:6,
 				respostas:["D","B","E","B","C","B","C","B","D","C","B","C","B","B","B","A","C","B","B","B","A","B","D","C","D","C","C","E","D","E","D","C","D","E","C","E","B","D","C","C","B","B","E","X","B","B","A","C","B","A","C","D","B","C"]
 			}
 		],
