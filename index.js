@@ -26,7 +26,7 @@ var simulados = [
 		date: "27-03-2025",
 		id: "012025",
 		organization: [{materia: "port", q:10, name: "Português"},{materia: "lit", q:6, name: "Literatura"},{materia: "hist", q:6, name: "História"},{materia: "geo", q:6, name: "Geografia"},{materia: "bio", q:6, name: "Biologia"},{materia: "quim", q:6, name: "Química"},{materia: "fis", q:6, name: "Física"},{materia: "mat", q:8, name: "Matemática"}],
-		special: [0,5,14,23,32,41,50,59],
+		special: [0,11,18,25,32,39,46,53],
 		matspecial: [
 			{ materia: "Português", special: 0 },
 			{ materia: "Literatura", special: 11 }, // +1
