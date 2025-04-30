@@ -15,6 +15,7 @@ import useradm from "./database/useradm.js"
 import simuladoo from "./database/simulado.js"
 import old from "./database/simulado02.js"
 import Db from "mongodb"
+let t = "4"
 import im from "./db_connect.js"
 const ec = txt => encodeURIComponent(txt)
 const dec = txt => decodeURIComponent(txt)
