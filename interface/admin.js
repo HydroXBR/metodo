@@ -250,7 +250,7 @@ document.addEventListener('DOMContentLoaded', function() {
 					formattedNumber = formattedNumber.slice(0, 2) + formattedNumber.slice(3);
 				}
 
-				const text = `*📌 MENSALIDADE*\n❗️Boa tarde, senhor(a) responsável!\n⚠️ Lembrando que sua mensalidade vence HOJE dia ${addZero(today.getDate())}/${addZero(today.getMonth())} do aluno:\n${aluno.completename}\n\n✅ Estamos aguardando o pagamento.\n\n🔑 *Chave Pix (CNPJ)*\n53.579.716/0001-51\n> Método Centro de Estudos LTDA\n> Caso pagamento em PIX, enviar comprovante, por favor.\n\n📍 Agradecemos a compreensão 😉👍🏻\n\n*MENSAGEM AUTOMÁTICA*`;
+				const text = `*📌 MENSALIDADE*\n❗️Boa tarde, senhor(a) responsável!\n⚠️ Lembrando que sua mensalidade vence HOJE dia ${addZero(today.getDate())}/${addZero(today.getMonth()+1)} do aluno:\n${aluno.completename}\n\n✅ Estamos aguardando o pagamento.\n\n🔑 *Chave Pix (CNPJ)*\n53.579.716/0001-51\n> Método Centro de Estudos LTDA\n> Caso pagamento em PIX, enviar comprovante, por favor.\n\n📍 Agradecemos a compreensão 😉👍🏻\n\n*MENSAGEM AUTOMÁTICA*`;
 				const whatsappLink = `https://api.whatsapp.com/send/?phone=55${formattedNumber}&text=${encodeURIComponent(text)}`;
 				return whatsappLink;
 			}
