@@ -339,7 +339,7 @@ document.addEventListener('DOMContentLoaded', function(){
 			create()
 
 			var nnp = document.createElement('p')
-			nnp.innerText = "Programação e desenvolvimento: © Isaías Nascimento, 2024"
+			nnp.innerText = "Programação e desenvolvimento: © Isaías Nascimento, 2025"
 			nnp.id = "copy"
 			nnp.classList.add("copy")
 			body.appendChild(nnp)
