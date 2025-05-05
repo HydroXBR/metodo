@@ -202,7 +202,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		const todos = await response.json();
 
 		const today = new Date();
-		const data = todos.filter(aluno => aluno.dia == today.getDate())
+		const data = todos.filter(aluno => aluno.dia == today.getDate() && aluno.turma !== 4)
 		data.sort((a, b) => a.completename.localeCompare(b.completename));
 			
 		const tableBody = document.getElementById('table-body');
