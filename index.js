@@ -52,7 +52,7 @@ var simulados = [
 		answers: [
 			{
 				turma:1,
-				respostas:["A","A","E","E","D","D","B","C","E","A","C","B","C","C","D","C","B","C","E","D","C","D","C","E","X","D","B","A","X","E","C","B","C","B","D","C","A","A","E","B","A","B","A","B","D","A","C","C","E","C","B","B","D","D"]
+				respostas:["A","A","E","E","D","D","B","C","E","A","C","B","C","C","D","C","B","C","E","D","C","D","C","E","X","D","B","A","X","E","C","B","C","B","D","C","A","A","E","B","A","B","A","B","D","A","C","C","E","X","B","B","D","D"]
 			}
 		],
 		questions: 54
