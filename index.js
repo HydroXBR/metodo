@@ -21,6 +21,51 @@ const ec = txt => encodeURIComponent(txt)
 const dec = txt => decodeURIComponent(txt)
 var simulados = [
 	{
+		name: "12° Simulado - 2025", 
+		description: "12° Simulado - 2025",
+		model: "PSC",
+		date: "19-05-2025",
+		id: "032025",
+		organization: [{materia: "port", q:10, name: "Português"},{materia: "lit", q:6, name: "Literatura"},{materia: "hist", q:6, name: "História"},{materia: "geo", q:6, name: "Geografia"},{materia: "bio", q:6, name: "Biologia"},{materia: "quim", q:6, name: "Química"},{materia: "fis", q:6, name: "Física"},{materia: "mat", q:8, name: "Matemática"}],
+		special: [0,11,18,25,32,39,46,53],
+		matspecial: [
+			{ materia: "Português", special: 0 },
+			{ materia: "Literatura", special: 11 }, // +1
+			{ materia: "História", special: 18 }, // +2
+			{ materia: "Geografia", special: 25 }, // +3
+			{ materia: "Biologia", special: 32 }, // +4
+			{ materia: "Química", special: 39 }, // +5
+			{ materia: "Física", special: 46 }, // +6
+			{ materia: "Matemática", special: 53 } // +7
+		],
+		intervals: {
+			port: [1, 10],
+			lit: [11, 16],
+			hist: [17, 22],
+			geo: [23, 28],
+			bio: [29, 34],
+			quim: [35, 40],
+			fis: [41, 46],
+			mat: [47, 54]
+		},
+		turmas: [1,2,3],
+		answers: [
+			{
+				turma:1,
+				respostas:["A","A","E","E","D","D","B","C","E","A","C","B","C","C","D","C","B","C","E","D","C","D","C","E","X","D","B","A","X","E","C","B","C","B","D","C","A","A","E","B","A","B","A","B","D","A","C","C","E","X","B","B","D","D"]
+			},
+			{
+				turma:2,
+				respostas:["A","A","E","E","D","D","B","C","E","A","C","B","C","C","D","C","B","C","E","D","C","D","C","E","X","D","B","A","X","E","C","B","C","B","D","C","A","A","E","B","A","B","A","B","D","A","C","C","E","X","B","B","D","D"]
+			},
+			{
+				turma:3,
+				respostas:["A","A","E","E","D","D","B","C","E","A","C","B","C","C","D","C","B","C","E","D","C","D","C","E","X","D","B","A","X","E","C","B","C","B","D","C","A","A","E","B","A","B","A","B","D","A","C","C","E","X","B","B","D","D"]
+			}
+		],
+		questions: 54
+	},
+	{
 		name: "11° Simulado - 2025", 
 		description: "11° Simulado - 2025",
 		model: "PSC",
