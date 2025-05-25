@@ -6,7 +6,7 @@ import { fileURLToPath } from 'url';
 const { token } = process.env
 import express from 'express'
 import cors from 'cors'
-const { PORT } = process.env || 3000
+const PORT = process.env || 3000
 const app = express()
 import bodyParser from "body-parser"
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -15,7 +15,6 @@ import useradm from "./database/useradm.js"
 import simuladoo from "./database/simulado.js"
 import old from "./database/simulado02.js"
 import Db from "mongodb"
-let t = "4"
 import im from "./db_connect.js"
 const ec = txt => encodeURIComponent(txt)
 const dec = txt => decodeURIComponent(txt)
@@ -52,15 +51,15 @@ var simulados = [
 		answers: [
 			{
 				turma:1,
-				respostas:["A","A","E","E","D","D","B","C","E","A","C","B","C","C","D","C","B","C","E","D","C","D","C","E","X","D","B","A","X","E","C","B","C","B","D","C","A","A","E","B","A","B","A","B","D","A","C","C","E","X","B","B","D","D"]
+				respostas:["B","A","B","B","D","B","E","C","A","C","A","E","A","E","A","D","A","A","C","E","B","D","C","A","C","C","E","B","B","D","E","C","C","B","B","D","B","C","C","E","C","B","E","X","E","A","A","A","E","B","A","A","B","C"]
 			},
 			{
 				turma:2,
-				respostas:["A","A","E","E","D","D","B","C","E","A","C","B","C","C","D","C","B","C","E","D","C","D","C","E","X","D","B","A","X","E","C","B","C","B","D","C","A","A","E","B","A","B","A","B","D","A","C","C","E","X","B","B","D","D"]
+				respostas:["B","A","B","B","D","C","C","D","B","B","E","A","C","E","D","A","C","C","D","D","B","E","C","A","C","C","E","B","B","D","E","C","C","B","E","B","B","C","C","A","D","E","D","B","X","D","A","A","E","B","A","A","B","B"]
 			},
 			{
 				turma:3,
-				respostas:["A","A","E","E","D","D","B","C","E","A","C","B","C","C","D","C","B","C","E","D","C","D","C","E","X","D","B","A","X","E","C","B","C","B","D","C","A","A","E","B","A","B","A","B","D","A","C","C","E","X","B","B","D","D"]
+				respostas:["C","B","D","B","C","C","C","D","B","B","B","B","C","E","E","D","E","E","A","A","C","A","E","B","D","B","A","B","E","E","E","B","A","A","B","A","C","D","C","X","B","D","B","A","D","C","B","E","D","E","D","A","A","D"]
 			}
 		],
 		questions: 54
