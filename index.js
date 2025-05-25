@@ -6,7 +6,7 @@ import { fileURLToPath } from 'url';
 const { token } = process.env
 import express from 'express'
 import cors from 'cors'
-const PORT = process.env || 3000
+const { PORT } = process.env || 3000
 const app = express()
 import bodyParser from "body-parser"
 const __dirname = dirname(fileURLToPath(import.meta.url))
