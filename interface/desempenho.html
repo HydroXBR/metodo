@@ -1,185 +1,213 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Desempenho - Método Pré-Vestibular</title>
-		<link rel="stylesheet" href="desempenho.css">
-		<link rel="icon" type="image/png" href="https://i.ibb.co/jryH3q8/Min-Branca.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desempenho - Método Pré-Vestibular</title>
+    <link rel="stylesheet" href="desempenho.css">
+    <link rel="icon" type="image/png" href="https://i.ibb.co/jryH3q8/Min-Branca.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-	<nav class="navbar">
-			<div class="container">
-				<div class="logo-container">
-						<img src="https://i.ibb.co/jryH3q8/Min-Branca.png" alt="Foto de Perfil" class="metodo">
-						<h1 class="logo">Método Pré-Vestibular</h1>
-				</div>
-					<ul class="nav-links" id="nav-links">
-							<li><a href="/">Início</a></li>
-							<li><a href="/sobre">Sobre</a></li>
-							<li><a href="/simulados">Simulados</a></li>
-							<li id="login"><a href="/login">Login</a></li>
-							<li><img id="profile" src="https://voxnews.com.br/wp-content/uploads/2017/04/unnamed.png" alt="Foto de Perfil" class="profile-picture"></li>
-					</ul>
+    <!-- Navbar mantida conforme original -->
+    <nav class="navbar">
+		<div class="container">
+			<div class="logo-container">
+				<img src="https://i.ibb.co/jryH3q8/Min-Branca.png" alt="Logo Método" class="logo-img">
+				<h1 class="logo">Método Pré-Vestibular</h1>
 			</div>
+			<button class="hamburger" id="hamburger" aria-label="Abrir menu">
+				<span class="hamburger-line"></span>
+				<span class="hamburger-line"></span>
+				<span class="hamburger-line"></span>
+			</button>
+			<ul class="nav-links" id="nav-links">
+				<li><a href="/">Início</a></li>
+				<li><a href="/sobre">Sobre</a></li>
+				<li><a href="/simulados">Simulados</a></li>
+				<li id="login"><a id="login" href="/login" class="btn-login">Login</a></li>
+				<li><a href="/profile"><img id="profile" src="https://voxnews.com.br/wp-content/uploads/2017/04/unnamed.png" alt="Foto de Perfil" class="profile-picture"></a></li>
+			</ul>
+		</div>
 	</nav>
 
-	<div class="box" id="boxx">
-		<!-- <button class='button-33' role="button" id="print">Imprimir</button> !-->
-		<h2 id="title"></h2>
-		<h2>Candidato(a)</h2>
-			<strong id="name"> Carregando...</strong>
-			<h5 id="serie">Carregando...</h5>
-		<h2>Desempenho total</h2>
-		<div class="grafico-barra-container vermelho">
-			<div class="coluna">
-				<span class="titulo">Simulado</span>
-			</div>
-			<div class="coluna">
-				<span id="pctotal" class="porcentagem"></span>
-				<div class="grafico-barra">
-					<div id="idgtotal" class="grafico-barra-progresso"></div>
-				</div>
-			</div>
+    <div class="performance-container">
+        <!-- Cabeçalho -->
+        <div class="glass-card header-section">
+            <div class="student-info">
+                <h1 class="student-name" id="name">Carregando...</h1>
+                <div class="performance-badge">
+                    <span class="badge-text" id="serie">Carregando...</span>
+                </div>
+            </div>
+            <div class="simulado-info">
+                <h2 class="simulado-title" id="title"></h2>
+                <div class="button-group">
+                    <button class="modern-button" id="voltar">Voltar para o ranking</button>
+                    <button class="modern-button red" id="prob">Problemas com o resultado</button>
+                </div>
+            </div>
+        </div>
 
-		</div>
-		<p class="desc" id="desctotal"></p>
-		<h2>Desempenho por matéria</h2>
-		<div id="divport" class="display">
-			<div class="grafico-barra-container vermelho">
-				<div class="coluna">
-					<span class="titulo">Português</span>
-				</div>
-				<div class="coluna">
-					<span id="pcport" class="porcentagem"></span>
-					<div class="grafico-barra">
-						<div id="idgport" class="grafico-barra-progresso"></div>
-					</div>
-				</div>
-			</div>
-			<p class="desc" id="descport"></p>
-		</div>
-		<div id="divlit">
-			<div class="grafico-barra-container vermelho">
-				<div class="coluna">
-					<span class="titulo">Literatura</span>
-				</div>
-				<div class="coluna">
-					<span id="pclit" class="porcentagem"></span>
-					<div class="grafico-barra">
-						<div id="idglit" class="grafico-barra-progresso"></div>
-					</div>
-				</div>
-		</div>
-		<p class="desc" id="desclit"></p>
-		</div>
-		<div id="divhist">
-			<div class="grafico-barra-container vermelho">
-				<div class="coluna">
-					<span class="titulo">História</span>
-				</div>
-				<div class="coluna">
-					<span id="pchist" class="porcentagem"></span>
-					<div class="grafico-barra">
-						<div id="idghist" class="grafico-barra-progresso"></div>
-					</div>
-				</div>
-			</div>
-			<p class="desc" id="deschist"></p>
-		</div>
-		<div id="divgeo">
-			<div class="grafico-barra-container vermelho">
-				<div class="coluna">
-					<span class="titulo">Geografia</span>
-				</div>
-				<div class="coluna">
-					<span id="pcgeo" class="porcentagem"></span>
-					<div class="grafico-barra">
-						<div id="idggeo" class="grafico-barra-progresso"></div>
-					</div>
-				</div>
-			</div>
-			<p class="desc" id="descgeo"></p>
-		</div>
-		<div id="divbio">
-			<div class="grafico-barra-container vermelho">
-				<div class="coluna">
-					<span class="titulo">Biologia</span>
-				</div>
-				<div class="coluna">
-					<span id="pcbio" class="porcentagem"></span>
-					<div class="grafico-barra">
-						<div id="idgbio" class="grafico-barra-progresso"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div id="divquim">
-		 <p class="desc" id="descbio"></p>
-		 <div class="grafico-barra-container vermelho">
-			 <div class="coluna">
-				<span class="titulo">Química</span>
-			 </div>
-			 <div class="coluna">
-				 <span id="pcquim" class="porcentagem"></span>
-				 <div class="grafico-barra">
-						<div id="idgquim" class="grafico-barra-progresso"></div>
-					</div>
-				 </div>
-			</div>
-			<p class="desc" id="descquim"></p>
-		</div>
-		<div id="divmat">
-			<div class="grafico-barra-container vermelho">
-				<div class="coluna">
-					<span class="titulo">Matemática</span>
-				</div>
-				<div class="coluna">
-					<span id="pcmat" class="porcentagem"></span>
-					<div class="grafico-barra">
-						<div id="idgmat" class="grafico-barra-progresso"></div>
-					</div>
-				</div>
-			</div>
-			<p class="desc" id="descmat"></p>
-		</div>
-		<div id="divfis">
-			<div class="grafico-barra-container vermelho">
-				<div class="coluna">
-					<span class="titulo">Física</span>
-				</div>
-				<div class="coluna">
-					<span id="pcfis" class="porcentagem"></span>
-					<div class="grafico-barra">
-						<div id="idgfis" class="grafico-barra-progresso"></div>
-					</div>
-				</div>
-			</div>
-			<p class="desc" id="descfis"></p>
-		</div>
-		<h2>Destaque(s)</h2>
-		<div id="destaques">
-		</div>
-		<h2 id="relatorio">Comparativos</h2>
-		<div id="relatorio-container">
-			<p id="nota">Nota: Para este gráfico de radar abaixo, quanto mais próximo da borda, melhor o desempenho na matéria.</p>
-			<canvas id="radarChart"></canvas>
-			<canvas id="graficous"></canvas>
-			<p id="nota2"></p>
-		</div>
-		<h2>Espelho de respostas</h2>
-		<div id="center">
-			<div id="tabelaa"></div>
-			<div id="final">
-				<p id="nota3">Resposta "N" = Questão sem resposta ou rasurada | Gabarito "X" = Questão anulada</p>
-				<p id="notaa">Programação e desenvolvimento: © Isaías Nascimento, 2025</p>
-				<button class='button-33' role="button" id="prob">Problemas com o resultado</button>
-				<button class='button-33' role="button" id="voltar">Voltar para o ranking</button>
-				
-			</div>
-		</div>
-		
-		</div>
-		<script src="desempenho.js"></script>
+        <!-- Desempenho Total -->
+        <div class="glass-card">
+    <h2 class="section-title">Desempenho total</h2>
+    <div class="total-performance">
+        <div class="circular-progress">
+            <div class="progress-fill" id="idgtotal"></div>
+            <div class="progress-text">
+                <span id="pctotal">0%</span>
+                <small>de acerto</small>
+            </div>
+        </div>
+        <div class="performance-details">
+            <div class="detail-item correct">
+                <span class="detail-value" id="correct-count">0</span>
+                <span class="detail-label">Corretas</span>
+            </div>
+            <div class="detail-item total">
+                <span class="detail-value" id="total-questions">0</span>
+                <span class="detail-label">Total</span>
+            </div>
+            <div class="detail-item wrong">
+                <span class="detail-value" id="wrong-count">0</span>
+                <span class="detail-label">Incorretas</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- Desempenho por Matéria -->
+        <div class="glass-card">
+            <h2 class="section-title">Desempenho por matéria</h2>
+            
+            <!-- Português -->
+            <div id="divport" class="subject-container">
+                <div class="subject-progress">
+                    <span class="subject-name">Português</span>
+                    <div class="progress-bar-container">
+                        <div class="progress-line" id="idgport"></div>
+                    </div>
+                    <span class="progress-percent" id="pcport"></span>
+                </div>
+                <p class="subject-detail" id="descport"></p>
+            </div>
+            
+            <!-- Literatura -->
+            <div id="divlit" class="subject-container">
+                <div class="subject-progress">
+                    <span class="subject-name">Literatura</span>
+                    <div class="progress-bar-container">
+                        <div class="progress-line" id="idglit"></div>
+                    </div>
+                    <span class="progress-percent" id="pclit"></span>
+                </div>
+                <p class="subject-detail" id="desclit"></p>
+            </div>
+            
+            <!-- História -->
+			 <div id="divlit" class="subject-container">
+                <div class="subject-progress">
+                    <span class="subject-name">História</span>
+                    <div class="progress-bar-container">
+                        <div class="progress-line" id="idghist"></div>
+                    </div>
+                    <span class="progress-percent" id="pchist"></span>
+                </div>
+                <p class="subject-detail" id="deschist"></p>
+            </div>
+
+			<!-- Geografia -->
+			 <div id="divlit" class="subject-container">
+                <div class="subject-progress">
+                    <span class="subject-name">Geografia</span>
+                    <div class="progress-bar-container">
+                        <div class="progress-line" id="idggeo"></div>
+                    </div>
+                    <span class="progress-percent" id="pcgeo"></span>
+                </div>
+                <p class="subject-detail" id="descgeo"></p>
+            </div>
+
+			<!-- Biologia -->
+			 <div id="divlit" class="subject-container">
+                <div class="subject-progress">
+                    <span class="subject-name">Biologia</span>
+                    <div class="progress-bar-container">
+                        <div class="progress-line" id="idgbio"></div>
+                    </div>
+                    <span class="progress-percent" id="pcbio"></span>
+                </div>
+                <p class="subject-detail" id="descbio"></p>
+            </div>
+
+			<!-- Química -->
+			 <div id="divlit" class="subject-container">
+                <div class="subject-progress">
+                    <span class="subject-name">Química</span>
+                    <div class="progress-bar-container">
+                        <div class="progress-line" id="idgquim"></div>
+                    </div>
+                    <span class="progress-percent" id="pcquim"></span>
+                </div>
+                <p class="subject-detail" id="descquim"></p>
+            </div>
+
+			<!-- Física -->
+			 <div id="divlit" class="subject-container">
+                <div class="subject-progress">
+                    <span class="subject-name">Física</span>
+                    <div class="progress-bar-container">
+                        <div class="progress-line" id="idgfis"></div>
+                    </div>
+                    <span class="progress-percent" id="pcfis"></span>
+                </div>
+                <p class="subject-detail" id="descfis"></p>
+            </div>
+
+			<!-- Matemática -->
+			 <div id="divlit" class="subject-container">
+                <div class="subject-progress">
+                    <span class="subject-name">Matemática</span>
+                    <div class="progress-bar-container">
+                        <div class="progress-line" id="idgmat"></div>
+                    </div>
+                    <span class="progress-percent" id="pcmat"></span>
+                </div>
+                <p class="subject-detail" id="descmat"></p>
+            </div>
+            
+        </div>
+
+        <!-- Destaques -->
+        <div class="glass-card">
+            <h2 class="section-title">Destaque(s)</h2>
+            <div id="destaques" class="highlights-container"></div>
+        </div>
+
+        <!-- Comparativos -->
+        <div class="glass-card">
+            <h2 class="section-title" id="relatorio">Comparativos</h2>
+            <div class="chart-container">
+                <canvas id="radarChart"></canvas>
+                <canvas id="graficous"></canvas>
+            </div>
+            <p id="nota2" class="chart-note"></p>
+        </div>
+
+        <!-- Espelho de respostas -->
+        <div class="glass-card">
+            <h2 class="section-title">Espelho de respostas</h2>
+            <div id="center">
+                <div id="tabelaa"></div>
+                <div id="final">
+                    <p id="nota3" class="chart-note">Resposta "N" = Questão sem resposta ou rasurada | Gabarito "X" = Questão anulada</p>
+                    <p id="notaa" class="footer-note">Programação e desenvolvimento: © Isaías Nascimento, 2025</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="desempenho.js"></script>
 </body>
 </html>
