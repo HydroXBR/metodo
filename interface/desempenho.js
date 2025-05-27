@@ -111,37 +111,6 @@ function addAnimationOnScroll() {
 window.addEventListener('scroll', addAnimationOnScroll);
 
 document.addEventListener('DOMContentLoaded', function(){
-	/*if (User.isLoggedIn()) {
-		const userInfo = User.getUserInfo();
-		let li = document.getElementById("login")
-		li.innerHTML = ""
-		let newa = document.createElement("a")
-		let btn = document.createElement("button")
-		btn.innerText = "Sair"
-		btn.classList.add("btn2")
-		btn.onclick = function(event){
-			User.logout();
-			window.location.href = "/"
-		}
-		newa.appendChild(btn)
-		li.appendChild(newa)
-
-		if(userInfo.profilePicture !== 'null'&& userInfo.profilePicture) {
-			document.getElementById("profile").src = userInfo.profilePicture;
-		}
-
-		if(userInfo.permissions > 0){
-			let ul = document.getElementById("nav-links")
-			let admin = document.createElement("li")
-			let aadmin = document.createElement("a")
-			aadmin.href = "/admin"
-			aadmin.innerText = "Admin"
-			admin.appendChild(aadmin)
-			ul.appendChild(admin)
-		}
-	} else {
-		console.log("Usuário não está logado.");
-	}*/
 
 	const ec = txt => encodeURIComponent(txt)
 	const dec = txt => decodeURIComponent(txt)
@@ -202,12 +171,14 @@ document.addEventListener('DOMContentLoaded', function(){
 		});
 
 		gebi("name").innerHTML = rr.completename
-		gebi("serie").innerHTML = Number(rr.turma) > 3 ? `${Number(rr.turma) - 3}° ano` : `${Number(rr.turma)}° ano`  
-
-		gebi("title").innerHTML = rr.simulado.name + ` (${rr.simulado.date.replace(/\-/gmi, "/")})`
+		let ttt = Number(rr.turma) > 3 ? Number(rr.turma) - 3 : Number(rr.turma)  
+		let tttt = Number(rr.turma) > 3 ? `${Number(rr.turma) - 3}° ano` : `${Number(rr.turma)}° ano`  
+		gebi("serie").innerHTML = tttt
 		voltar.addEventListener('click', function(event){
-			window.location.href = `/ranking?id=${rr.simulado.id}`
+			window.location.href = `/ranking?id=${rr.simulado.id}&serie=${ttt}`
 		})
+
+		gebi("title").innerHTML = rr.simulado.name /*+ ` (${rr.simulado.date.replace(/\-/gmi, "/")})`*/
 		/*print.addEventListener('click', function(event){
 			window.print()
 		})
@@ -215,6 +186,21 @@ document.addEventListener('DOMContentLoaded', function(){
 		prob.addEventListener('click', function(event){
 			window.location.href = `https://api.whatsapp.com/send?phone=559284507170&text=Ol%C3%A1%2C%20Isa%C3%ADas!%20Sou%20${rr.completename}%2C%20e%20estou%20com%20d%C3%BAvidas%2Fproblemas%20em%20rela%C3%A7%C3%A3o%20ao%20simulado%20de%20ID%20${idsimulado}. %20(N%C3%83O%20APAGAR!)`
 		})
+
+		function updateTotalPerformance(total, correct) {
+			const wrong = total - correct;
+			const percentage = (correct / total * 100).toFixed(1);
+			
+			// Atualiza gráfico
+			document.getElementById('idgtotal').style.background = `conic-gradient(#FE0000 ${percentage * 3.6}deg, #2A2758 0deg)`;
+			
+			// Atualiza textos
+			document.getElementById('pctotal').textContent = `${percentage}%`;
+			document.getElementById('correct-count').textContent = correct;
+			document.getElementById('total-questions').textContent = total;
+			document.getElementById('wrong-count').textContent = wrong;
+		}
+
 
 		async function history(name) {
 			try{
@@ -417,6 +403,21 @@ document.addEventListener('DOMContentLoaded', function(){
 
 		history(rr.completename);
 
+		function updateTotalPerformance(total, correct) {
+			const percentage = (correct / total * 100).toFixed(1);
+			const degrees = percentage * 3.6;
+			
+			// Atualiza a variável CSS
+			const progressCircle = document.querySelector('.circular-progress');
+			progressCircle.style.setProperty('--progress', `${degrees}deg`);
+			
+			// Atualiza os textos
+			document.getElementById('pctotal').textContent = `${percentage}%`;
+			document.getElementById('correct-count').textContent = correct;
+			document.getElementById('total-questions').textContent = total;
+			document.getElementById('wrong-count').textContent = total - correct;
+		}
+
 		async function espelho(){
 			var body = gebi('tabelaa')
 			var tbl = document.createElement("table");
@@ -548,6 +549,12 @@ document.addEventListener('DOMContentLoaded', function(){
 				}
 			}
 		})
+
+		function atualizarAnel(percentual) {
+			const el = document.querySelector('.circular-progress');
+			el.style.setProperty('--progress', percentual + '%');
+			document.getElementById('pctotal').textContent = percentual + '%';
+		}
 		
 		function preencherGraficos() {
 			const materias = []
@@ -564,6 +571,7 @@ document.addEventListener('DOMContentLoaded', function(){
 			const maxPorcentagem = Math.max(...materias.map(materia => materia.porcentagem));
 
 			const materiasDestaque = materias.filter(materia => materia.porcentagem === maxPorcentagem);
+			updateTotalPerformance(rr.simulado.questions, rr.total);
 
 			for(var i = 0; i < materiasDestaque.length; i++){
 				let dt = gebi("destaques")
@@ -584,10 +592,10 @@ document.addEventListener('DOMContentLoaded', function(){
 
 			const medidortotal = document.getElementById("idgtotal");
 
-			medidortotal.style.width = (rr.total/rr.simulado.questions)*100 + '%';
+			/*medidortotal.style.width = (rr.total/rr.simulado.questions)*100 + '%';*/
+			updateTotalPerformance(rr.simulado.questions,rr.total)
 
 			document.getElementById("pctotal").innerHTML = round(((rr.total)/rr.simulado.questions)*100,2) + '%';
-			gebi("desctotal").innerHTML = `${rr.total} de ${rr.simulado.questions}`
 		}
 
 		preencherGraficos()
