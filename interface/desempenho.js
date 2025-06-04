@@ -170,6 +170,12 @@ document.addEventListener('DOMContentLoaded', function(){
 			}
 		});
 
+		
+		let print = gebi("print")
+		print.addEventListener('click', function(event){
+			window.print()
+		})
+
 		gebi("name").innerHTML = rr.completename
 		let ttt = Number(rr.turma) > 3 ? Number(rr.turma) - 3 : Number(rr.turma)  
 		let tttt = Number(rr.turma) > 3 ? `${Number(rr.turma) - 3}° ano` : `${Number(rr.turma)}° ano`  
@@ -216,7 +222,9 @@ document.addEventListener('DOMContentLoaded', function(){
 					'rosa': '#FFC0CB',
 					'amarelo': '#FFFF00',
 					'ciano': '#00FFFF',
+					'azul-escuro': '#00072b',
 					'vermelho': '#FE0000',
+					'azul-profundo': '#0C1248',
 					'cinza-escuro': '#1C1C1C',
 					'cinza-claro': '#D3D3D3',
 					'azul-médio': '#243A73',
