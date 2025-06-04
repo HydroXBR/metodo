@@ -166,12 +166,13 @@ document.addEventListener('DOMContentLoaded', function(){
 		logoclass.classList.remove("logo")
 		logoclass.classList.add("logona")
 		gebi("metodo").setAttribute("src", "https://i.ibb.co/1QvjfDp/Design-sem-nome-2.png")
-		document.body.style.backgroundImage = "url(https://www.portaldoholanda.com.br/sites/default/files/imagecache/2020_noticia_fotogrande/portaldoholanda-906224-imagem-foto-1amazonas.jpg)"
+		document.body.style.backgroundImage = "url(https://img.freepik.com/vetores-gratis/fundo-de-conexao-gradiente_23-2150462053.jpg?semt=ais_hybrid&w=740)"
 		link.href = "https://i.ibb.co/1QvjfDp/Design-sem-nome-2.png"
 		document.head.appendChild(link)
 		gebi("inicio").style.display = "none"
 		gebi("pphoto").style.display = "none"
 		gebi("sobre").style.display = "none"
+		gebi("login").style.display = "none"
 		
 	}else{
 		gebi("logoclass").innerHTML = "Método Pré-Vestibular"
