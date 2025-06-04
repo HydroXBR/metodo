@@ -477,6 +477,11 @@ tr:hover {
     background: var(--accent-red);
 }
 
+.modern-button.yellow {
+    background: #ffef93;
+	color: black;
+}
+
 .modern-button:hover {
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(254, 0, 0, 0.3);
@@ -510,4 +515,89 @@ tr:hover {
     .modern-button {
         width: 100%;
     }
+}
+
+@media print {
+  body, * {
+    color: black !important;
+    print-color-adjust: exact;
+  }
+
+  .bar {
+    background-color: #333 !important;
+    fill: #333 !important;
+  }
+
+  canvas {
+    filter: brightness(0.3);
+	display: block;
+  }
+
+  .modern-button {
+	display: none;
+  }
+
+  #nota2{
+	display: none;
+  }
+
+  .detail-item {
+    display: block !important;
+    background-color: #f0f0f0 !important; 
+    color: black !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .progress-line {
+    background: #000 !important;
+	color: black !important;
+	-webkit-print-color-adjust: exact;
+  }
+
+  .circular-progress,
+  .progress-fill,
+  .progress-text {
+    background-color: #ddd !important; 
+    color: black !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  } 
+
+  #tabelaa tr:nth-child(odd):not(.materia), .num, .performance-badge {
+    background-color: #f9f9f9 !important;
+	-webkit-print-color-adjust: exact;
+  }
+
+  #tabelaa tr:nth-child(even):not(.materia) {
+    background-color: #ffffff !important; 
+	-webkit-print-color-adjust: exact;
+  }
+
+  #tabelaa tr.materia,
+  #tabelaa tr:first-child {
+    background-color: #e0e0e0 !important; 
+    font-weight: bold;
+	-webkit-print-color-adjust: exact;
+  }
+
+  #dpmateria{
+	margin-top: 500px;
+  }
+
+  #tabelaa, #nota3, #notaa {
+    font-size: 10px;
+  }
+
+  #tabelaa td, #tabelaa th {
+    padding: 2px 4px; 
+  }
+
+  #tabelaa tr {
+    line-height: 1.2; 
+  }
+
+  #tabelaa td {
+    vertical-align: middle;
+  }
 }
