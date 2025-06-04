@@ -51,15 +51,15 @@ var simulados = [
 		answers: [
 			{
 				turma:1,
-				respostas:["B","A","B","B","D","B","E","C","A","C","A","E","A","E","A","D","A","A","C","E","B","D","C","A","C","C","E","B","B","D","E","C","C","B","B","D","B","C","C","E","C","B","E","X","E","A","A","A","E","B","A","A","B","C"]
+				respostas:["B","C","B","D","D","C","E","B","C","B","C","B","B","C","C","D","B","C","E","C","B","D","C","C","C","E","D","B","B","E","D","D","B","E","A","A","B","B","E","A","A","D","C","B","A","B","E","B","B","A","B","B","A","E"]
 			},
 			{
 				turma:2,
-				respostas:["B","A","B","B","D","C","C","D","B","B","E","A","C","E","D","A","C","C","D","D","B","E","C","A","C","C","E","B","B","D","E","C","C","B","E","B","B","C","C","A","D","E","D","B","X","D","A","A","E","B","A","A","B","B"]
+				respostas:["A","B","D","E","E","B","C","B","B","D","C","D","B","D","E","A","C","C","A","C","C","E","C","E","E","D","E","B","B","B","A","D","B","E","A","A","B","B","E","A","A","D","C","B","A","C","D","C","C","B","C","B","D","C"]
 			},
 			{
 				turma:3,
-				respostas:["C","B","D","B","C","C","C","D","B","B","B","B","C","E","E","D","E","E","A","A","C","A","E","B","D","B","A","B","E","E","E","B","A","A","B","A","C","D","C","X","B","D","B","A","D","C","B","E","D","E","D","A","A","D"]
+				respostas:["D","B","B","A","D","E","B","E","C","C","D","E","A","D","D","B","E","A","B","A","C","E","A","B","C","E","A","D","A","E","D","E","D","C","C","C","E","A","B","B","D","B","A","D","B","E","B","B","C","A","D","A","B","D"]
 			}
 		],
 		questions: 54
@@ -1435,20 +1435,24 @@ app.get('/apiranking', function(req,res) {
 
 			function g(fullName) {
 				const words = fullName.trim().split(/\s+/);
-
-				const firstName = words[0]; 
-				const secondName = words[1];
-
-				if(secondName){
+				const firstName = words[0];
+				const secondName = words[1] || "";
+			
+				// se não tiver segundo nome, retorna só o primeiro
+				if (!secondName) return firstName;
+			
+				const thirdName = words[2] || "";
+				const fourthName = words[3] || "";
+			
 				if (["de", "da", "dos", "das", "do", "henrique", "pedro", "eduarda", "luiza"].includes(secondName.toLowerCase())) {
-					if (["de", "da", "dos", "das", "do"].includes(words[2].toLowerCase())) {
-						return `${firstName} ${secondName} ${words[2]} ${words[3]}`;
+					if (["de", "da", "dos", "das", "do"].includes(thirdName.toLowerCase())) {
+						return `${firstName} ${secondName} ${thirdName} ${fourthName}`.trim();
 					} else {
-						return `${firstName} ${secondName} ${words[2]}`;
+						return `${firstName} ${secondName} ${thirdName}`.trim();
 					}
 				}
-				}
-				return `${firstName} ${secondName}`;
+			
+				return `${firstName} ${secondName}`.trim();
 			}
 
 			const u = {
