@@ -358,7 +358,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 				function drawRadarChart() {
 					ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
-					ctx2.fillStyle = 'white'
+					ctx2.fillStyle = 'black'
 					ctx2.beginPath();
 					for (var i = 0; i < numCategories; i++) {
 						var angle = i * angleIncrement;
@@ -379,7 +379,7 @@ document.addEventListener('DOMContentLoaded', function(){
 					}
 					
 					ctx2.closePath();
-					ctx2.strokeStyle = 'white';
+					ctx2.strokeStyle = 'black';
 					ctx2.stroke();
 
 					ctx2.beginPath();
@@ -397,7 +397,7 @@ document.addEventListener('DOMContentLoaded', function(){
 					}
 						
 					ctx2.closePath();
-					ctx2.fillStyle = '#fe0000';
+					ctx2.fillStyle = '#0C1248';
 					ctx2.fill();
 				}
 
