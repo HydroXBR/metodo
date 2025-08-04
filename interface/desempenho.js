@@ -152,6 +152,7 @@ document.addEventListener('DOMContentLoaded', function(){
 		if(!rr) return alert("Usuário não encontrado! Contate Isaías Nascimento para mais informações.") 
 		const materiasEsperadas = rr.simulado.organization.map(item => item.materia)
 		rr.total = 0
+		console.log("Matérias esperadas", materiasEsperadas)
 		materiasEsperadas.forEach(materia => {
 			if (rr[materia] !== undefined && typeof rr[materia] === 'number') {
 				rr.total += rr[materia];
@@ -165,7 +166,9 @@ document.addEventListener('DOMContentLoaded', function(){
 		const divs = document.querySelectorAll("div[id^='div']");
 
 		divs.forEach(div => {
+			console.log(div, div.id, div.id.slice(3))
 			if (!isMateriaEsperada(div.id.slice(3))) {
+				console.log("isnotmateriasesperada:", div)
 				div.style.display = "none";
 			}
 		});
@@ -316,7 +319,7 @@ document.addEventListener('DOMContentLoaded', function(){
 						var textX = x + (barWidth - textWidth) / 2; 
 						var textY = y - 5;
 
-						ctx.fillStyle = '#ffffff';
+						ctx.fillStyle = '#000000';
 						ctx.fillText(data[i].label, textX, startY + 20);
 						ctx.fillText(data[i].value, textX, startY +10);
 					}
