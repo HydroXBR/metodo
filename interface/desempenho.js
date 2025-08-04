@@ -400,7 +400,7 @@ document.addEventListener('DOMContentLoaded', function(){
 					}
 						
 					ctx2.closePath();
-					ctx2.fillStyle = '#0C1248';
+					ctx2.fillStyle = '#fe0000';
 					ctx2.fill();
 				}
 
