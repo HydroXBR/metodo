@@ -25,41 +25,39 @@ var simulados = [
 		model: "SIS",
 		date: "02-08-2025",
 		id: "042025",
-		organization: [{materia: "port", q:10, name: "Português"},{materia: "lit", q:6, name: "Literatura"},{materia: "hist", q:6, name: "História"},{materia: "geo", q:6, name: "Geografia"},{materia: "bio", q:6, name: "Biologia"},{materia: "quim", q:6, name: "Química"},{materia: "fis", q:6, name: "Física"},{materia: "mat", q:8, name: "Matemática"}],
-		special: [0,11,18,25,32,39,46,53],
+		organization: [{materia: "port", q:12, name: "Português"},{materia: "hist", q:8, name: "História"},{materia: "geo", q:8, name: "Geografia"},{materia: "bio", q:8, name: "Biologia"},{materia: "quim", q:8, name: "Química"},{materia: "fis", q:8, name: "Física"},{materia: "mat", q:8, name: "Matemática"}],
+		special: [0,13,22,31,47,57,66],
 		matspecial: [
 			{ materia: "Português", special: 0 },
-			{ materia: "Literatura", special: 11 }, // +1
-			{ materia: "História", special: 18 }, // +2
-			{ materia: "Geografia", special: 25 }, // +3
-			{ materia: "Biologia", special: 32 }, // +4
-			{ materia: "Química", special: 39 }, // +5
-			{ materia: "Física", special: 46 }, // +6
-			{ materia: "Matemática", special: 53 } // +7
+			{ materia: "História", special: 13 }, // +1
+			{ materia: "Geografia", special: 22 }, // +2
+			{ materia: "Biologia", special: 31 }, // +3
+			{ materia: "Química", special: 47 }, // +4
+			{ materia: "Matemática", special: 57 }, // +5
+			{ materia: "Física", special: 66 } // +6
 		],
 		intervals: {
-			port: [1, 10],
-			lit: [11, 16],
-			hist: [17, 22],
-			geo: [23, 28],
-			bio: [29, 34],
-			quim: [35, 40],
-			fis: [41, 46],
-			mat: [47, 54]
+			port: [1, 12],
+			hist: [13, 20],
+			geo: [21, 28],
+			bio: [29, 36],
+			quim: [37, 44],
+			mat: [45, 52],
+			fis: [53, 60]
 		},
 		turmas: [1,2,3],
 		answers: [
 			{
 				turma:1,
-				respostas:["B","A","B","B","D","B","E","C","A","C","A","E","A","E","A","D","A","A","C","E","B","D","C","A","C","C","E","B","B","D","E","C","C","B","B","D","B","C","C","E","C","B","E","X","E","A","A","A","E","B","A","A","B","C"]
+				respostas:["E","E","E","A","E","A","C","B","E","B","C","D","C","A","B","D","C","A","A","D","A","A","D","D","C","C","B","E","A","E","C","A","D","D","E","E","C","B","A","D","C","A","C","B","D","E","A","A","A","E","C","E","A","B","C","D","B","X","X","B"]
 			},
 			{
 				turma:2,
-				respostas:["B","A","B","B","D","C","C","D","B","B","E","A","C","E","D","A","C","C","D","D","B","E","C","A","C","C","E","B","B","D","E","C","C","B","E","B","B","C","C","A","D","E","D","B","X","D","A","A","E","B","A","A","B","B"]
+				respostas:["C","C","D","A","C","D","E","D","B","E","A","C","B","B","B","D","D","A","E","E","E","D","D","B","C","D","B","D","D","E","C","C","C","A","A","A","E","C","B","E","D","D","E","X","B","C","E","C","E","C","B","D","C","B","A","E","D","C","E","A"]
 			},
 			{
 				turma:3,
-				respostas:["C","B","D","B","C","C","C","D","B","B","B","B","C","E","E","D","E","E","A","A","C","A","E","B","D","B","A","B","E","E","E","B","A","A","B","A","C","D","C","X","B","D","B","A","D","C","B","E","D","E","D","A","A","D"]
+				respostas:["E","E","D","A","C","B","C","A","D","A","D","E","A","E","B","A","E","A","C","D","D","D","A","D","E","B","B","D","C","B","D","X","C","A","B","C","A","B","D","D","B","A","C","C","D","E","A","A","B","B","D","A","A","E","E","D","B","C","D","A"]
 			}
 		],
 		questions: 60
