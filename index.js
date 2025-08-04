@@ -25,7 +25,7 @@ var simulados = [
 		model: "SIS",
 		date: "02-08-2025",
 		id: "042025",
-		organization: [{materia: "port", q:12, name: "Português"},{materia: "hist", q:8, name: "História"},{materia: "geo", q:8, name: "Geografia"},{materia: "bio", q:8, name: "Biologia"},{materia: "quim", q:8, name: "Química"},{materia: "fis", q:8, name: "Física"},{materia: "mat", q:8, name: "Matemática"}],
+		organization: [{materia: "port", q:12, name: "Português"},{materia: "hist", q:8, name: "História"},{materia: "geo", q:8, name: "Geografia"},{materia: "bio", q:8, name: "Biologia"},{materia: "quim", q:8, name: "Química"},{materia: "mat", q:8, name: "Matemática"},{materia: "fis", q:8, name: "Física"}],
 		special: [0,13,22,31,40,49,58],
 		matspecial: [
 			{ materia: "Português", special: 0 },
@@ -53,11 +53,11 @@ var simulados = [
 			},
 			{
 				turma:2,
-				respostas:["C","C","D","A","C","D","E","D","B","E","A","C","B","B","B","D","D","A","E","E","E","D","D","B","C","D","B","D","D","E","C","C","C","A","A","A","E","C","B","E","D","D","E","X","B","C","E","C","E","C","B","D","C","B","A","E","D","C","E","A"]
+				respostas:["C","C","D","A","C","D","E","D","B","E","A","C","B","B","B","D","D","A","E","E","E","D","D","B","C","D","B","D","D","E","C","C","C","A","A","A","E","C","B","E","D","D","E","B","B","C","E","C","E","C","B","D","C","B","A","E","D","C","E","A"]
 			},
 			{
 				turma:3,
-				respostas:["E","E","D","A","C","B","C","A","D","A","D","E","A","E","B","A","E","A","C","D","D","D","A","D","E","B","B","D","C","B","D","X","C","A","B","C","A","B","D","D","B","A","C","C","D","E","A","A","B","B","D","A","A","E","E","D","B","C","D","A"]
+				respostas:["E","E","D","A","C","B","C","A","D","A","D","E","A","E","B","A","E","A","C","D","D","D","A","D","E","B","B","D","C","B","D","X","C","A","B","C","A","B","D","D","B","A","C","X","D","E","A","A","B","B","D","A","A","E","E","D","B","C","D","A"]
 			}
 		],
 		questions: 60
