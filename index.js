@@ -26,15 +26,15 @@ var simulados = [
 		date: "02-08-2025",
 		id: "042025",
 		organization: [{materia: "port", q:12, name: "Português"},{materia: "hist", q:8, name: "História"},{materia: "geo", q:8, name: "Geografia"},{materia: "bio", q:8, name: "Biologia"},{materia: "quim", q:8, name: "Química"},{materia: "fis", q:8, name: "Física"},{materia: "mat", q:8, name: "Matemática"}],
-		special: [0,13,22,31,47,57,66],
+		special: [0,13,22,31,40,49,68],
 		matspecial: [
 			{ materia: "Português", special: 0 },
 			{ materia: "História", special: 13 }, // +1
 			{ materia: "Geografia", special: 22 }, // +2
 			{ materia: "Biologia", special: 31 }, // +3
-			{ materia: "Química", special: 47 }, // +4
-			{ materia: "Matemática", special: 57 }, // +5
-			{ materia: "Física", special: 66 } // +6
+			{ materia: "Química", special: 40 }, // +4
+			{ materia: "Matemática", special: 49 }, // +5
+			{ materia: "Física", special: 68 } // +6
 		],
 		intervals: {
 			port: [1, 12],
