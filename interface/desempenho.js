@@ -319,7 +319,7 @@ document.addEventListener('DOMContentLoaded', function(){
 						var textX = x + (barWidth - textWidth) / 2; 
 						var textY = y - 5;
 
-						ctx.fillStyle = '#000000';
+						ctx.fillStyle = '#ffffff';
 						ctx.fillText(data[i].label, textX, startY + 20);
 						ctx.fillText(data[i].value, textX, startY +10);
 					}
@@ -361,7 +361,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 				function drawRadarChart() {
 					ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
-					ctx2.fillStyle = 'black'
+					ctx2.fillStyle = 'white'
 					ctx2.beginPath();
 					for (var i = 0; i < numCategories; i++) {
 						var angle = i * angleIncrement;
@@ -382,7 +382,7 @@ document.addEventListener('DOMContentLoaded', function(){
 					}
 					
 					ctx2.closePath();
-					ctx2.strokeStyle = 'black';
+					ctx2.strokeStyle = 'white';
 					ctx2.stroke();
 
 					ctx2.beginPath();
