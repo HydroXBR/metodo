@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { join, basename, dirname } from "path"
-let t = "h"
+let t = "hh"
 import * as path from 'path'
 import { fileURLToPath } from 'url';
 const { token } = process.env
