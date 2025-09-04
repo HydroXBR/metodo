@@ -20,6 +20,49 @@ const ec = txt => encodeURIComponent(txt)
 const dec = txt => decodeURIComponent(txt)
 var simulados = [
 	{
+		name: "14° Simulado - 2025", 
+		description: "14° Simulado - 2025",
+		model: "SIS",
+		date: "31-08-2025",
+		id: "052025",
+		organization: [{materia: "port", q:12, name: "Português"},{materia: "hist", q:8, name: "História"},{materia: "geo", q:8, name: "Geografia"},{materia: "bio", q:8, name: "Biologia"},{materia: "quim", q:8, name: "Química"},{materia: "mat", q:8, name: "Matemática"},{materia: "fis", q:8, name: "Física"}],
+		special: [0,13,22,31,40,49,58],
+		matspecial: [
+			{ materia: "Português", special: 0 },
+			{ materia: "História", special: 13 }, // +1
+			{ materia: "Geografia", special: 22 }, // +2
+			{ materia: "Biologia", special: 31 }, // +3
+			{ materia: "Química", special: 40 }, // +4
+			{ materia: "Matemática", special: 49 }, // +5
+			{ materia: "Física", special: 58 } // +6
+		],
+		intervals: {
+			port: [1, 12],
+			hist: [13, 20],
+			geo: [21, 28],
+			bio: [29, 36],
+			quim: [37, 44],
+			mat: [45, 52],
+			fis: [53, 60]
+		},
+		turmas: [1,2,3],
+		answers: [
+			{
+				turma:1,
+				respostas:["E","E","E","A","E","A","C","B","E","B","C","D","C","A","B","D","C","A","A","D","A","A","D","D","C","C","B","E","A","E","C","A","D","D","E","E","C","B","A","D","C","A","C","B","D","E","A","A","A","E","C","E","A","B","C","D","B","X","X","B"]
+			},
+			{
+				turma:2,
+				respostas:["C","C","D","A","C","D","E","D","B","E","A","C","B","B","B","D","D","A","E","E","E","D","D","B","C","D","B","D","D","E","C","C","C","A","A","A","E","C","B","E","D","D","E","B","B","C","E","C","E","C","B","D","C","B","A","E","D","C","E","A"]
+			},
+			{
+				turma:3,
+				respostas:["E","E","D","A","C","B","C","A","D","A","D","E","A","E","B","A","E","A","C","D","D","D","A","D","E","B","B","D","C","B","D","X","X","A","B","C","A","B","D","D","B","A","C","X","D","E","A","A","B","B","D","A","A","E","E","D","B","C","D","A"]
+			}
+		],
+		questions: 60
+	},
+	{
 		name: "13° Simulado - 2025", 
 		description: "13° Simulado - 2025",
 		model: "SIS",
