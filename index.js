@@ -1009,6 +1009,9 @@ app.get('/desempenho',function(req,res) {
 app.get('/desempenhols',function(req,res) {
 	console.log("Access DESEMPENHO LS: "+ new Date())
 	res.sendFile(__dirname + '/interface/desempenhols.html')
+});app.get('/ms',function(req,res) {
+	console.log("Access MS: "+ new Date())
+	res.sendFile(__dirname + '/interface/Convite de casamento Marcos e Sarah_20251128_151427_0000.pdf')
 });
 
 app.get('/aluno',function(req,res) {
