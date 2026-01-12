@@ -1707,7 +1707,7 @@ app.get('/api/concurso/inscricoes', async (req, res) => {
     if (serie) query.serieAtual = serie;
     
     const inscricoes = await Inscricao.find(query)
-      .select('nomeCompleto email cpf serieAtual escolaPublica status dataInscricao percentualBolsa')
+      .select('nomeCompleto email cpf telefone serieAtual escolaPublica status dataInscricao percentualBolsa')
       .sort({ dataInscricao: -1 })
       .skip((page - 1) * limit)
       .limit(parseInt(limit));
