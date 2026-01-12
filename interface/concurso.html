@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concurso de Bolsas | Método Pré-Vestibular</title>
+    <link rel="stylesheet" href="concurso.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="https://i.ibb.co/jryH3q8/Min-Branca.png">
+</head>
+
+<body>
+    <div class="background-animation">
+        <div class="particles-container"></div>
+        <div class="gradient-overlay"></div>
+    </div>
+
+    <!-- Navbar Simplificada -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-glow">
+                    <img src="https://i.ibb.co/jryH3q8/Min-Branca.png" alt="Logo Método">
+                </div>
+                <span class="logo-text">Método<span class="logo-highlight">Bolsas</span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <main class="concurso-container">
+        <!-- Banner Hero -->
+        <section class="hero-banner">
+            <div class="hero-content">
+                <h1><i class="fas fa-graduation-cap"></i> Concurso de Bolsas 2026</h1>
+                <p class="hero-subtitle">Garanta sua bolsa de estudo de <span class="highlight">10% a 100%</span> no Método Pré-Vestibular</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <i class="fas fa-percentage"></i>
+                        <span>Até 100% de desconto</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Prova: 18/01/2026</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Sede do Método</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formulário de Inscrição -->
+        <section class="form-section">
+            <div class="form-container">
+                <div class="form-header">
+                    <h2><i class="fas fa-file-signature"></i> Formulário de Inscrição</h2>
+                    <p>Preencha todos os campos abaixo para participar do concurso</p>
+                </div>
+
+                <form id="formInscricao">
+                    <!-- Progress Steps -->
+                    <div class="form-progress">
+                        <div class="progress-steps">
+                            <div class="step active" data-step="1">
+                                <div class="step-number">1</div>
+                                <span>Dados Pessoais</span>
+                            </div>
+                            <div class="step" data-step="2">
+                                <div class="step-number">2</div>
+                                <span>Escola</span>
+                            </div>
+                            <div class="step" data-step="3">
+                                <div class="step-number">3</div>
+                                <span>Vestibulares</span>
+                            </div>
+                            <div class="step" data-step="4">
+                                <div class="step-number">4</div>
+                                <span>Motivação</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 1: Dados Pessoais -->
+                    <div class="form-step active" data-step="1">
+                        <h3><i class="fas fa-user"></i> Informações Pessoais</h3>
+                        
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="nomeCompleto">
+                                    <i class="fas fa-id-card"></i> Nome Completo *
+                                </label>
+                                <input type="text" id="nomeCompleto" name="nomeCompleto" required 
+                                       placeholder="Digite seu nome completo">
+                                <div class="form-error" id="error-nomeCompleto"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">
+                                    <i class="fas fa-envelope"></i> E-mail *
+                                </label>
+                                <input type="email" id="email" name="email" required 
+                                       placeholder="seu@email.com">
+                                <div class="form-error" id="error-email"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cpf">
+                                    <i class="fas fa-id-badge"></i> CPF *
+                                </label>
+                                <input type="text" id="cpf" name="cpf" required 
+                                       placeholder="000.000.000-00" 
+                                       data-mask="000.000.000-00">
+                                <div class="form-error" id="error-cpf"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="dataNascimento">
+                                    <i class="fas fa-birthday-cake"></i> Data de Nascimento *
+                                </label>
+                                <input type="date" id="dataNascimento" name="dataNascimento" required>
+                                <div class="form-error" id="error-dataNascimento"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="telefone">
+                                    <i class="fas fa-phone"></i> Telefone/WhatsApp *
+                                </label>
+                                <input type="text" id="telefone" name="telefone" required 
+                                       placeholder="(92) 99999-9999" 
+                                       data-mask="(00) 00000-0000">
+                                <div class="form-error" id="error-telefone"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn-next" data-next="2">
+                                Próximo <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Informações Escolares -->
+                    <div class="form-step" data-step="2">
+                        <h3><i class="fas fa-school"></i> Informações Escolares</h3>
+                        
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="serieAtual">
+                                    <i class="fas fa-user-graduate"></i> Série em 2026 *
+                                </label>
+                                <select id="serieAtual" name="serieAtual" required>
+                                    <option value="">Selecione sua série</option>
+                                    <option value="9º Ano EF">9º Ano do Ensino Fundamental</option>
+                                    <option value="1º Ano EM">1ª série do Ensino Médio</option>
+                                    <option value="2º Ano EM">2ª série do Ensino Médio</option>
+                                    <option value="3º Ano EM">3ª série do Ensino Médio</option>
+                                    <option value="4º Ano EM">Já concluí o Ensino Médio</option>
+                                </select>
+                                <div class="form-error" id="error-serieAtual"></div>
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label for="escolaOrigem">
+                                    <i class="fas fa-university"></i> Escola de Origem *
+                                </label>
+                                <input type="text" id="escolaOrigem" name="escolaOrigem" required 
+                                       placeholder="Nome completo da sua escola">
+                                <div class="form-error" id="error-escolaOrigem"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label><i class="fas fa-building"></i> Tipo de Escola *</label>
+                                <div class="radio-group">
+                                    <label class="radio-option">
+                                        <input type="radio" name="escolaPublica" value="true" required>
+                                        <span class="radio-custom"></span>
+                                        <span class="radio-label">
+                                            <i class="fas fa-school"></i> Escola Pública
+                                        </span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="escolaPublica" value="false" required>
+                                        <span class="radio-custom"></span>
+                                        <span class="radio-label">
+                                            <i class="fas fa-school"></i> Escola Particular
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="form-error" id="error-escolaPublica"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn-prev" data-prev="1">
+                                <i class="fas fa-arrow-left"></i> Anterior
+                            </button>
+                            <button type="button" class="btn-next" data-next="3">
+                                Próximo <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Vestibulares Anteriores -->
+                    <div class="form-step" data-step="3">
+                        <h3><i class="fas fa-file-alt"></i> Vestibulares Anteriores</h3>
+                        <p class="step-description">Informe se já fez PSC ou SIS e suas notas (opcional)</p>
+                        
+                        <!-- PSC -->
+                        <div class="vestibular-section">
+                            <div class="vestibular-header">
+                                <h4><i class="fas fa-university"></i> PSC (Processo Seletivo Contínuo)</h4>
+                                <div class="toggle-group">
+                                    <span>Fez PSC?</span>
+                                    <label class="switch">
+                                        <input type="checkbox" id="fezPSC" name="fezPSC">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div id="pscFields" class="vestibular-fields" style="display: none;">
+                                <div class="notas-grid" id="pscNotasGrid">
+                                    <!-- Campos de notas do PSC serão gerados dinamicamente -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SIS -->
+                        <div class="vestibular-section">
+                            <div class="vestibular-header">
+                                <h4><i class="fas fa-graduation-cap"></i> SIS (Sistema de Ingresso Seriado)</h4>
+                                <div class="toggle-group">
+                                    <span>Fez SIS?</span>
+                                    <label class="switch">
+                                        <input type="checkbox" id="fezSIS" name="fezSIS">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div id="sisFields" class="vestibular-fields" style="display: none;">
+                                <div class="notas-grid" id="sisNotasGrid">
+                                    <!-- Campos de notas do SIS serão gerados dinamicamente -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Redações -->
+                        <div class="vestibular-section" id="redacaoSection" style="display: none;">
+                            <h4><i class="fas fa-edit"></i> Notas de Redação (opcional)</h4>
+                            <div class="notas-grid" id="redacaoNotasGrid">
+                                <!-- Campos de redação serão gerados dinamicamente -->
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn-prev" data-prev="2">
+                                <i class="fas fa-arrow-left"></i> Anterior
+                            </button>
+                            <button type="button" class="btn-next" data-next="4">
+                                Próximo <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Motivação -->
+                    <div class="form-step" data-step="4">
+                        <h3><i class="fas fa-star"></i> Motivação</h3>
+                        
+                        <div class="form-group">
+                            <label for="motivacao">
+                                <i class="fas fa-comment-dots"></i> Por que você deseja estudar no Método? *
+                            </label>
+                            <textarea id="motivacao" name="motivacao" rows="6" required 
+                                      placeholder="Conte-nos por que você escolheu o Método e quais são seus objetivos... (mínimo 20 caracteres)"></textarea>
+                            <div class="char-counter">
+                                <span id="charCount">0</span> / 1000 caracteres
+                            </div>
+                            <div class="form-error" id="error-motivacao"></div>
+                        </div>
+
+                        <div class="termos">
+                            <label class="checkbox-option">
+                                <input type="checkbox" id="aceiteTermos" name="aceiteTermos" required>
+                                <span class="checkmark"></span>
+                                <span class="termos-text">
+                                    Confirmo que todas as informações fornecidas são verdadeiras e 
+                                    concordo com as regras do concurso de bolsas.
+                                </span>
+                            </label>
+                            <div class="form-error" id="error-termos"></div>
+                        </div>
+
+                        <div class="info-prova">
+                            <h4><i class="fas fa-info-circle"></i> Informações sobre a Prova</h4>
+                            <ul>
+                                <li><i class="fas fa-calendar"></i> <strong>Data:</strong> 18 de Janeiro de 2026</li>
+                                <li><i class="fas fa-clock"></i> <strong>Horário:</strong> 08:00 às 12:00</li>
+                                <li><i class="fas fa-map-marker-alt"></i> <strong>Local:</strong> Rua Elisa Lispector s/n, Bairro Tarumã, Manaus - AM</li>
+                                <li><i class="fas fa-clipboard-list"></i> <strong>Documentos obrigatórios:</strong> RG ou certidão de nascimento</li>
+                            </ul>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn-prev" data-prev="3">
+                                <i class="fas fa-arrow-left"></i> Anterior
+                            </button>
+                            <button type="submit" class="btn-submit">
+                                <i class="fas fa-paper-plane"></i> Enviar Inscrição
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Mensagem de Sucesso -->
+                <div id="successMessage" class="success-message" style="display: none;">
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Inscrição realizada com sucesso!</h3>
+                    <p id="successDetails"></p>
+                    <div class="success-info">
+                        <h4><i class="fas fa-file-alt"></i> Protocolo: <span id="protocolo"></span></h4>
+                        <h4><i class="fas fa-calendar-alt"></i> Data da Prova: 18/01/2026</h4>
+                        <h4><i class="fas fa-map-marker-alt"></i> Local: Rua Elisa Lispector s/n, Bairro Tarumã, Manaus - AM</h4>
+                    </div>
+                    <div class="success-actions">
+                        <button class="btn-print" onclick="window.print()">
+                            <i class="fas fa-print"></i> Imprimir Comprovante
+                        </button>
+                        <button class="btn-new" onclick="location.reload()">
+                            <i class="fas fa-plus"></i> Nova Inscrição
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="faq-container">
+                <h2><i class="fas fa-question-circle"></i> Perguntas Frequentes</h2>
+                
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>Quem pode participar?</h3>
+                        <p>Alunos que estarão no 9º ano do EF ou 1ª, 2ª ou 3ª série do EM em 2026.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>Qual o valor da bolsa?</h3>
+                        <p>As bolsas variam de 10% a 100% de desconto na matrícula, dependendo do desempenho na prova.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>Preciso ter feito PSC ou SIS?</h3>
+                        <p>Não, é opcional informar se já fez esses vestibulares. Não é obrigatório ter feito.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>O que levar no dia da prova?</h3>
+                        <p>Documento de identidade (RG ou certidão de nascimento), caneta azul ou preta e o comprovante de inscrição.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Simplificado -->
+    <footer class="concurso-footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <div class="logo-glow">
+                    <img src="https://i.ibb.co/jryH3q8/Min-Branca.png" alt="Logo Método">
+                </div>
+                <div class="footer-brand">
+                    <span class="footer-title">Método<span class="logo-highlight">Pré-Vestibular</span></span>
+                    <p class="footer-tagline">Mudando vidas, escrevendo histórias.</p>
+                </div>
+            </div>
+
+            <div class="footer-contacts">
+                <h4><i class="fas fa-headset"></i> Contato</h4>
+                <div class="contact-info">
+                    <a href="https://wa.me/559294860365" class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>(92) 99486-0365</span>
+                    </a>
+                    <a href="https://instagram.com/metodo.prevest" class="contact-item">
+                        <i class="fab fa-instagram"></i>
+                        <span>@metodo.prevest</span>
+                    </a>
+                    <a href="mailto:metodoprevest@gmail.com" class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>metodoprevest@gmail.com</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Método Pré-Vestibular. Concurso de Bolsas 2026.</p>
+                <p>Rua Elisa Lispector s/n, Bairro Tarumã, Manaus - AM</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="concurso.js"></script>
+</body>
+</html>
