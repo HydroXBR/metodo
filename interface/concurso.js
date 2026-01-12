@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
             fezSIS.addEventListener('change', function() {
                 sisFields.style.display = this.checked ? 'block' : 'none';
                 const serie = document.getElementById('serieAtual').value;
-                redacaoSection.style.display = (this.checked && (serie === '2º Ano EM' || serie === '3º Ano EM')) ? 'block' : 'none';
+                redacaoSection.style.display = (this.checked && (serie === '3º Ano EM' || serie === '4º Ano EM')) ? 'block' : 'none';
                 
                 if (this.checked) {
                     atualizarCamposSIS();
@@ -337,8 +337,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 atualizarCamposSIS();
                 const redacaoSection = document.getElementById('redacaoSection');
                 if (redacaoSection) {
-                    redacaoSection.style.display = (serie === '2º Ano EM' || serie === '3º Ano EM') ? 'block' : 'none';
-                    if (serie === '2º Ano EM' || serie === '3º Ano EM') {
+                    redacaoSection.style.display = (serie === '3º Ano EM' || serie === '4º Ano EM') ? 'block' : 'none';
+                    if (serie === '3º Ano EM' || serie === '4º Ano EM') {
                         atualizarCamposRedacao();
                     }
                 }
@@ -577,8 +577,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Atualizar detalhes na mensagem de sucesso
         document.getElementById('protocolo').textContent = data.protocolo || 'N/A';
         document.getElementById('successDetails').innerHTML = `
-            Olá <strong>${data.nome}</strong>, sua inscrição foi registrada com sucesso!<br>
-            Um email de confirmação foi enviado para <strong>${data.email}</strong>.
+            Olá <strong>${data.nome}</strong>, sua inscrição foi registrada com sucesso!<strong>${data.email}</strong>.
         `;
         
         // Mostrar mensagem de sucesso
