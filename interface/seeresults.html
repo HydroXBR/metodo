@@ -1025,9 +1025,9 @@
             <div class="footer-contacts">
                 <h4><i class="fas fa-headset"></i> Contato Administrativo</h4>
                 <div class="contact-info">
-                    <a href="https://wa.me/55929486365" class="contact-item">
+                    <a href="https://wa.me/559294860365" class="contact-item">
                         <i class="fab fa-whatsapp"></i>
-                        <span>(92) 99486-365</span>
+                        <span>(92) 99486-0365</span>
                     </a>
                     <a href="mailto:metodoprevest@gmail.com" class="contact-item">
                         <i class="fas fa-envelope"></i>
@@ -1121,13 +1121,8 @@
             const busca = document.getElementById('searchInput').value.toLowerCase();
             
             inscricoesFiltradas = inscricoes.filter(inscricao => {
-                // Filtro por status
                 if (status && inscricao.status !== status) return false;
-                
-                // Filtro por série
                 if (serie && inscricao.serieAtual !== serie) return false;
-                
-                // Filtro por tipo de escola
                 if (escola !== '' && String(inscricao.escolaPublica) !== escola) return false;
                 
                 // Filtro por data
@@ -1187,6 +1182,7 @@
             let html = '';
             
             inscricoesPagina.forEach(inscricao => {
+                console.log(inscricao)
                 const dataFormatada = new Date(inscricao.dataInscricao).toLocaleDateString('pt-BR');
                 const escolaTipo = inscricao.escolaPublica ? 'Pública' : 'Particular';
                 const statusClass = `status-${inscricao.status}`;
@@ -1611,11 +1607,11 @@
         // Enviar WhatsApp
         function enviarWhatsApp(telefone, nome) {
             // Remover formatação do telefone
-            const telLimpo = telefone.replace(/\D/g, '');
-            // Garantir código do Brasil
-            const telFormatado = telLimpo.startsWith('55') ? telLimpo : '55' + telLimpo;
+            const telLimpo = telefone.replace(/\D/g, '')
+            const telwith92only = telLimpo.sclice(0,1) + telLimpo.slice(3,10)
+            const telFormatado = telwith92only
             
-            const mensagem = `Olá ${nome}! Aqui é da equipe do Método Pré-Vestibular. Gostaríamos de conversar sobre sua inscrição no concurso de bolsas.`;
+            const mensagem = `Olá, ${nome}! Aqui é da equipe do Método Pré-Vestibular. Gostaríamos de conversar sobre sua inscrição no concurso de bolsas.`;
             const url = `https://wa.me/${telFormatado}?text=${encodeURIComponent(mensagem)}`;
             window.open(url, '_blank');
         }
