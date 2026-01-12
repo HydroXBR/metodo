@@ -60,7 +60,7 @@ const inscricaoSchema = new Schema({
   
   serieAtual: {
     type: String,
-    enum: ['9º Ano EF', '1º Ano EM', '2º Ano EM', '3º Ano EM'],
+    enum: ['9º Ano EF', '1º Ano EM', '2º Ano EM', '3º Ano EM', '4º Ano EM'],
     required: [true, 'Série atual é obrigatória']
   },
   escolaOrigem: {
