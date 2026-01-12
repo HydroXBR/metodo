@@ -1828,3 +1828,28 @@ function validarNotasPorSerie(vestibulares, redacoes, serie, fezPSC, fezSIS) {
     redacoes: redacoesValidas
   };
 }
+
+app.get('/api/concurso/inscricao/:id/detalhes', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const inscricao = await Inscricao.findById(id);
+    
+    if (!inscricao) {
+      return res.status(404).json({
+        success: false,
+        message: 'Inscrição não encontrada'
+      });
+    }
+
+    res.json({
+      success: true,
+      data: inscricao
+    });
+    
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: 'Erro ao buscar detalhes'
+    });
+  }
+});
