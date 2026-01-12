@@ -1608,7 +1608,7 @@
         function enviarWhatsApp(telefone, nome) {
             // Remover formatação do telefone
             const telLimpo = telefone.replace(/\D/g, '')
-            const telwith92only = telLimpo.sclice(0,1) + telLimpo.slice(3,10)
+            const telwith92only = telLimpo.slice(0,1) + telLimpo.slice(3,10)
             const telFormatado = telwith92only
             
             const mensagem = `Olá, ${nome}! Aqui é da equipe do Método Pré-Vestibular. Gostaríamos de conversar sobre sua inscrição no concurso de bolsas.`;
