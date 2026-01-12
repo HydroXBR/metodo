@@ -1583,3 +1583,248 @@ app.get('/apiranking', function(req,res) {
 		res.send(array)
 	})
 })
+
+import Inscricao from './database/concurso.js';
+
+app.post('/api/concurso/inscricao', async (req, res) => {
+  try {
+    const {
+      nomeCompleto,
+      email,
+      cpf,
+      dataNascimento,
+      telefone,
+      serieAtual,
+      escolaOrigem,
+      escolaPublica,
+      fezPSC,
+      fezSIS,
+      notasVestibulares,
+      notasRedacao,
+      motivacao
+    } = req.body;
+
+    // Validar CPF único
+    const inscricaoExistente = await Inscricao.findOne({ cpf: cpf.replace(/\D/g, '') });
+    if (inscricaoExistente) {
+      return res.status(400).json({
+        success: false,
+        message: 'Já existe uma inscrição com este CPF'
+      });
+    }
+
+    // Validar série e notas
+    const serie = serieAtual;
+    const notasValidadas = validarNotasPorSerie(notasVestibulares, notasRedacao, serie, fezPSC, fezSIS);
+
+    // Criar nova inscrição
+    const novaInscricao = new Inscricao({
+      nomeCompleto,
+      email,
+      cpf: cpf.replace(/\D/g, ''), // Remover formatação
+      dataNascimento: new Date(dataNascimento),
+      telefone: telefone.replace(/\D/g, ''), // Remover formatação
+      serieAtual: serie,
+      escolaOrigem,
+      escolaPublica: escolaPublica === 'true' || escolaPublica === true,
+      fezPSC: fezPSC === 'true' || fezPSC === true,
+      fezSIS: fezSIS === 'true' || fezSIS === true,
+      notasVestibulares: notasValidadas.vestibulares,
+      notasRedacao: notasValidadas.redacoes,
+      motivacao
+    });
+
+    // Salvar no banco de dados
+    await novaInscricao.save();
+
+    res.status(201).json({
+      success: true,
+      message: 'Inscrição realizada com sucesso!',
+      data: {
+        id: novaInscricao._id,
+        nome: novaInscricao.nomeCompleto,
+        email: novaInscricao.email,
+        dataProva: novaInscricao.dataProva,
+        localProva: 'Rua Elisa Lispector s/n, Bairro Tarumã, Manaus - AM',
+        protocolo: `CONC-${novaInscricao._id.toString().slice(-8).toUpperCase()}`
+      }
+    });
+
+  } catch (error) {
+    console.error('Erro na inscrição:', error);
+    
+    if (error.name === 'ValidationError') {
+      const errors = Object.values(error.errors).map(err => err.message);
+      return res.status(400).json({
+        success: false,
+        message: 'Erro de validação',
+        errors
+      });
+    }
+
+    res.status(500).json({
+      success: false,
+      message: 'Erro ao processar inscrição. Tente novamente.'
+    });
+  }
+});
+
+// GET - Verificar status de inscrição por CPF
+app.get('/api/concurso/verificar/:cpf', async (req, res) => {
+  try {
+    const cpf = req.params.cpf.replace(/\D/g, '');
+    
+    const inscricao = await Inscricao.findOne({ cpf })
+      .select('nomeCompleto email status dataProva percentualBolsa compareceuProva');
+    
+    if (!inscricao) {
+      return res.status(404).json({
+        success: false,
+        message: 'Inscrição não encontrada'
+      });
+    }
+
+    res.json({
+      success: true,
+      data: inscricao
+    });
+    
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: 'Erro ao buscar inscrição'
+    });
+  }
+});
+
+// GET - Listar todas inscrições (admin)
+app.get('/api/concurso/inscricoes', async (req, res) => {
+  try {
+    const { status, serie, page = 1, limit = 20 } = req.query;
+    
+    const query = {};
+    if (status) query.status = status;
+    if (serie) query.serieAtual = serie;
+    
+    const inscricoes = await Inscricao.find(query)
+      .select('nomeCompleto email cpf serieAtual escolaPublica status dataInscricao percentualBolsa')
+      .sort({ dataInscricao: -1 })
+      .skip((page - 1) * limit)
+      .limit(parseInt(limit));
+    
+    const total = await Inscricao.countDocuments(query);
+    
+    res.json({
+      success: true,
+      data: inscricoes,
+      pagination: {
+        page: parseInt(page),
+        limit: parseInt(limit),
+        total,
+        pages: Math.ceil(total / limit)
+      }
+    });
+    
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: 'Erro ao listar inscrições'
+    });
+  }
+});
+
+// PUT - Atualizar status (admin)
+app.put('/api/concurso/inscricao/:id/status', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { status, percentualBolsa, notaConcurso, compareceuProva } = req.body;
+    
+    const atualizacao = {};
+    if (status) atualizacao.status = status;
+    if (percentualBolsa !== undefined) atualizacao.percentualBolsa = percentualBolsa;
+    if (notaConcurso !== undefined) atualizacao.notaConcurso = notaConcurso;
+    if (compareceuProva !== undefined) atualizacao.compareceuProva = compareceuProva;
+    
+    const inscricao = await Inscricao.findByIdAndUpdate(
+      id,
+      atualizacao,
+      { new: true }
+    ).select('nomeCompleto email status percentualBolsa');
+    
+    if (!inscricao) {
+      return res.status(404).json({
+        success: false,
+        message: 'Inscrição não encontrada'
+      });
+    }
+    
+    res.json({
+      success: true,
+      message: 'Status atualizado com sucesso',
+      data: inscricao
+    });
+    
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: 'Erro ao atualizar status'
+    });
+  }
+});
+
+// Funções auxiliares para validação de notas
+function validarNotasPorSerie(vestibulares, redacoes, serie, fezPSC, fezSIS) {
+  const vestibularesValidos = [];
+  const redacoesValidas = [];
+  
+  // Filtrar vestibulares baseado na série
+  if (vestibulares && Array.isArray(vestibulares)) {
+    vestibulares.forEach(v => {
+      if (serie === '9º Ano EF') {
+        // 9º ano não pode ter feito vestibulares
+        return;
+      }
+      
+      if (serie === '1º Ano EM') {
+        // 1º Ano não pode ter feito vestibulares
+        return;
+
+      } else if (serie === '2º Ano EM') {
+        // 2º ano pode ter feito PSC I, PSC II, SIS I, SIS II
+        if (['PSC I', 'SIS I'].includes(v.nome)) {
+          if ((v.nome.startsWith('PSC') && fezPSC) || (v.nome.startsWith('SIS') && fezSIS)) {
+            vestibularesValidos.push(v);
+          }
+        }
+      } else if (serie === '3º Ano EM') {
+        // 3º ano pode ter feito todos, exceto PSC III
+        if (['PSC I', 'PSC II', 'SIS I', 'SIS II'].includes(v.nome)) {
+          if ((v.nome.startsWith('PSC') && fezPSC) || (v.nome.startsWith('SIS') && fezSIS)) {
+            vestibularesValidos.push(v);
+          }
+        }
+      } else if (serie === '4º Ano EM') {
+        // 3º ano pode ter feito todos
+        if (['PSC I', 'PSC II', 'PSC III', 'SIS I', 'SIS II', 'SIS III'].includes(v.nome)) {
+          if ((v.nome.startsWith('PSC') && fezPSC) || (v.nome.startsWith('SIS') && fezSIS)) {
+            vestibularesValidos.push(v);
+          }
+        }
+      }
+    });
+  }
+  
+  // Filtrar redações baseado na série
+  if (redacoes && Array.isArray(redacoes)) {
+    redacoes.forEach(r => {
+      if ((serie === '3º Ano EM' || serie === '4º Ano EM') && ['SIS II', 'SIS III', 'PSC III'].includes(r.vestibular)) {
+        redacoesValidas.push(r);
+      }
+    });
+  }
+  
+  return {
+    vestibulares: vestibularesValidos,
+    redacoes: redacoesValidas
+  };
+}
