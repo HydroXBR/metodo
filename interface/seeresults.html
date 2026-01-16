@@ -1606,15 +1606,27 @@
 
         // Enviar WhatsApp
         function enviarWhatsApp(telefone, nome) {
-            // Remover formatação do telefone
-            const telLimpo = telefone.replace(/\D/g, '')
-            const telwith92only = telLimpo.slice(0,1) + telLimpo.slice(3,10)
-            const telFormatado = telwith92only
-            
-            const mensagem = `Olá, ${nome}! Aqui é da equipe do Método Pré-Vestibular. Gostaríamos de conversar sobre sua inscrição no concurso de bolsas.`;
-            const url = `https://wa.me/${telFormatado}?text=${encodeURIComponent(mensagem)}`;
-            window.open(url, '_blank');
-        }
+  // Remover formatação do telefone
+  const telLimpo = telefone.replace(/\D/g, '')
+  
+  // Remover o "9" que está após o DDD (se houver)
+  // Considerando formato: DDD (2 dígitos) + 9 (opcional) + número (8 dígitos)
+  const ddd = telLimpo.substring(0, 2)
+  const restoNumero = telLimpo.substring(2)
+  
+  // Verificar se tem 9 e remover (números brasileiros geralmente tem 9 após DDD)
+  let numeroSemNove = restoNumero
+  if (restoNumero.length > 8 && restoNumero.charAt(0) === '9') {
+    numeroSemNove = restoNumero.substring(1)
+  }
+  
+  const telFormatado = ddd + numeroSemNove
+  console.log('Original:', telefone, 'Limpo:', telLimpo, 'Formatado:', telFormatado)
+  
+  const mensagem = `Olá, ${nome}! Aqui é da equipe do Método Pré-Vestibular. Gostaríamos de conversar sobre sua inscrição no concurso de bolsas.`
+  const url = `https://wa.me/${telFormatado}?text=${encodeURIComponent(mensagem)}`
+  window.open(url, '_blank')
+}
 
         // Enviar Email
         function enviarEmail(email, nome) {
