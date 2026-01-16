@@ -19,6 +19,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // Inicializar controles
     inicializarVestibularControles();
     
+    // Prevenir validação nativa
+    limparValidacaoNativa();
+    
     // Event Listeners
     motivacaoTextarea.addEventListener('input', atualizarContadorCaracteres);
     form.addEventListener('submit', enviarInscricao);
@@ -40,6 +43,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Inicializar step 1
     irParaStep(1);
+
+    function limparValidacaoNativa() {
+        // Prevenir comportamento padrão de validação
+        const inputs = form.querySelectorAll('input, textarea, select');
+        inputs.forEach(input => {
+            input.addEventListener('invalid', function(e) {
+                e.preventDefault();
+            });
+        });
+    }
 
     function inicializarMascaras() {
         // Máscara para CPF
@@ -196,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function () {
             vestibularesSIS = ['SIS I'];
         } else if (serie === '3º Ano EM') {
             vestibularesSIS = ['SIS I', 'SIS II'];
-        }else if (serie === '4º Ano EM') {
+        } else if (serie === '4º Ano EM') {
             vestibularesSIS = ['SIS I', 'SIS II', 'SIS III'];
         }
         
@@ -466,6 +479,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function validarStep3() {
         // Step 3 não tem validações obrigatórias, tudo é opcional
+        // Limpar qualquer erro de validação nativa dos campos ocultos
+        const camposNotas = document.querySelectorAll('#pscFields input, #sisFields input, #redacaoSection input');
+        camposNotas.forEach(campo => {
+            campo.setCustomValidity('');
+        });
+        
         return true;
     }
 
@@ -501,6 +520,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     async function enviarInscricao(e) {
         e.preventDefault();
+        e.stopPropagation();
         
         // Validar step atual
         if (!validarStep(4)) {
