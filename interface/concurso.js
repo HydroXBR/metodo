@@ -155,10 +155,8 @@ document.addEventListener('DOMContentLoaded', function () {
         let vestibularesPSC = [];
         
         // Determinar quais PSCs são possíveis baseado na série
-        if (serie === '2º Ano EM') {
+        if (serie === '3º Ano EM') {
             vestibularesPSC = ['PSC I'];
-        } else if (serie === '3º Ano EM') {
-            vestibularesPSC = ['PSC I', 'PSC II'];
         } else if (serie === '4º Ano EM') {
             vestibularesPSC = ['PSC I', 'PSC II', 'PSC III'];
         }
