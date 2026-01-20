@@ -1204,7 +1204,7 @@
                         </td>
                         <td>${inscricao.email}</td>
                         <td>${formatarCPF(inscricao.cpf)}</td>
-                        <td>${inscricao.serieAtual.replace("4° Ano EM","Já concluiu o EM")}</td>
+                        <td>${inscricao.serieAtual == "4° Ano EM" ? "Já concluiu o EM" : inscricao.serieAtual}</td>
                         <td>${escolaTipo}</td>
                         <td>
                             <span class="status-badge ${statusClass}">
@@ -1427,7 +1427,7 @@
                                 <i class="fas fa-user-graduate"></i>
                                 <span>Série em 2026</span>
                             </div>
-                            <div class="info-value">${inscricao.serieAtuaL.replace("4° Ano EM", "Já concluiu o EM")}</div>
+                            <div class="info-value">${inscricao.serieAtual == "4° Ano EM" ? "Já concluiu o EM" : inscricao.serieAtual}</div>
                         </div>
                         <div class="info-item">
                             <div class="info-label">
@@ -1668,7 +1668,7 @@
                     `"${formatarCPF(inscricao.cpf)}"`,
                     `"${formatarTelefone(inscricao.telefone)}"`,
                     `"${new Date(inscricao.dataNascimento).toLocaleDateString('pt-BR')}"`,
-                    `"${inscricao.serieAtual.replace("4° Ano EM", "Já concluiu o EM")}"`,
+                    `"${inscricao.serieAtual == "4° Ano EM" ? "Já concluiu o EM" : inscricao.serieAtual}"`,
                     `"${inscricao.escolaOrigem}"`,
                     `"${inscricao.escolaPublica ? 'Pública' : 'Particular'}"`,
                     `"${inscricao.fezPSC ? 'Sim' : 'Não'}"`,
