@@ -1700,7 +1700,7 @@ app.get('/api/concurso/verificar/:cpf', async (req, res) => {
 // GET - Listar todas inscrições (admin)
 app.get('/api/concurso/inscricoes', async (req, res) => {
   try {
-    const { status, serie, page = 1, limit = 20 } = req.query;
+    const { status, serie, page = 1, limit = 99 } = req.query;
     
     const query = {};
     if (status) query.status = status;
