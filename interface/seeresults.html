@@ -910,6 +910,7 @@
                         <option value="1º Ano EM">1º Ano EM</option>
                         <option value="2º Ano EM">2º Ano EM</option>
                         <option value="3º Ano EM">3º Ano EM</option>
+                        <option value="4º Ano EM">Concludentes</option>
                     </select>
                 </div>
                 
@@ -1048,7 +1049,7 @@
         let inscricoes = [];
         let inscricoesFiltradas = [];
         let paginaAtual = 1;
-        const itensPorPagina = 20;
+        const itensPorPagina = 999;
         let inscricaoSelecionada = null;
 
         // Inicialização
@@ -1203,7 +1204,7 @@
                         </td>
                         <td>${inscricao.email}</td>
                         <td>${formatarCPF(inscricao.cpf)}</td>
-                        <td>${inscricao.serieAtual}</td>
+                        <td>${inscricao.serieAtual.replace("4° Ano EM","Já concluiu o EM")}</td>
                         <td>${escolaTipo}</td>
                         <td>
                             <span class="status-badge ${statusClass}">
@@ -1426,7 +1427,7 @@
                                 <i class="fas fa-user-graduate"></i>
                                 <span>Série em 2026</span>
                             </div>
-                            <div class="info-value">${inscricao.serieAtual == "4° Ano EM" ? "Já concluiu" : inscricao.serieAtual}</div>
+                            <div class="info-value">${inscricao.serieAtuaL.replace("4° Ano EM", "Já concluiu o EM")}</div>
                         </div>
                         <div class="info-item">
                             <div class="info-label">
@@ -1667,7 +1668,7 @@
                     `"${formatarCPF(inscricao.cpf)}"`,
                     `"${formatarTelefone(inscricao.telefone)}"`,
                     `"${new Date(inscricao.dataNascimento).toLocaleDateString('pt-BR')}"`,
-                    `"${inscricao.serieAtual}"`,
+                    `"${inscricao.serieAtual.replace("4° Ano EM", "Já concluiu o EM")}"`,
                     `"${inscricao.escolaOrigem}"`,
                     `"${inscricao.escolaPublica ? 'Pública' : 'Particular'}"`,
                     `"${inscricao.fezPSC ? 'Sim' : 'Não'}"`,
